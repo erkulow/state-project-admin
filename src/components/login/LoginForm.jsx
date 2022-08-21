@@ -68,7 +68,7 @@ const LoginForm = () => {
 					<Input
 						isValid={errors?.password && !isValid}
 						type='Password'
-						placeholder='assword'
+						placeholder='Password'
 						{...input.password}
 					/>
 					<Button type='submit'>
