@@ -1,18 +1,12 @@
-import { getJwt } from '../utils/helpers/general'
+/* eslint-disable no-use-before-define */
 import { SERVER_BASE_URL } from '../utils/constants/general'
 
 export const baseFetch = async (options) => {
-	const token = getJwt()
 	try {
 		const { path, body, method, params } = options
 		const requestOptions = {
 			method: method || 'GET',
-			headers: token
-				? {
-						'Content-Type': 'application/json',
-						Authorization: `Bearer ${token}`,
-				  }
-				: { 'Content-Type': 'application/json' },
+			headers: { 'Content-Type': 'application/json' },
 		}
 		if (method !== 'GET') {
 			requestOptions.body = JSON.stringify(body || {})
@@ -29,11 +23,16 @@ export const baseFetch = async (options) => {
 		)
 		const result = await response.json()
 		if (!response.ok) {
+			console.log(result?.errors[0]?.defaultMessage)
+			console.log(result?.errors[0])
 			let errorMessage = 'Some thing went wrong'
 			if (result && result.message) {
-				errorMessage = result.message
+				errorMessage = result.errors[0].defaultMessage || result.message
 			}
 			throw new Error(errorMessage)
+		}
+		if (response.ok && result.status === 'UNAUTHORIZED') {
+			throw new Error('Неправильный логин или пароль!!!')
 		}
 		return result
 	} catch (e) {
