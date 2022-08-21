@@ -1,6 +1,6 @@
 export const SERVER_BASE_URL = 'https://mady-application.herokuapp.com/api'
 
-export const LOCALSTORAGE_KEY_USER = 'billingual_user_information'
+export const _KEY_AUTH = 'STATE_PROJECT_'
 
 export const ROLES = {
 	ADMIN: 'ADMIN',
