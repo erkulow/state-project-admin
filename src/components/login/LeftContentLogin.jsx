@@ -12,6 +12,9 @@ const Container = styled.div`
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
+	@media screen and (max-width: 700px) {
+		display: none;
+	}
 `
 
 export default LeftContentLogin

@@ -21,11 +21,11 @@ export const Flex = styled.div`
    margin: ${({ margin }) => margin || '0'};
    height: ${({ height }) => height || ''};
    max-width: ${({ maxWidth }) => maxWidth || ''};
-   @media (max-width: 800px) {
+   /* @media (max-width: 800px) {
       flex-direction: ${(props) => props.mobileDirection || 'row'};
       justify-content: ${(props) => props.mobileJustify || 'start'};
       align-items: ${(props) => props.mobileAlign || 'stretch'};
-   }
+   } */
 `
 export const Centered = styled.div`
    position: absolute;

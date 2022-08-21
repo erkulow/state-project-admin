@@ -1,14 +1,21 @@
 import styled from '@emotion/styled'
 import { Alert, Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { loginAsAdmin } from '../../store/admin-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
+import Spinner from '../UI/loader/Spinner'
 
 const LoginForm = () => {
+	const { isAuthorized, isLoading } = useSelector((state) => state.auth)
+	const navigate = useNavigate()
 	const dispatch = useDispatch()
+	useEffect(() => {
+		if (isAuthorized) navigate('/')
+	}, [isAuthorized, navigate])
 	const {
 		register,
 		formState: { errors, isValid },
@@ -35,7 +42,6 @@ const LoginForm = () => {
 	const errorPasswordMessage =
 		(errors?.password && errors.password.message) || ''
 	const errorMessage = errorLoginMessage || errorPasswordMessage
-
 	return (
 		<Container>
 			<Form onSubmit={handleSubmit(submitHandler)}>
@@ -65,12 +71,15 @@ const LoginForm = () => {
 						placeholder='assword'
 						{...input.password}
 					/>
-					<Button type='submit'>Login</Button>
+					<Button type='submit'>
+						{isLoading ? <Spinner /> : 'LOGIN'}
+					</Button>
 				</Flex>
 			</Form>
 		</Container>
 	)
 }
+
 const Title = styled.h3`
 	color: #bfcdd6;
 `
@@ -83,6 +92,9 @@ const Container = styled.div`
 	align-items: center;
 	background-color: #0e1117;
 	height: 100vh;
+	@media screen and (max-width: 700px) {
+		width: 100%;
+	}
 `
 const Form = styled.form`
 	max-width: 500px;

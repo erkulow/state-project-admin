@@ -4,10 +4,12 @@ import {
 	showSuccessMessage,
 } from '../components/UI/notification/Notification'
 import { baseFetch } from '../api/baseFetch'
+import { getDataFromLocalStorage } from '../utils/helpers/general'
+import { _KEY_AUTH } from '../utils/constants/general'
 
 export const loginAsAdmin = createAsyncThunk(
 	'loginAsAdmin/admin',
-	async ({ data, reset}, { rejectWithValue }) => {
+	async ({ data, reset }, { rejectWithValue }) => {
 		try {
 			const result = await baseFetch({
 				path: 'auth/sign-in',
@@ -21,7 +23,6 @@ export const loginAsAdmin = createAsyncThunk(
 			reset()
 			return result
 		} catch (error) {
-			console.log(error.message)
 			showErrorMessage({
 				title: 'Error!!!',
 				message: error.message,
@@ -30,9 +31,13 @@ export const loginAsAdmin = createAsyncThunk(
 		}
 	},
 )
+const localData = getDataFromLocalStorage(_KEY_AUTH) || {}
 const initialState = {
-	token: null,
-	user: null,
+	token: localData?.token || null,
+	isAuthorized: localData?.isAuthorized || false,
+	isLoading: false,
+	error: null,
+	role: localData?.role || null,
 }
 
 const adminslice = createSlice({
@@ -47,7 +52,9 @@ const adminslice = createSlice({
 		[loginAsAdmin.fulfilled]: (state, action) => {
 			state.isLoading = false
 			state.error = null
-			state.user = action.payload
+			state.token = action?.payload?.token
+			state.isAuthorized = action?.payload?.token && true
+			state.role = action?.payload?.role
 		},
 		[loginAsAdmin.rejected]: (state, action) => {
 			state.isLoading = false
