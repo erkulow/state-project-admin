@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
 import { CATEGORYES } from '../../utils/constants/categoryes'
 import { AiOutlineCaretRight } from 'react-icons/ai'
@@ -18,49 +18,46 @@ const Lists = () => {
 	return (
 		<Container>
 			{CATEGORYES.map((el) => (
-				<>
-					<List
-						key={el.id}
-						onClick={toggleInnerMenu.bind(null, el.id)}
-					>
+				<Fragment key={el.id}>
+					<List onClick={toggleInnerMenu.bind(null, el.id)}>
 						<span>
 							{el.icon} {el.title}
 						</span>{' '}
 						<Icon
-							isVisibleInner={isVisibleInner(el.id)}
+							isvisibleinner={isVisibleInner(el.id)}
 							fontSize={20}
 						/>
 					</List>
 					{el.innerList.map((item) => (
 						<InnerList
+							key={item.id}
 							onClick={() =>
 								navigate(`${el.title}/${item.title}`)
 							}
-							key={item.id}
-							isVisibleInner={isVisibleInner(el.id)}
+							isvisibleinner={isVisibleInner(el.id)}
 						>
 							{item.title}
 						</InnerList>
 					))}
-				</>
+				</Fragment>
 			))}
 		</Container>
 	)
 }
 const Icon = styled(AiOutlineCaretRight)`
-	transform: ${({ isVisibleInner }) =>
-		isVisibleInner ? 'rotate(90deg)' : 'rotate(0deg)'};
+	transform: ${({ isvisibleinner }) =>
+		isvisibleinner ? 'rotate(90deg)' : 'rotate(0deg)'};
 `
 const InnerList = styled.div`
 	width: 100%;
-	padding: ${({ isVisibleInner }) => (isVisibleInner ? '1rem' : '0rem')};
+	padding: ${({ isvisibleinner }) => (isvisibleinner ? '1rem' : '0rem')};
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-	height: ${({ isVisibleInner }) => (isVisibleInner ? 'fit-content' : '0px')};
-	color: ${({ isVisibleInner }) =>
-		isVisibleInner ? '#7d97b8' : 'transparent'};
+	height: ${({ isvisibleinner }) => (isvisibleinner ? 'fit-content' : '0px')};
+	color: ${({ isvisibleinner }) =>
+		isvisibleinner ? '#7d97b8' : 'transparent'};
 	background-color: #0e1117;
-	margin-bottom: ${({ isVisibleInner }) => (isVisibleInner ? '3px' : '0px')};
-	pointer-events: ${({ isVisibleInner }) => (isVisibleInner ? '' : 'none')};
+	margin-bottom: ${({ isvisibleinner }) => (isvisibleinner ? '3px' : '0px')};
+	pointer-events: ${({ isvisibleinner }) => (isvisibleinner ? '' : 'none')};
 	cursor: pointer;
 	:hover {
 		background-color: #26292c;

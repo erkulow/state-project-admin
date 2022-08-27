@@ -9,16 +9,6 @@ import { Flex } from '../../styles/style-for-positions/style'
 import { Title } from '../../styles/typography/typography'
 import BreadCrumbs from '../UI/breadcrumbs/BreadCrumbs'
 
-const SOCIAL_ICONS = [<ImFacebook2 />, <BsInstagram />, <BsWhatsapp />]
-
-const socialsRender = (socials) => {
-	return SOCIAL_ICONS.map((icon, i) => (
-		<Social key={i} to={socials[i]}>
-			{icon}
-		</Social>
-	))
-}
-
 const TemplateLeaderShipPages = ({
 	headerTitle,
 	children,
@@ -35,9 +25,6 @@ const TemplateLeaderShipPages = ({
 						<TitleHeader>{headerTitle}</TitleHeader>
 						<BreadCrumbs pathsArray={breadCrumbsPaths} />
 					</div>
-					<Flex gap='7px' align='center'>
-						{socialsRender(socials)}
-					</Flex>
 				</InnerHeader>
 			</Header>
 			<Flex
