@@ -23,8 +23,6 @@ export const baseFetch = async (options) => {
 		)
 		const result = await response.json()
 		if (!response.ok) {
-			console.log(result?.errors[0]?.defaultMessage)
-			console.log(result?.errors[0])
 			let errorMessage = 'Some thing went wrong'
 			if (result && result.message) {
 				errorMessage = result.errors[0].defaultMessage || result.message
