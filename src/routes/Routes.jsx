@@ -6,6 +6,9 @@ import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
 const Login = React.lazy(() => import('../containers/login-page/Login'))
+const Government = React.lazy(() =>
+	import('../containers/leadership/Government'),
+)
 
 const AppRoutes = () => {
 	const { isAuthorized } = useSelector((state) => state.auth)
@@ -14,13 +17,19 @@ const AppRoutes = () => {
 		<Routes>
 			<Route
 				path='/'
-				element={<Navigate to={isAuthorized ? '/admin' : '/login'} />}
+				element={
+					<Navigate to={isAuthorized ? admin.path : login.path} />
+				}
 			/>
 
 			<Route path={login.path} element={<Login />} />
 
 			<Route element={<ProtectedRoute isAllowed={isAuthorized} />}>
 				<Route path={admin.path} element={<Admin />} />
+				<Route
+					path={leadership.government.path}
+					element={<Government />}
+				/>
 			</Route>
 		</Routes>
 	)

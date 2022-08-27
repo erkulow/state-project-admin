@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { CATEGORYES } from '../../utils/constants/categoryes'
 import { AiOutlineCaretRight } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 const Lists = () => {
+	const navigate = useNavigate()
 	const [toggle, setToggle] = useState(false)
 	const [listId, setlistId] = useState(null)
 	const isVisibleInner = (id) => listId === id && toggle
@@ -31,6 +33,9 @@ const Lists = () => {
 					</List>
 					{el.innerList.map((item) => (
 						<InnerList
+							onClick={() =>
+								navigate(`${el.title}/${item.title}`)
+							}
 							key={item.id}
 							isVisibleInner={isVisibleInner(el.id)}
 						>
@@ -55,6 +60,7 @@ const InnerList = styled.div`
 		isVisibleInner ? '#7d97b8' : 'transparent'};
 	background-color: #0e1117;
 	margin-bottom: ${({ isVisibleInner }) => (isVisibleInner ? '3px' : '0px')};
+	pointer-events: ${({ isVisibleInner }) => (isVisibleInner ? '' : 'none')};
 	cursor: pointer;
 	:hover {
 		background-color: #26292c;
