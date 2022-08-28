@@ -17,7 +17,7 @@ export const CATEGORYES = [
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'Окмот',
+				title: 'Өкмөт',
 			},
 			{
 				id: Math.random().toString(),
@@ -25,13 +25,13 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Айылдык кенеш',
+				title: 'Айылдык кеңеш',
 			},
 		],
 	},
 	{
 		id: Math.random().toString(),
-		title: 'Билим беруу',
+		title: 'Билим берүү',
 		icon: <IoIosSchool fontSize={20} />,
 		innerList: [
 			{
@@ -56,11 +56,11 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Иш чаралар',
+				title: 'Иш-чаралар',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'ОРТ',
+				title: 'ЖРТ (ОРТ)',
 			},
 		],
 	},
@@ -83,7 +83,7 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Дарыгердин кенеши',
+				title: 'Дарыгердин кеңеши',
 			},
 		],
 	},
@@ -94,23 +94,23 @@ export const CATEGORYES = [
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'Коммиттет жетекчиси',
+				title: 'Комитет жетекчиси',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Жигердуу жаштар',
+				title: 'Жигердүү жаштар',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Жаштар учун сунуштар',
+				title: 'Жаштар үчүн сунуштар',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Спорттук иш чаралар',
+				title: 'Спорттук иш-чаралар',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Инициативалар',
+				title: 'Демилгелер',
 			},
 		],
 	},
@@ -145,11 +145,11 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Адеп ахлак',
+				title: 'Адеп-ахлак',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Диний иш чаралар',
+				title: 'Диний иш-чаралар',
 			},
 		],
 	},
@@ -160,15 +160,15 @@ export const CATEGORYES = [
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'Мал чарба коммиттети',
+				title: 'Мал чарба комитети',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Жайыт коммиттети',
+				title: 'Жайыт комитети',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Уроон чарбасы',
+				title: 'Үрөөн чарбасы',
 			},
 			{
 				id: Math.random().toString(),
@@ -176,11 +176,11 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Кенештер',
+				title: 'Кеңештер',
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Иш чаралар',
+				title: 'Иш-чаралар',
 			},
 		],
 	},
@@ -191,7 +191,7 @@ export const CATEGORYES = [
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'Маданият уйлору',
+				title: 'Маданият үйлөрү',
 			},
 			{
 				id: Math.random().toString(),
@@ -203,7 +203,7 @@ export const CATEGORYES = [
 			},
 			{
 				id: Math.random().toString(),
-				title: 'Маданий иш чаралар',
+				title: 'Маданий иш-чаралар',
 			},
 			{
 				id: Math.random().toString(),
@@ -213,12 +213,12 @@ export const CATEGORYES = [
 	},
 	{
 		id: Math.random().toString(),
-		title: 'МЧС',
+		title: 'ӨКМ',
 		icon: <TbFiretruck fontSize={20} />,
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'МЧС',
+				title: 'ӨКМ',
 			},
 		],
 	},
@@ -246,12 +246,12 @@ export const CATEGORYES = [
 	},
 	{
 		id: Math.random().toString(),
-		title: 'Жанылыктар жана кулактандыруулар',
+		title: 'Жаңылыктар жана кулактандыруулар',
 		icon: <GiNewspaper fontSize={20} />,
 		innerList: [
 			{
 				id: Math.random().toString(),
-				title: 'Жанылыктар жана кулактандыруу',
+				title: 'Жаңылыктар жана кулактандыруу',
 			},
 		],
 	},

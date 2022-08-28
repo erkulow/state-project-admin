@@ -33,10 +33,9 @@ const VillageCouncil = () => {
 	return (
 		<div>
 			<TemplateLeaderShipPages
-				headerTitle='МАДЫ АЙЫЛ ОКМОТУНУН АЙЫЛДЫК КЕНЕШИ'
-				socials={['dfs', 'sdf', 'sd']}
+				headerTitle='МАДЫ АЙЫЛ ОКМОТУ'
 				navigation={navigation}
-				navigationTitle='МАДЫ АЙЫЛ ОКМОТУНУН АЙЫЛДЫК КЕНЕШИ'
+				navigationTitle='МАДЫ АЙЫЛ ОКМОТУ'
 				breadCrumbsPaths={pathsArray}
 			>
 				<p style={{ color: '#7d97b8' }}>
