@@ -9,7 +9,7 @@ const Login = React.lazy(() => import('../containers/login-page/Login'))
 
 const AppRoutes = () => {
 	const { isAuthorized } = useSelector((state) => state.auth)
-	const { login, admin, leadership } = ROUTES
+	const { login, admin, leadershsip } = ROUTES
 	return (
 		<Routes>
 			<Route
