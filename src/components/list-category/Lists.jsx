@@ -24,7 +24,7 @@ const Lists = () => {
 							{el.icon} {el.title}
 						</span>{' '}
 						<Icon
-							isvisibleinner={isVisibleInner(el.id)}
+							isvisibleinner={isVisibleInner(el.id) || undefined}
 							fontSize={20}
 						/>
 					</List>
@@ -32,7 +32,7 @@ const Lists = () => {
 						<InnerList
 							key={item.id}
 							onClick={() =>
-								navigate(`${el.title}/${item.title}`)
+								navigate(`${item.path}`)
 							}
 							isvisibleinner={isVisibleInner(el.id)}
 						>

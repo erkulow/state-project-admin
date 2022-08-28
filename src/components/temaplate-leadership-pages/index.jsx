@@ -1,10 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
-import { ImFacebook2 } from 'react-icons/im'
-import { BsWhatsapp, BsInstagram } from 'react-icons/bs'
+import styled from 'styled-components'
 import { IoIosArrowForward } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Flex } from '../../styles/style-for-positions/style'
 import { Title } from '../../styles/typography/typography'
 import BreadCrumbs from '../UI/breadcrumbs/BreadCrumbs'
@@ -12,11 +10,11 @@ import BreadCrumbs from '../UI/breadcrumbs/BreadCrumbs'
 const TemplateLeaderShipPages = ({
 	headerTitle,
 	children,
-	socials,
 	navigationTitle,
 	navigation,
 	breadCrumbsPaths,
 }) => {
+	const isActiveFunction = (isAcive) => (isAcive ? 'active' : '')
 	return (
 		<Container>
 			<Header>
@@ -44,12 +42,12 @@ const TemplateLeaderShipPages = ({
 						<NavigationTitle>{navigationTitle}</NavigationTitle>
 						<InnerNavigationLi>
 							{navigation.map((item) => (
-								<li key={item.id}>
+								<NavLink key={item.id} className={({isActive})=>isActiveFunction(isActive)} to = {item.nav}>
 									{item.title}
 									<div>
 										<IoIosArrowForward />
 									</div>
-								</li>
+								</NavLink>
 							))}
 						</InnerNavigationLi>
 					</NavigationBlock>
@@ -98,21 +96,9 @@ const InnerHeader = styled.div`
 	}
 `
 
-const Social = styled(Link)`
-	padding: 0.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #7d97b8;
-	border: 1px solid #2c3744;
-	border-radius: 5px;
-	font-size: 15px;
-	:hover {
-		color: #536577;
-	}
-`
 const ContainerContent = styled.div`
 	max-width: 70%;
+	width: 100%;
 	background-color: #161b22;
 	padding: 1rem;
 	box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
@@ -144,9 +130,9 @@ const NavigationBlock = styled.div`
 	}
 `
 const InnerNavigationLi = styled.ul`
-	list-style: none;
-	li {
-		padding: 15px 20px;
+a {
+	text-decoration:none;
+	padding: 15px 20px;
 		cursor: pointer;
 		width: 100%;
 		display: flex;
@@ -166,6 +152,10 @@ const InnerNavigationLi = styled.ul`
 		:hover div {
 			transform: translateX(3px);
 		}
-	}
+}
+a.active{
+	background: #2b323a;
+}
+	list-style: none;
 `
 export default TemplateLeaderShipPages
