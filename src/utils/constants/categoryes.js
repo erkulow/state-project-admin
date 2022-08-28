@@ -21,17 +21,17 @@ export const CATEGORYES = [
 			{
 				id: Math.random().toString(),
 				title: 'Өкмөт',
-				path: leadership.government,
+				path: leadership.government.path,
 			},
 			{
 				id: Math.random().toString(),
 				title: 'Аппарат',
-				path: leadership.government_apparatus,
+				path: leadership.government_apparatus.path,
 			},
 			{
 				id: Math.random().toString(),
 				title: 'Айылдык кеңеш',
-				path: leadership.villageCouncil,
+				path: leadership.villageCouncil.path,
 			},
 		],
 	},

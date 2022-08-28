@@ -1,5 +1,7 @@
 import React from 'react'
+import Form from '../../components/forms/Form'
 import TemplateLeaderShipPages from '../../components/temaplate-leadership-pages'
+import { FORM_LEADERSHIP } from '../../utils/constants/form'
 
 const navigation = [
 	{
@@ -38,19 +40,7 @@ const VillageCouncil = () => {
 				navigationTitle='МАДЫ АЙЫЛ ОКМОТУ'
 				breadCrumbsPaths={pathsArray}
 			>
-				<p style={{ color: '#7d97b8' }}>
-					Кыргыз Республикасынын, Кыргыз Республикасынын Министрлер
-					Кабинетинин, Кыргыз Республикасынын Юстиция министрлигине
-					караштуу Соттук өкүлчүлүк борборунун жана Кыргыз
-					Республикасынын башка мамлекеттик органдарынын
-					кызыкчылыктарын арбитраждык соттордо, эл аралык соттордо, эл
-					аралык арбитраждык соттордо жана башка адистештирилген
-					соттордо Кыргыз Республикасына, Кыргыз Республикасынын
-					Министрлер Кабинетине, Кыргыз Республикасынын Юстиция
-					министрлигине караштуу Соттук өкүлчүлүк борборуна жана
-					Кыргыз Республикасынын башка мамлекеттик органдарына каршы
-					жана алардын атынан коюлган доолор боюнча юридика.
-				</p>
+				<Form dataForm={FORM_LEADERSHIP} />
 			</TemplateLeaderShipPages>
 		</div>
 	)

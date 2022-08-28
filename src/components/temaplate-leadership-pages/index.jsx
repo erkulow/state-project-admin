@@ -113,6 +113,7 @@ const Social = styled(Link)`
 `
 const ContainerContent = styled.div`
 	max-width: 70%;
+	width: 100%;
 	background-color: #161b22;
 	padding: 1rem;
 	box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
