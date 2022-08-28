@@ -9,15 +9,15 @@ export const ROUTES = {
 	},
 	leadership: {
 		government: {
-			path: '/admin/leadership/government',
+			path: '/admin/jetekchilik/okmot',
 			label: 'Government',
 		},
 		government_apparatus: {
-			path: '/admin/leadership/government-apparatus',
+			path: '/admin/leadership/okmot-apparaty',
 			label: 'Governemnt-apparatus',
 		},
 		villageCouncil: {
-			path: '/admin/leadership/village-council',
+			path: '/admin/leadership/aiyldyk-kenesh',
 			label: 'Village-council',
 		},
 	},

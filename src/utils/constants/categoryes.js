@@ -8,6 +8,9 @@ import { HiMoon } from 'react-icons/hi'
 import { GiCow, GiNewspaper } from 'react-icons/gi'
 import { AiFillBank, AiFillStar } from 'react-icons/ai'
 import { TbFiretruck } from 'react-icons/tb'
+import { ROUTES } from './routes'
+
+const { leadership } = ROUTES
 
 export const CATEGORYES = [
 	{
@@ -18,14 +21,17 @@ export const CATEGORYES = [
 			{
 				id: Math.random().toString(),
 				title: 'Өкмөт',
+				path: leadership.government,
 			},
 			{
 				id: Math.random().toString(),
 				title: 'Аппарат',
+				path: leadership.government_apparatus,
 			},
 			{
 				id: Math.random().toString(),
 				title: 'Айылдык кеңеш',
+				path: leadership.villageCouncil,
 			},
 		],
 	},
