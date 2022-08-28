@@ -9,15 +9,15 @@ export const ROUTES = {
 	},
 	leadership: {
 		government: {
-			path: '/admin/:leadership/:government',
+			path: '/admin/leadership/government',
 			label: 'Government',
 		},
 		government_apparatus: {
-			path: '/admin/:leadership/:government-apparatus',
+			path: '/admin/leadership/government-apparatus',
 			label: 'Governemnt-apparatus',
 		},
 		villageCouncil: {
-			path: '/admin/:leadership/:village-council',
+			path: '/admin/leadership/village-council',
 			label: 'Village-council',
 		},
 	},
