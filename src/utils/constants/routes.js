@@ -7,21 +7,17 @@ export const ROUTES = {
 		path: '/admin',
 		label: 'Admin',
 	},
-	categoryes: {
-		path: '/:categoryId',
-		label: 'Categoryes',
-	},
 	leadership: {
 		government: {
-			path: '/:categoryesId/:government',
+			path: '/admin/:leadership/:government',
 			label: 'Government',
 		},
-		government: {
-			path: '/:categoryesId/:government-apparatus',
+		government_apparatus: {
+			path: '/admin/:leadership/:government-apparatus',
 			label: 'Governemnt-apparatus',
 		},
-		government: {
-			path: '/:categoryesId/:village-council',
+		villageCouncil: {
+			path: '/admin/:leadership/:village-council',
 			label: 'Village-council',
 		},
 	},
