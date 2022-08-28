@@ -39,7 +39,7 @@ export const FORM_LEADERSHIP = [
     styles: { gridArea: "3 / 3 / 5 / 5" },
     requestName: "positions",
 	type : 'select',
-	options : ['Айыл окмот башчысы',"Айыл окмотунун орун басары",],
+	options : ['','Айыл окмот башчысы',"Айыл окмотунун орун басары",],
     required: {
       required: "Поляны бош жонотууго болбойт",
     },

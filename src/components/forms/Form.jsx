@@ -38,7 +38,7 @@ const Form = ({ dataForm = [] }) => {
                      : ''}</p>
 				</Flex>
 			))}
-			<Button type = "submit" style = {{gridArea: "4 / 1 / 4 / 5"}}>Отправить</Button>
+			<Button className='btn__submit' type = "submit" style = {{gridArea: "4 / 1 / 4 / 5"}}>Отправить</Button>
 		</FormStyled>
 	)
 }
@@ -46,10 +46,17 @@ const FormStyled = styled.form`
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(4, 0.5fr);
-	grid-template-rows: repeat(4, 1.5fr);
+	grid-template-rows: repeat(3, 1.5fr);
 	gap: 20px 20px;
 	grid-auto-flow: column;
 	-ms-grid-column-align: start;
+	.btn__submit{
+		background : #2ea54f;
+		color:white;
+		:hover{
+			background : #2ea54f;
+		}
+	}
 `
 const Label = styled.label`
 	font-size: 16px;

@@ -97,7 +97,7 @@ const InnerHeader = styled.div`
 `
 
 const ContainerContent = styled.div`
-	max-width: 70%;
+	max-width: 80%;
 	width: 100%;
 	background-color: #161b22;
 	padding: 1rem;

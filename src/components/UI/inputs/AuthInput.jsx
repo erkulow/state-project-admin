@@ -6,8 +6,7 @@ const Input = forwardRef((props, ref) => {
 		return <InputStyledDate autoComplete='off' type={props.type} ref={ref} {...props} />
 	} 
 	if(props.type === 'select'){
-		return <InputStyledSelect ref={ref} {...props} >
-			<option value = '' style={{color:'whitesmoke',background : "#0e1117"}} >Танданыз</option>
+		return <InputStyledSelect value ={props.value} ref={ref} {...props} >
 		   {props.options.map(option=>(
 			// todo change key with uuid()
 			<option value = {option} style={{color:'whitesmoke',background : "#0e1117"}} key={Math.random()} >{option}</option>
