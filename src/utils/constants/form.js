@@ -39,7 +39,13 @@ export const FORM_LEADERSHIP = [
       styles: { gridArea: '3 / 3 / 5 / 5' },
       requestName: 'positions',
       type: 'select',
-      options: ['', 'Айыл окмот башчысы', 'Айыл окмотунун орун басары'],
+      options: [
+         '',
+         'Айыл окмот башчысы',
+         'Айыл окмотунун орун басары',
+         'Айылдык кенешинин торагасы',
+         'Айылдык кенешинин депутаты',
+      ],
       required: {
          required: 'Поляны бош жонотууго болбойт',
       },
@@ -59,9 +65,74 @@ export const FORM_LEADERSHIP = [
    {
       label: 'Байланыш телефону',
       styles: { gridArea: '3 / 1 / 4 / 3' },
+      type: 'number',
       requestName: 'phoneNumber',
       required: {
          required: 'Поляны бош жонотууго болбойт',
       },
    },
+]
+export const FORM_EDUCATION = [
+   {
+      label: 'Мектептин аты',
+      styles: { gridArea: '1 / 1 / 3 / 2' },
+      requestName: 'schoolName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Директордун аты-жону',
+      styles: { gridArea: '1 / 2 / 2 / 3' },
+      requestName: 'directorFullName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Адрес',
+      styles: { gridArea: '1 / 3 / 2 / 4' },
+      requestName: 'address',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Байланыш телефону',
+      styles: { gridArea: '1 / 4 / 3 / 5' },
+      requestName: 'phoneNumber',
+      type: 'number',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Мектеп жонундо маалымат',
+      styles: { gridArea: '2 / 1 / 5 / 5' },
+      requestName: 'text',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   // {
+   //    label: 'Электрондук почтасы',
+   //    styles: { gridArea: '2 / 1 / 3 / 3' },
+   //    requestName: 'email',
+   //    required: {
+   //       required: 'Поляны бош жонотууго болбойт',
+   //       pattern: {
+   //          value: REGEXP_EMAIL,
+   //          message: 'Электрондук почта форматында болушу керек',
+   //       },
+   //    },
+   // },
+   // {
+   //    label: 'Байланыш телефону',
+   //    styles: { gridArea: '3 / 1 / 4 / 3' },
+   //    type: 'number',
+   //    requestName: 'phoneNumber',
+   //    required: {
+   //       required: 'Поляны бош жонотууго болбойт',
+   //    },
+   // },
 ]
