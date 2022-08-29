@@ -2,22 +2,25 @@ import React from 'react'
 import Form from '../../components/forms/Form'
 import TemplateLeaderShipPages from '../../components/temaplate-leadership-pages'
 import { FORM_LEADERSHIP } from '../../utils/constants/form'
+import { ROUTES } from '../../utils/constants/routes'
+
+const {leadership} = ROUTES
 
 const navigation = [
 	{
 		id: 1,
-		title: 'Beyabrs',
-		nav: 'Beybars',
+		title: 'Окмот',
+		nav: leadership.government.path,
 	},
 	{
 		id: 2,
-		title: 'Beyabrs',
-		nav: 'Beybars',
+		title: 'Аппарат',
+		nav: leadership.government_apparatus.path,
 	},
 	{
 		id: 3,
-		title: 'Beyabrs',
-		nav: 'Beybars',
+		title: 'Айылдык кенеш',
+		nav: leadership.villageCouncil.path,
 	},
 ]
 
@@ -29,7 +32,7 @@ const VillageCouncil = () => {
 		},
 		{
 			path: '/jetekchilik/aiyldyk-kenesh',
-			name: 'Айылдык кенеш',
+			name: 'Окмот',
 		},
 	]
 	return (
@@ -37,7 +40,7 @@ const VillageCouncil = () => {
 			<TemplateLeaderShipPages
 				headerTitle='МАДЫ АЙЫЛ ОКМОТУ'
 				navigation={navigation}
-				navigationTitle='МАДЫ АЙЫЛ ОКМОТУ'
+				navigationTitle='ЖЕТЕКЧИЛИК'
 				breadCrumbsPaths={pathsArray}
 			>
 				<Form dataForm={FORM_LEADERSHIP} />

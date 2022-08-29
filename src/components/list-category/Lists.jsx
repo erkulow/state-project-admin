@@ -32,7 +32,7 @@ const Lists = () => {
 						<InnerList
 							key={item.id}
 							onClick={() =>
-								navigate(`${item.path}`) || undefined
+								navigate(`${item.path}`)
 							}
 							isvisibleinner={isVisibleInner(el.id)}
 						>

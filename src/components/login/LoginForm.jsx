@@ -71,7 +71,7 @@ const LoginForm = () => {
 						placeholder='Password'
 						{...input.password}
 					/>
-					<Button type='submit'>
+					<Button className='btn' disabled = {isLoading} type='submit'>
 						{isLoading ? <Spinner /> : 'LOGIN'}
 					</Button>
 				</Flex>
@@ -121,6 +121,12 @@ const Form = styled.form`
 		}
 		100% {
 			transform: scale(1);
+		}
+	}
+	.btn{
+		:disabled{
+			cursor:not-allowed;
+			background:gray;
 		}
 	}
 `

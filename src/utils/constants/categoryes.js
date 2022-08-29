@@ -43,6 +43,7 @@ export const CATEGORYES = [
 			{
 				id: Math.random().toString(),
 				title: 'Мектептер',
+				path: leadership
 			},
 			{
 				id: Math.random().toString(),
