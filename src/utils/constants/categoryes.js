@@ -8,256 +8,254 @@ import { HiMoon } from 'react-icons/hi'
 import { GiCow, GiNewspaper } from 'react-icons/gi'
 import { AiFillBank, AiFillStar } from 'react-icons/ai'
 import { TbFiretruck } from 'react-icons/tb'
+import uuid from 'react-uuid'
 import { ROUTES } from './routes'
 
-const { leadership } = ROUTES
+const { leadership, education } = ROUTES
 
 export const CATEGORYES = [
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Жетекчилик',
       icon: <MdOutlineManageAccounts fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
-            title: 'Өкмөт',
+            id: uuid(),
+            title: 'Кызматкерлер',
             path: leadership.government.path,
-         },
-         {
-            id: Math.random().toString(),
-            title: 'Аппарат',
-            path: leadership.government_apparatus.path,
-         },
-         {
-            id: Math.random().toString(),
-            title: 'Айылдык кеңеш',
-            path: leadership.villageCouncil.path,
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Билим берүү',
+      label: 'Мады айыл окмотунун жетекчилиги',
       icon: <IoIosSchool fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Мектептер',
-            path: leadership,
+            path: education.schools.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Авто мектептер',
+            path: education.drivingSchool.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Ийримдер',
+            path: education.iyrymder.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Олимпиадалар',
+            path: education.olympiads.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Бала бакчалар',
+            path: education.kindergartens.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Иш-чаралар',
+            path: education.аctivities.path,
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'ЖРТ (ОРТ)',
+            path: education.GRT.path,
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Саламаттыкты сактоо',
       icon: <FaHandHoldingMedical fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Ооруканалар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'ФАПтар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'ОМС',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Дарыгердин кеңеши',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Жаштар иштери',
       icon: <FaPeopleCarry fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Комитет жетекчиси',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Жигердүү жаштар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Жаштар үчүн сунуштар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Спорттук иш-чаралар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Демилгелер',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Дин иштери',
       icon: <HiMoon fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Мечиттер',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Медреселер',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Ажылык',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Айт',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Рамазан',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Намаз',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Адеп-ахлак',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Диний иш-чаралар',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Айыл чарба',
       icon: <GiCow fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Мал чарба комитети',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Жайыт комитети',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Үрөөн чарбасы',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Мыйзамдар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Кеңештер',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Иш-чаралар',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Маданият',
       icon: <AiFillBank fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Маданият үйлөрү',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Музейлер',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Маданият кызматкерлери',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Маданий иш-чаралар',
          },
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Маданий сынактар',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'ӨКМ',
       icon: <TbFiretruck fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'ӨКМ',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Тазалык',
       icon: <MdOutlineCleaningServices fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Тазалык',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Атактуулар',
       icon: <AiFillStar fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Атактуулар',
          },
       ],
    },
    {
-      id: Math.random().toString(),
+      id: uuid(),
       title: 'Жаңылыктар жана кулактандыруулар',
       icon: <GiNewspaper fontSize={20} />,
       innerList: [
          {
-            id: Math.random().toString(),
+            id: uuid(),
             title: 'Жаңылыктар жана кулактандыруу',
          },
       ],
