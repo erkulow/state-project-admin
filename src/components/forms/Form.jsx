@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 
 const Form = ({ dataForm = [] }) => {
+   const [images, setImages] = useState({
+      images: [],
+      files: [],
+   })
    const {
       register,
       formState: { errors, isValid },
@@ -21,6 +25,7 @@ const Form = ({ dataForm = [] }) => {
       <FormStyled onSubmit={handleSubmit(submitHandler)}>
          {dataForm.map((item) => (
             <Flex
+               key={item.label}
                style={item.styles}
                margin="0 0 10px 0"
                direction="column"
