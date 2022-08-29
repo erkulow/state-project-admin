@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import styled from 'styled-components'
-import { ReactComponent as IconImagePicker } from '../../../assets/icons/imagepicker.svg'
-import Flex from '../ui-for-positions/Flex'
+import { ReactComponent as IconImagePicker } from '../../../assets/icons/picker.svg'
+import { Flex } from '../../../styles/style-for-positions/style'
 import Text from '../typography/Text'
 import Title from '../typography/Title'
 

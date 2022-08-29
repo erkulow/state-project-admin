@@ -31,7 +31,7 @@ const Lists = () => {
                {el.innerList.map((item) => (
                   <InnerList
                      key={item.id}
-                     onClick={() => navigate(`${item.path}`)}
+                     onClick={() => navigate(`${item.path}`, { state: item })}
                      isvisibleinner={isVisibleInner(el.id)}
                   >
                      {item.title}

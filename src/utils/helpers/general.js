@@ -1,5 +1,7 @@
 /* eslint-disable no-alert */
 
+import { CATEGORYES } from '../constants/categoryes'
+
 export const saveToLocalStorage = (key, data) => {
    try {
       localStorage.setItem(key, JSON.stringify(data))
@@ -101,4 +103,17 @@ export const formatDate = {
 
       return dateString
    },
+}
+
+export const findOneCategory = (pathname) => {
+   let oneCategory = null
+   CATEGORYES.forEach((category) =>
+      category.innerList.forEach((item) => {
+         if (item.path === pathname) {
+            oneCategory = category
+         }
+         return category
+      })
+   )
+   return oneCategory
 }
