@@ -6,16 +6,16 @@ import { _KEY_AUTH } from './utils/constants/general'
 import { saveToLocalStorage } from './utils/helpers/general'
 
 function App() {
-	const { token, isAuthorized, role } = useSelector((state) => state.auth)
-	useEffect(() => {
-		saveToLocalStorage(_KEY_AUTH, { token, isAuthorized, role })
-	}, [isAuthorized, token, role])
-	return (
-		<div className='App'>
-			<AppRoutes />
-			<Notification />
-		</div>
-	)
+   const { token, isAuthorized, role } = useSelector((state) => state.auth)
+   useEffect(() => {
+      saveToLocalStorage(_KEY_AUTH, { token, isAuthorized, role })
+   }, [isAuthorized, token, role])
+   return (
+      <div className="App">
+         <AppRoutes />
+         <Notification />
+      </div>
+   )
 }
 
 export default App

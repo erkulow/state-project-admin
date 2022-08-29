@@ -11,44 +11,12 @@ export const getDataFromLocalStorage = (key) => {
    try {
       return JSON.parse(localStorage.getItem(key))
    } catch (error) {
-      window.alert(error.message)
+      return window.alert(error.message)
    }
 }
 export const removeWithKeyFromLocalStorage = (key) => {
    localStorage.removeItem(key)
 }
-// /* eslint-disable no-plusplus */
-// export const getExcludedDates = (bookings) => {
-//    function getDatesRange(startDate, stopDate) {
-//       const ONE_DAY = 24 * 3600 * 1000
-//       const days = []
-//       let currentDate = new Date(startDate)
-//       while (currentDate <= stopDate) {
-//          days.push(new Date(currentDate))
-//          currentDate = currentDate - 1 + 1 + ONE_DAY
-//       }
-//       return days
-//    }
-//    const newDate = bookings.map((el) => {
-//       return getDatesRange(new Date(el.checkInDate), new Date(el.checkOutDate))
-//    })
-//    const selectedDays = []
-//    for (let i = 0; i < newDate.length; i++) {
-//       newDate[i].map((el) => selectedDays.push(el))
-//    }
-//    return selectedDays
-// }
-// export const getImageFullUrl = (linkPhoto) => {
-//    return `${SERVER_BASE_URL}/${linkPhoto}`
-// }
-// export const getSomeGiven = (example, data, value) => {
-//    try {
-//       const item = data && data.find((el) => el[value] === example)
-//       return item || null
-//    } catch (error) {
-//       console.log(error.message)
-//    }
-// }
 
 export const paramsSet = (value, key, setParams, params) => {
    params.set(key, value)
@@ -68,6 +36,7 @@ export const getParams = (key, mode = 'get') => {
       const value = url.get(key)
       return value
    }
+   return null
 }
 export function getNumberOfDays(start, end) {
    const startDate = new Date(start)
@@ -89,24 +58,6 @@ export const convertDateInToString = (date) => {
    const dateString = `${month} ${day} ${year}`
 
    return dateString
-}
-
-export const validateDateCreditCard = (value) => {
-   const currentDate = new Date()
-   const currentMonth = currentDate.getMonth() + 1
-   const currentYear = currentDate.getFullYear().toString().substr(-2)
-   const dateInput = value.split('/')
-   const expireMonth = Number(dateInput[0])
-   const expireYear = Number(dateInput[1])
-
-   if (
-      Number(currentYear) <= expireYear &&
-      currentMonth <= expireMonth &&
-      expireMonth <= 12
-   ) {
-      return true
-   }
-   return 'enter a valid date'
 }
 
 export function compareTwoDate(currentDate, date) {
@@ -151,27 +102,3 @@ export const formatDate = {
       return dateString
    },
 }
-
-// export const getImagesAndIds = (listing) => {
-//    if (listing) {
-//       const images = listing?.images?.map((el) => {
-//          return { img: getImageFullUrl(el.image.smallImagePath), id: el.id }
-//       })
-//       const imageIds = listing?.images?.map((el) => {
-//          return el.id
-//       })
-//       return { imageIds, images }
-//    }
-// }
-// export const getRegionByCoordinates = (locations) => {
-//    const location = Object.values(locations.features[0].properties).filter(
-//       (el) => typeof el === 'string'
-//    )
-//    const name = (el) => location.find((d) => d.includes(el))
-
-//    const findedRegion = REGIONS.find((el) => name(el))
-
-//    const result = REGIONS.find((el) => findedRegion.includes(el))
-
-//    return result
-// }
