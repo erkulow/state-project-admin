@@ -1,9 +1,9 @@
 import React from 'react'
 import Form from '../../../components/forms/Form'
-import { FORM_LEADERSHIP } from '../../../utils/constants/form'
+import { FORM_EDUCATION } from '../../../utils/constants/form'
 
 const DrivingSchools = () => {
-   return <Form dataForm={FORM_LEADERSHIP} />
+   return <Form dataForm={FORM_EDUCATION} />
 }
 
 export default DrivingSchools
