@@ -1,18 +1,22 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import TemplateLeaderShipPages from '../components/temaplate-leadership-pages'
 import Admin from '../containers/admin'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
 const Login = React.lazy(() => import('../containers/login-page/Login'))
-const Government = React.lazy(
-   () => import('../containers/leadership/Government')
+const Employees = React.lazy(() => import('../containers/leadership'))
+const DrivingSchools = React.lazy(() =>
+   import('../containers/education/driving-schools')
 )
+const Schools = React.lazy(() => import('../containers/education/schools'))
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership } = ROUTES
+   const { login, admin, leadership, education } = ROUTES
    return (
       <Routes>
          <Route
@@ -24,7 +28,17 @@ const AppRoutes = () => {
 
          <Route element={<ProtectedRoute isAllowed={isAuthorized} />}>
             <Route path={admin.path} element={<Admin />} />
-            <Route path={leadership.government.path} element={<Government />} />
+            <Route element={<TemplateLeaderShipPages />}>
+               <Route
+                  path={leadership.government.path}
+                  element={<Employees />}
+               />
+               <Route path={education.schools.path} element={<Schools />} />
+               <Route
+                  path={education.drivingSchool.path}
+                  element={<DrivingSchools />}
+               />
+            </Route>
          </Route>
       </Routes>
    )

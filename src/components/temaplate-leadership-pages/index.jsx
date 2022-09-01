@@ -1,27 +1,35 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import styled from 'styled-components'
-import { IoIosArrowForward } from 'react-icons/io'
-import { NavLink } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Flex } from '../../styles/style-for-positions/style'
 import { Title } from '../../styles/typography/typography'
 import BreadCrumbs from '../UI/breadcrumbs/BreadCrumbs'
+import SideBarNav from './SideBarNav'
+import { findOneCategory } from '../../utils/helpers/general'
 
-const TemplateLeaderShipPages = ({
-   headerTitle,
-   children,
-   navigationTitle,
-   navigation,
-   breadCrumbsPaths,
-}) => {
+const TemplateLeaderShipPages = () => {
+   const { pathname, state } = useLocation()
+
+   const pathsArray = [
+      {
+         path: '/',
+         name: 'Уй',
+      },
+      {
+         path: '/jetekchilik/aiyldyk-kenesh',
+         name: state.title,
+      },
+   ]
    const isActiveFunction = (isAcive) => (isAcive ? 'active' : '')
    return (
       <Container>
          <Header>
             <InnerHeader>
                <div>
-                  <TitleHeader>{headerTitle}</TitleHeader>
-                  <BreadCrumbs pathsArray={breadCrumbsPaths} />
+                  <TitleHeader>{`Мады айыл окмоту / ${
+                     findOneCategory(pathname).title
+                  }`}</TitleHeader>
+                  <BreadCrumbs pathsArray={pathsArray} />
                </div>
             </InnerHeader>
          </Header>
@@ -36,28 +44,17 @@ const TemplateLeaderShipPages = ({
                maxWidth="1440px"
                width="90%"
                justify="space-between"
-               mobileAlign="center"
+               align="start"
             >
                <NavigationBlock>
-                  <NavigationTitle>{navigationTitle}</NavigationTitle>
+                  <NavigationTitle>Навигация</NavigationTitle>
                   <InnerNavigationLi>
-                     {navigation.map((item) => (
-                        <NavLink
-                           key={item.id}
-                           className={({ isActive }) =>
-                              isActiveFunction(isActive)
-                           }
-                           to={item.nav}
-                        >
-                           {item.title}
-                           <div>
-                              <IoIosArrowForward />
-                           </div>
-                        </NavLink>
-                     ))}
+                     <SideBarNav />
                   </InnerNavigationLi>
                </NavigationBlock>
-               <ContainerContent>{children}</ContainerContent>
+               <ContainerContent>
+                  <Outlet />
+               </ContainerContent>
             </Flex>
          </Flex>
       </Container>
