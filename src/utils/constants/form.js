@@ -248,4 +248,13 @@ export const FORM_GRT = [
          },
       },
    },
+   {
+      label: 'Add photo',
+      styles: { gridArea: '2 / 1 / 3 / 5' },
+      requestName: 'text',
+      type: 'file',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
 ]
