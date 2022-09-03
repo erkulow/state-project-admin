@@ -26,7 +26,7 @@ const TemplateLeaderShipPages = () => {
          <Header>
             <InnerHeader>
                <div>
-                  <TitleHeader>{`Мады айыл окмоту / ${
+                  <TitleHeader>{`Мады айыл өкмөтү / ${
                      findOneCategory(pathname).title
                   }`}</TitleHeader>
                   <BreadCrumbs pathsArray={pathsArray} />

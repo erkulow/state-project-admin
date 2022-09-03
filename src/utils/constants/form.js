@@ -6,7 +6,7 @@ export const FORM_LEADERSHIP = [
       styles: { gridArea: '1 / 1 / 3 / 3' },
       requestName: 'firstName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -14,7 +14,7 @@ export const FORM_LEADERSHIP = [
       styles: { gridArea: '1 / 3 / 2 / 4' },
       requestName: 'lastName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -22,16 +22,16 @@ export const FORM_LEADERSHIP = [
       styles: { gridArea: '1 / 4 / 2 / 5' },
       requestName: 'patronymic',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Туулган куну',
+      label: 'Туулган күнү',
       styles: { gridArea: '2 / 3 / 3 / 5' },
       requestName: 'birthDay',
       type: 'date',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -41,13 +41,13 @@ export const FORM_LEADERSHIP = [
       type: 'select',
       options: [
          '',
-         'Айыл окмот башчысы',
-         'Айыл окмотунун орун басары',
-         'Айылдык кенешинин торагасы',
-         'Айылдык кенешинин депутаты',
+         'Айыл өкмөт башчысы',
+         'Айыл өкмөтүнүн орун басары',
+         'Айылдык кеңешинин төрагасы',
+         'Айылдык кеңешинин депутаты',
       ],
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -55,7 +55,7 @@ export const FORM_LEADERSHIP = [
       styles: { gridArea: '2 / 1 / 3 / 3' },
       requestName: 'email',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          pattern: {
             value: REGEXP_EMAIL,
             message: 'Электрондук почта форматында болушу керек',
@@ -68,7 +68,7 @@ export const FORM_LEADERSHIP = [
       type: 'number',
       requestName: 'phoneNumber',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
 ]
@@ -78,23 +78,23 @@ export const FORM_EDUCATION = [
       styles: { gridArea: '1 / 1 / 3 / 2' },
       requestName: 'schoolName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Директордун аты-жону',
+      label: 'Директордун аты-жонү',
       styles: { gridArea: '1 / 2 / 2 / 3' },
       requestName: 'directorFullName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Адрес',
+      label: 'Дареги',
       styles: { gridArea: '1 / 3 / 2 / 4' },
       requestName: 'address',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -103,15 +103,15 @@ export const FORM_EDUCATION = [
       requestName: 'phoneNumber',
       type: 'number',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Мектеп жонундо маалымат',
+      label: 'Мектеп жөнүндө маалымат',
       styles: { gridArea: '2 / 1 / 5 / 5' },
       requestName: 'text',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
 ]
@@ -121,23 +121,23 @@ export const FORM_KINGERGARTENS = [
       styles: { gridArea: '1 / 1 / 3 / 3' },
       requestName: 'kindergartensName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Директордун аты-жону',
+      label: 'Директордун аты-жонү',
       styles: { gridArea: '1 / 3 / 2 / 4' },
       requestName: 'directorFullName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'Адрес',
+      label: 'Дареги',
       styles: { gridArea: '2 / 1 / 2 / 2' },
       requestName: 'address',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -146,7 +146,7 @@ export const FORM_KINGERGARTENS = [
       requestName: 'phoneNumber',
       type: 'number',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
@@ -154,7 +154,7 @@ export const FORM_KINGERGARTENS = [
       styles: { gridArea: '2 / 2 / 3 / 3' },
       requestName: 'email',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          pattern: {
             value: REGEXP_EMAIL,
             message: 'Электрондук почта форматында болушу керек',
@@ -168,42 +168,42 @@ export const FORM_KINGERGARTENS = [
       type: 'select',
       options: ['Кыргыз тили', 'Орус тили', 'Англис тили'],
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
 ]
 export const FORM_CIRCLES = [
    {
-      label: 'Курстун аты',
+      label: 'Ийримдин аты',
       styles: { gridArea: '1 / 1 / 3 / 3' },
       requestName: 'courseName',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'courseTeacher',
+      label: 'Ийрим жетекчиси',
       styles: { gridArea: '1 / 3 / 2 / 4' },
       requestName: 'courseTeacher',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'info',
+      label: 'Маалымат',
       styles: { gridArea: '2 / 1 / 2 / 2' },
       requestName: 'info',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
    {
-      label: 'phoneNumber',
+      label: 'Байланыш телефону',
       styles: { gridArea: '1 / 4 / 3 / 5' },
       requestName: 'phoneNumber',
       type: 'number',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
       },
    },
 ]
