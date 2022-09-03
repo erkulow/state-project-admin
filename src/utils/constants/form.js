@@ -207,3 +207,45 @@ export const FORM_CIRCLES = [
       },
    },
 ]
+export const FORM_EVENTS = [
+   {
+      label: 'text',
+      styles: { gridArea: '1 / 1 / 3 / 5' },
+      requestName: 'text',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+         minLength: {
+            value: 100,
+            message: 'Tamgalar 100 belgiden as bolbosun',
+         },
+      },
+   },
+]
+export const FORM_OLYMPIADS = [
+   {
+      label: 'text',
+      styles: { gridArea: '1 / 1 / 3 / 5' },
+      requestName: 'text',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+         minLength: {
+            value: 100,
+            message: 'Tamgalar 100 belgiden as bolbosun',
+         },
+      },
+   },
+]
+export const FORM_GRT = [
+   {
+      label: 'text',
+      styles: { gridArea: '1 / 1 / 3 / 5' },
+      requestName: 'text',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+         minLength: {
+            value: 100,
+            message: 'Tamgalar 100 belgiden as bolbosun',
+         },
+      },
+   },
+]

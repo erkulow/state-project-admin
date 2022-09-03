@@ -39,7 +39,7 @@ export const ROUTES = {
          label: 'Activities',
       },
       GRT: {
-         path: '/admin/bilim-beruu/ish-charalar',
+         path: '/admin/bilim-beruu/ORT',
          label: 'GeneralRepublicanTesting',
       },
    },

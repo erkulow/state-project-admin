@@ -5,6 +5,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import TemplateLeaderShipPages from '../components/temaplate-leadership-pages'
 import Admin from '../containers/admin'
 import Circles from '../containers/education/circles'
+import Events from '../containers/education/events'
+import GRT from '../containers/education/GRT'
+import Olympiads from '../containers/education/olympiads'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
@@ -47,6 +50,9 @@ const AppRoutes = () => {
                   element={<Kingergartens />}
                />
                <Route path={education.iyrymder.path} element={<Circles />} />
+               <Route path={education.аctivities.path} element={<Events />} />
+               <Route path={education.olympiads.path} element={<Olympiads />} />
+               <Route path={education.GRT.path} element={<GRT />} />
             </Route>
          </Route>
       </Routes>
