@@ -114,25 +114,96 @@ export const FORM_EDUCATION = [
          required: 'Поляны бош жонотууго болбойт',
       },
    },
-   // {
-   //    label: 'Электрондук почтасы',
-   //    styles: { gridArea: '2 / 1 / 3 / 3' },
-   //    requestName: 'email',
-   //    required: {
-   //       required: 'Поляны бош жонотууго болбойт',
-   //       pattern: {
-   //          value: REGEXP_EMAIL,
-   //          message: 'Электрондук почта форматында болушу керек',
-   //       },
-   //    },
-   // },
-   // {
-   //    label: 'Байланыш телефону',
-   //    styles: { gridArea: '3 / 1 / 4 / 3' },
-   //    type: 'number',
-   //    requestName: 'phoneNumber',
-   //    required: {
-   //       required: 'Поляны бош жонотууго болбойт',
-   //    },
-   // },
+]
+export const FORM_KINGERGARTENS = [
+   {
+      label: 'Бала бакчанын аты',
+      styles: { gridArea: '1 / 1 / 3 / 3' },
+      requestName: 'kindergartensName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Директордун аты-жону',
+      styles: { gridArea: '1 / 3 / 2 / 4' },
+      requestName: 'directorFullName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Адрес',
+      styles: { gridArea: '2 / 1 / 2 / 2' },
+      requestName: 'address',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Байланыш телефону',
+      styles: { gridArea: '1 / 4 / 3 / 5' },
+      requestName: 'phoneNumber',
+      type: 'number',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Электрондук почтасы',
+      styles: { gridArea: '2 / 2 / 3 / 3' },
+      requestName: 'email',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+         pattern: {
+            value: REGEXP_EMAIL,
+            message: 'Электрондук почта форматында болушу керек',
+         },
+      },
+   },
+   {
+      label: 'Бала бакчанын тили',
+      styles: { gridArea: '2 / 3 / 5 / 5' },
+      requestName: 'language',
+      type: 'select',
+      options: ['Кыргыз тили', 'Орус тили', 'Англис тили'],
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+]
+export const FORM_CIRCLES = [
+   {
+      label: 'Курстун аты',
+      styles: { gridArea: '1 / 1 / 3 / 3' },
+      requestName: 'courseName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'courseTeacher',
+      styles: { gridArea: '1 / 3 / 2 / 4' },
+      requestName: 'courseTeacher',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'info',
+      styles: { gridArea: '2 / 1 / 2 / 2' },
+      requestName: 'info',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'phoneNumber',
+      styles: { gridArea: '1 / 4 / 3 / 5' },
+      requestName: 'phoneNumber',
+      type: 'number',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
 ]

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import TemplateLeaderShipPages from '../components/temaplate-leadership-pages'
 import Admin from '../containers/admin'
+import Circles from '../containers/education/circles'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
@@ -13,6 +14,9 @@ const DrivingSchools = React.lazy(() =>
    import('../containers/education/driving-schools')
 )
 const Schools = React.lazy(() => import('../containers/education/schools'))
+const Kingergartens = React.lazy(() =>
+   import('../containers/education/kingergartens')
+)
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
@@ -38,6 +42,11 @@ const AppRoutes = () => {
                   path={education.drivingSchool.path}
                   element={<DrivingSchools />}
                />
+               <Route
+                  path={education.kindergartens.path}
+                  element={<Kingergartens />}
+               />
+               <Route path={education.iyrymder.path} element={<Circles />} />
             </Route>
          </Route>
       </Routes>
