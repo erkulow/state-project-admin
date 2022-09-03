@@ -209,42 +209,42 @@ export const FORM_CIRCLES = [
 ]
 export const FORM_EVENTS = [
    {
-      label: 'text',
+      label: 'Маалымат',
       styles: { gridArea: '1 / 1 / 3 / 5' },
       requestName: 'text',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          minLength: {
             value: 100,
-            message: 'Tamgalar 100 belgiden as bolbosun',
+            message: '100 белгиден аз болбосун',
          },
       },
    },
 ]
 export const FORM_OLYMPIADS = [
    {
-      label: 'text',
+      label: 'Маалымат',
       styles: { gridArea: '1 / 1 / 3 / 5' },
       requestName: 'text',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          minLength: {
             value: 100,
-            message: 'Tamgalar 100 belgiden as bolbosun',
+            message: '100 белгиден аз болбосун',
          },
       },
    },
 ]
 export const FORM_GRT = [
    {
-      label: 'text',
+      label: 'Маалымат',
       styles: { gridArea: '1 / 1 / 3 / 5' },
       requestName: 'text',
       required: {
-         required: 'Поляны бош жонотууго болбойт',
+         required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          minLength: {
             value: 100,
-            message: 'Tamgalar 100 belgiden as bolbosun',
+            message: '100 белгиден аз болбосун',
          },
       },
    },
