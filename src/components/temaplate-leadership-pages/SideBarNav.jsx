@@ -1,59 +1,102 @@
-import React from 'react'
-import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
-import styled from '@emotion/styled'
-import { VscExport } from 'react-icons/vsc'
+import React, { Fragment, useState } from 'react'
+import styled from 'styled-components'
+import { AiOutlineCaretRight } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 import { CATEGORYES } from '../../utils/constants/categoryes'
-import { Flex } from '../../styles/style-for-positions/style'
 
 const SideBarNav = () => {
+   const navigate = useNavigate()
+   const [toggle, setToggle] = useState(false)
+   const [listId, setlistId] = useState(null)
+   const isVisibleInner = (id) => listId === id && toggle
+
+   const toggleInnerMenu = (id) => {
+      setToggle(!toggle)
+      setlistId(id)
+   }
+
    return (
-      <Menu>
-         {CATEGORYES.map((navigation) => (
-            <Accordion style={{ padding: '0' }} key={navigation.id}>
-               <AccordionSummary
-                  style={{ background: '#d7dce2' }}
-                  id="panel1-header"
-                  aria-controls="panel1-content"
-                  expandIcon={<VscExport />}
-               >
-                  <h5>{navigation.title}</h5>
-               </AccordionSummary>
-               <AccordionDetails
-                  style={{ background: '#101520', padding: '10px 2px 2px 2px' }}
-               >
-                  <Flex direction="column" width="100%">
-                     {navigation.innerList.map((detail) => (
-                        <Item key={detail.id} size="11px" width="100%">
-                           {detail.title}
-                        </Item>
-                     ))}
-                  </Flex>
-               </AccordionDetails>
-            </Accordion>
+      <Container>
+         {CATEGORYES.map((el) => (
+            <Fragment key={el.id}>
+               <List onClick={() => toggleInnerMenu(el.id)}>
+                  <span
+                     style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                     }}
+                  >
+                     {el.icon} {el.title}
+                  </span>{' '}
+                  <Icon
+                     isvisibleinner={isVisibleInner(el.id) || undefined}
+                     fontSize={14}
+                  />
+               </List>
+               {el.innerList.map((item) => (
+                  <InnerList
+                     key={item.id}
+                     onClick={() => navigate(`${item.path}`, { state: item })}
+                     isvisibleinner={isVisibleInner(el.id)}
+                  >
+                     {item.title}
+                  </InnerList>
+               ))}
+            </Fragment>
          ))}
-      </Menu>
+      </Container>
    )
 }
-
-const Menu = styled.div`
-   width: 100%;
-   background-color: #101520;
-   max-height: 80vh;
-   overflow-y: auto;
-   ::-webkit-scrollbar {
-      display: none;
-   }
+const Icon = styled(AiOutlineCaretRight)`
+   transform: ${({ isvisibleinner }) =>
+      isvisibleinner ? 'rotate(90deg)' : 'rotate(0deg)'};
 `
-const Item = styled.div`
+const InnerList = styled.div`
    width: 100%;
-   padding: 0.5em;
-   background: #24292f;
-   border-radius: 5px;
-   color: #a4a4a7;
-   margin-bottom: 3px;
+   padding: ${({ isvisibleinner }) => (isvisibleinner ? '0.4rem' : '0rem')};
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+   height: ${({ isvisibleinner }) => (isvisibleinner ? 'fit-content' : '0px')};
+   color: ${({ isvisibleinner }) =>
+      isvisibleinner ? '#7d97b8' : 'transparent'};
+   background-color: #0e1117;
+   margin-bottom: ${({ isvisibleinner }) => (isvisibleinner ? '3px' : '0px')};
+   pointer-events: ${({ isvisibleinner }) => (isvisibleinner ? '' : 'none')};
+   font-size: 13px;
    cursor: pointer;
    :hover {
-      background-color: #0d1013;
+      background-color: #26292c;
+   }
+   :active {
+      opacity: 0.5;
+   }
+`
+const Container = styled.div`
+   max-width: 1000px;
+   width: 100%;
+   max-height: 60vh;
+   overflow: scroll;
+   padding: 0.2rem;
+   margin: 0 auto;
+   background-color: #161b22;
+`
+const List = styled.div`
+   width: 100%;
+   padding: 0.5rem;
+   background-color: #21262c;
+   color: #7d97b8;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   margin-bottom: 6px;
+   font-size: 13px;
+   cursor: pointer;
+   :hover {
+      background-color: #2e343b;
+   }
+   :active {
+      opacity: 0.5;
    }
 `
 
