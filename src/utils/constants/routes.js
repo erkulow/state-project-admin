@@ -43,4 +43,22 @@ export const ROUTES = {
          label: 'GeneralRepublicanTesting',
       },
    },
+   healthCare: {
+      hospitals: {
+         path: '/admin/salamattykty-saktoo/oorukanalar',
+         label: 'Hospitals',
+      },
+      paramedicPoint: {
+         path: '/admin/salamattykty-saktoo/PHAP',
+         label: 'Paramedic Point',
+      },
+      OMS: {
+         path: '/admin/salamattykty-saktoo/OMS',
+         label: 'OMS',
+      },
+      doctorAdvice: {
+         path: '/admin/salamattykty-saktoo/darygerdin-keneshi',
+         label: 'Doctor Advice',
+      },
+   },
 }

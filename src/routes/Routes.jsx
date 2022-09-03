@@ -8,6 +8,7 @@ import Circles from '../containers/education/circles'
 import Events from '../containers/education/events'
 import GRT from '../containers/education/GRT'
 import Olympiads from '../containers/education/olympiads'
+import Hospitals from '../containers/health/hospitals/indes'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
@@ -23,7 +24,7 @@ const Kingergartens = React.lazy(() =>
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership, education } = ROUTES
+   const { login, admin, leadership, education, healthCare } = ROUTES
    return (
       <Routes>
          <Route
@@ -53,6 +54,10 @@ const AppRoutes = () => {
                <Route path={education.аctivities.path} element={<Events />} />
                <Route path={education.olympiads.path} element={<Olympiads />} />
                <Route path={education.GRT.path} element={<GRT />} />
+               <Route
+                  path={healthCare.hospitals.path}
+                  element={<Hospitals />}
+               />
             </Route>
          </Route>
       </Routes>
