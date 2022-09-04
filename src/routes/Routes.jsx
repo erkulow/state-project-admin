@@ -13,10 +13,15 @@ const DrivingSchools = React.lazy(() =>
    import('../containers/education/driving-schools')
 )
 const Schools = React.lazy(() => import('../containers/education/schools'))
+const Hospitals = React.lazy(()=>import('../containers/healthcare/hospitals'))   
+const FMC = React.lazy(() => import('../containers/healthcare/FMC'))
+const OMC = React.lazy(() => import('../containers/healthcare/OMC'))
+const DoctorsAdvice = React.lazy(() => import('../containers/healthcare/doctors-advice'))
+
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership, education } = ROUTES
+   const { login, admin, leadership, education, healthcare } = ROUTES
    return (
       <Routes>
          <Route
@@ -38,6 +43,10 @@ const AppRoutes = () => {
                   path={education.drivingSchool.path}
                   element={<DrivingSchools />}
                />
+               <Route path={healthcare.hospitals.path} element={<Hospitals/>} />
+               <Route path={healthcare.FMC.path} element={<FMC/>} />
+               <Route path={healthcare.OMC.path} element={<OMC/>} />
+               <Route path={healthcare.doctorsAdvice.path} element={<DoctorsAdvice/>} />
             </Route>
          </Route>
       </Routes>

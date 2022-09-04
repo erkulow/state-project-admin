@@ -10,6 +10,7 @@ const Form = ({ dataForm = [] }) => {
       images: [],
       files: [],
    })
+   console.log(dataForm)
    const {
       register,
       formState: { errors, isValid },

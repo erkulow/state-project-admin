@@ -43,4 +43,23 @@ export const ROUTES = {
          label: 'GeneralRepublicanTesting',
       },
    },
+
+   healthcare: {
+      hospitals: {
+         path: '/admin/salamattykty-saktoo/oorukanalar',
+         label: 'Hospitals',
+      },
+      FMC: {
+         path: '/admin/salamattykty-saktoo/FAPtar',
+         label: 'FMC',
+      },
+      OMC: {
+         path: '/admin/salamattykty-saktoo/oms',
+         label: 'OMC',
+      },
+      doctorsAdvice: {
+         path: '/admin/salamattykty-saktoo/daarygerdin-keneshy',
+         label: "Doctor's advice",
+      },
+   },
 }
