@@ -39,27 +39,26 @@ export const ROUTES = {
          label: 'Activities',
       },
       GRT: {
-         path: '/admin/bilim-beruu/ish-charalar',
+         path: '/admin/bilim-beruu/ORT',
          label: 'GeneralRepublicanTesting',
       },
    },
-
-   healthcare: {
+   healthCare: {
       hospitals: {
          path: '/admin/salamattykty-saktoo/oorukanalar',
          label: 'Hospitals',
       },
-      FMC: {
-         path: '/admin/salamattykty-saktoo/FAPtar',
-         label: 'FMC',
+      paramedicPoint: {
+         path: '/admin/salamattykty-saktoo/PHAP',
+         label: 'Paramedic Point',
       },
-      OMC: {
-         path: '/admin/salamattykty-saktoo/oms',
-         label: 'OMC',
+      OMS: {
+         path: '/admin/salamattykty-saktoo/OMS',
+         label: 'OMS',
       },
-      doctorsAdvice: {
-         path: '/admin/salamattykty-saktoo/daarygerdin-keneshy',
-         label: "Doctor's advice",
+      doctorAdvice: {
+         path: '/admin/salamattykty-saktoo/darygerdin-keneshi',
+         label: 'Doctor Advice',
       },
    },
 }

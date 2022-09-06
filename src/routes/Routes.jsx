@@ -4,6 +4,11 @@ import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import TemplateLeaderShipPages from '../components/temaplate-leadership-pages'
 import Admin from '../containers/admin'
+import Circles from '../containers/education/circles'
+import Events from '../containers/education/events'
+import GRT from '../containers/education/GRT'
+import Olympiads from '../containers/education/olympiads'
+import Hospitals from '../containers/health/hospitals/indes'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
@@ -13,15 +18,13 @@ const DrivingSchools = React.lazy(() =>
    import('../containers/education/driving-schools')
 )
 const Schools = React.lazy(() => import('../containers/education/schools'))
-const Hospitals = React.lazy(()=>import('../containers/healthcare/hospitals'))   
-const FMC = React.lazy(() => import('../containers/healthcare/FMC'))
-const OMC = React.lazy(() => import('../containers/healthcare/OMC'))
-const DoctorsAdvice = React.lazy(() => import('../containers/healthcare/doctors-advice'))
-
+const Kingergartens = React.lazy(() =>
+   import('../containers/education/kingergartens')
+)
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership, education, healthcare } = ROUTES
+   const { login, admin, leadership, education, healthCare } = ROUTES
    return (
       <Routes>
          <Route
@@ -43,10 +46,18 @@ const AppRoutes = () => {
                   path={education.drivingSchool.path}
                   element={<DrivingSchools />}
                />
-               <Route path={healthcare.hospitals.path} element={<Hospitals/>} />
-               <Route path={healthcare.FMC.path} element={<FMC/>} />
-               <Route path={healthcare.OMC.path} element={<OMC/>} />
-               <Route path={healthcare.doctorsAdvice.path} element={<DoctorsAdvice/>} />
+               <Route
+                  path={education.kindergartens.path}
+                  element={<Kingergartens />}
+               />
+               <Route path={education.iyrymder.path} element={<Circles />} />
+               <Route path={education.аctivities.path} element={<Events />} />
+               <Route path={education.olympiads.path} element={<Olympiads />} />
+               <Route path={education.GRT.path} element={<GRT />} />
+               <Route
+                  path={healthCare.hospitals.path}
+                  element={<Hospitals />}
+               />
             </Route>
          </Route>
       </Routes>

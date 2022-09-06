@@ -7,7 +7,7 @@ import Text from '../typography/Text'
 import Title from '../typography/Title'
 
 const ImagePicker = React.forwardRef(
-   ({ onDrop, files = [], deleteHandler }, ref) => {
+   ({ onDrop, files = [], deleteHandler, ...props }, ref) => {
       const { getRootProps, getInputProps } = useDropzone({
          onDrop,
          accept: 'image/*',
@@ -26,7 +26,12 @@ const ImagePicker = React.forwardRef(
                ))}
                {files.length < 4 && (
                   <ImagePickerStyled {...getRootProps()}>
-                     <input ref={ref} {...getInputProps()} type="file" />
+                     <input
+                        {...props}
+                        ref={ref}
+                        {...getInputProps()}
+                        type="file"
+                     />
                      <IconImagePicker />
                   </ImagePickerStyled>
                )}

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import ImagePicker from '../image-picker/ImagePicker'
 
 const Input = forwardRef((props, ref) => {
-   if (props.type === 'image') {
-      return <ImagePicker />
+   if (props.type === 'file') {
+      return <ImagePicker ref={ref} {...props} />
    }
    if (props.type === 'select') {
       return (
