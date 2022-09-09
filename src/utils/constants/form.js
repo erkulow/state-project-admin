@@ -302,3 +302,95 @@ export const FORM_HEALTHCARE = [
       },
    },
 ]
+
+export const FORM_FAPS = [
+   {
+      label: 'ФАПтын аты',
+      styles: { gridArea: '1 / 1 / 3 / 3' },
+      requestName: 'hospitalName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Адрес',
+      styles: { gridArea: '1 / 3 / 2 / 4' },
+      requestName: 'address',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Байланыш телефону',
+      styles: { gridArea: '1/ 4 / 3 / 5' },
+      requestName: 'phoneNumber',
+      type: 'number',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'ФАП жонундо маалымат',
+      styles: { gridArea: '2 / 1 / 3 / 5' },
+      requestName: 'infoAboutHospital',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+]
+export const FORM_OMS = [
+   {
+      label: ' ОМСтин аты',
+      styles: { gridArea: '1 / 1 / 3 / 3' },
+      requestName: 'hospitalName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Байланыш телефону',
+      styles: { gridArea: '1 / 5/ 5 / 3' },
+      requestName: 'phoneNumber',
+      type: 'number',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Маалымат',
+      styles: { gridArea: '2 / 1/ 2 / 5' },
+      requestName: 'info',
+      type: 'text',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+]
+
+export const FORM_DOCTORS_ADVICE = [
+   {
+      label: ' Доктордун аты',
+      styles: { gridArea: '1 / 1 / 2 / 3' },
+      requestName: 'doctorlName',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Кенештер',
+      styles: { gridArea: '2 / 1 / 3 / 5' },
+      requestName: 'infoAboutHospital',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+   {
+      label: 'Байланыш телефону',
+      styles: { gridArea: '1 / 3 / 3 / 5' },
+      requestName: 'phoneNumber',
+      type: 'number  ',
+      required: {
+         required: 'Поляны бош жонотууго болбойт',
+      },
+   },
+]
