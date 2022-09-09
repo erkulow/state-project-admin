@@ -8,7 +8,6 @@ import Circles from '../containers/education/circles'
 import Events from '../containers/education/events'
 import GRT from '../containers/education/GRT'
 import Olympiads from '../containers/education/olympiads'
-import Hospitals from '../containers/health/hospitals/indes'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
 
@@ -21,6 +20,11 @@ const Schools = React.lazy(() => import('../containers/education/schools'))
 const Kingergartens = React.lazy(() =>
    import('../containers/education/kingergartens')
 )
+const Hospitals = React.lazy(()=>import('../containers/healthcare/hospitals'))
+const FAPs = React.lazy(()=>import('../containers/healthcare/FAPs'))
+const OMS = React.lazy(()=>import('../containers/healthcare/OMS'))
+const DoctorsAdvice = React.lazy(()=>import('../containers/healthcare/doctors-advice'))
+
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
@@ -57,6 +61,18 @@ const AppRoutes = () => {
                <Route
                   path={healthCare.hospitals.path}
                   element={<Hospitals />}
+               />
+               <Route
+                  path={healthCare.paramedicPoint.path}
+                  element={<FAPs />}
+               />
+                 <Route
+                  path={healthCare.OMS.path}
+                  element={<OMS />}
+               />
+                 <Route
+                  path={healthCare.doctorAdvice.path}
+                  element={<DoctorsAdvice />}
                />
             </Route>
          </Route>
