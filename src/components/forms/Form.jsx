@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 
-const Form = ({ dataForm = [] }) => {
+const Form = ({ dataForm }) => {
    const [images, setImages] = useState({
       images: [],
       files: [],
@@ -23,8 +23,11 @@ const Form = ({ dataForm = [] }) => {
    }
 
    return (
-      <FormStyled onSubmit={handleSubmit(submitHandler)}>
-         {dataForm.map((item) => (
+      <FormStyled
+         styleForm={dataForm.style}
+         onSubmit={handleSubmit(submitHandler)}
+      >
+         {dataForm.forms.map((item) => (
             <Flex
                key={item.label}
                style={item.styles}
@@ -60,7 +63,7 @@ const FormStyled = styled.form`
    width: 100%;
    display: grid;
    grid-template-columns: repeat(4, 0.5fr);
-   grid-template-rows: repeat(3, 1.5fr);
+   grid-template-rows: ${({ styleForm }) => styleForm || 'repeat(3, 1fr)'};
    gap: 20px 20px;
    grid-auto-flow: column;
    -ms-grid-column-align: start;
