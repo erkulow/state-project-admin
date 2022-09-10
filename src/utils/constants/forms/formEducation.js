@@ -1,7 +1,7 @@
 import { REGEXP_EMAIL } from '../general'
 
 export const FORM_SCHOOLS = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Мектептин аты',
@@ -45,10 +45,19 @@ export const FORM_SCHOOLS = {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
+      {
+         label: 'Сурот кошуу',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 export const FORM_KINGERGARTENS = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Бала бакчанын аты',
@@ -105,10 +114,19 @@ export const FORM_KINGERGARTENS = {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
+      {
+         label: 'Сурот кошуу',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 export const FORM_CIRCLES = {
-   style: 'repeat(2, 0.5fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Ийримдин аты',
@@ -144,10 +162,19 @@ export const FORM_CIRCLES = {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 export const FORM_EVENTS = {
-   style: '1fr',
+   style: '100px 1fr',
    forms: [
       {
          label: 'Маалымат',
@@ -162,10 +189,19 @@ export const FORM_EVENTS = {
             },
          },
       },
+      {
+         label: 'Сурот кошуу',
+         styles: { gridArea: '2 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 export const FORM_OLYMPIADS = {
-   style: 'repeat(1,1fr)',
+   style: '100px 1fr',
    forms: [
       {
          label: 'Маалымат',
@@ -178,6 +214,15 @@ export const FORM_OLYMPIADS = {
                value: 100,
                message: '100 белгиден аз болбосун',
             },
+         },
+      },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '2 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
          },
       },
    ],

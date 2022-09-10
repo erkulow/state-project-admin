@@ -10,10 +10,9 @@ const Form = ({ dataForm }) => {
       images: [],
       files: [],
    })
-   console.log(dataForm)
    const {
       register,
-      formState: { errors, isValid },
+      formState: { errors, isValid, isSubmitted },
       handleSubmit,
    } = useForm()
 
@@ -21,9 +20,12 @@ const Form = ({ dataForm }) => {
       e.stopPropagation()
       console.log(data)
    }
+   console.log(isSubmitted)
 
    return (
       <FormStyled
+         isValid={isValid}
+         isSubmitted={isSubmitted}
          styleForm={dataForm.style}
          onSubmit={handleSubmit(submitHandler)}
       >
@@ -52,9 +54,11 @@ const Form = ({ dataForm }) => {
          <Button
             className="btn__submit"
             type="submit"
-            style={{ gridArea: '4 / 1 / 4 / 5' }}
+            style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
          >
-            Отправить
+            {!isValid && isSubmitted
+               ? 'Жазуу талааларын толтурунуз'
+               : 'Жонотуу'}
          </Button>
       </FormStyled>
    )
@@ -68,10 +72,14 @@ const FormStyled = styled.form`
    grid-auto-flow: column;
    -ms-grid-column-align: start;
    .btn__submit {
-      background: #2ea54f;
+      background: ${({ isValid, isSubmitted }) =>
+         !isValid && isSubmitted ? 'tomato' : ' #245aac'};
       color: white;
+      cursor: ${({ isValid, isSubmitted }) =>
+         !isValid && isSubmitted ? 'not-allowed' : 'pointer'};
       :hover {
-         background: #2ea54f;
+         background: ${({ isValid, isSubmitted }) =>
+            !isValid && isSubmitted ? 'red' : '#1c4481'};
       }
    }
 `
