@@ -43,6 +43,15 @@ export const FORM_HEALTHCARE = {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 
@@ -83,6 +92,15 @@ export const FORM_FAPS = {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 
@@ -115,6 +133,15 @@ export const FORM_OMS = {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
    ],
 }
 
@@ -142,6 +169,15 @@ export const FORM_DOCTORS_ADVICE = {
          styles: { gridArea: '1 / 3 / 3 / 5' },
          requestName: 'phoneNumber',
          type: 'number  ',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
+      {
+         label: 'Add photo',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },

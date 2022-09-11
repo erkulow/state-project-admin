@@ -11,6 +11,7 @@ const ImagePicker = React.forwardRef(
       const { getRootProps, getInputProps } = useDropzone({
          onDrop,
          accept: 'image/*',
+         multiple: false,
       })
 
       return (
@@ -27,6 +28,7 @@ const ImagePicker = React.forwardRef(
                {files.length < 4 && (
                   <ImagePickerStyled {...getRootProps()}>
                      <input
+                        accept="image/png, image/gif, image/jpeg"
                         {...props}
                         ref={ref}
                         {...getInputProps()}

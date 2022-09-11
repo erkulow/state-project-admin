@@ -1,6 +1,8 @@
 import { REGEXP_EMAIL } from '../general'
 
 export const FORM_LEADERSHIP = {
+   style: '100px 100px 100px 1fr',
+   styleBtn: '5 / 1 / 5 / 5',
    forms: [
       {
          label: 'Аты',
@@ -70,6 +72,15 @@ export const FORM_LEADERSHIP = {
          requestName: 'phoneNumber',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Кызматкердин суроту',
+         styles: { gridArea: '4 / 1 / 4 / 5' },
+         requestName: 'galery',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
          },
       },
    ],
