@@ -61,4 +61,38 @@ export const ROUTES = {
          label: 'Doctor Advice',
       },
    },
+   religiousAffairs: {
+      mosques: {
+         path: '/admin/din-ishteri/mechitter',
+         label: 'Mosques',
+      },
+      madrasas: {
+         path: '/admin/din-ishteri/medreseler',
+         label: 'Madrasa',
+      },
+      pilgrimage: {
+         path: '/admin/din-ishteri/azhylyk',
+         label: 'Pilgrimage',
+      },
+      ait: {
+         path: '/admin/din-ishteri/ait',
+         label: 'Ait',
+      },
+      ramadan: {
+         path: '/admin/din-ishteri/ramazan',
+         label: 'Ramadan',
+      },
+      namaz: {
+         path: '/admin/din-ishteri/namaz',
+         label: 'Namaz',
+      },
+      morality: {
+         path: '/admin/din-ishteri/adep-ahlak',
+         label: 'Morality',
+      },
+      religiousActivities: {
+         path: '/admin/din-ishteri/din-ishteri',
+         label: 'Religious Activities',
+      },
+   },
 }
