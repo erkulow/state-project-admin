@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
-	margin: 0;
-	padding: 0;
-	outline: 0;
-	border: 0;
-	box-sizing: border-box;
-	font-family: 'Inter';
-	transition: all 0.3s ease;
+   margin: 0;
+   padding: 0;
+   outline: 0;
+   border: 0;
+   box-sizing: border-box;
+   font-family: 'Inter';
+   transition: all 0.3s ease;
 }
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: #0e1117;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: #0e1117;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
 }
