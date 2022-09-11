@@ -6,7 +6,7 @@ import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 
 const Form = ({ dataForm }) => {
-   const [images, setImages] = useState({
+   const [selectedImages, setImages] = useState({
       images: [],
       files: [],
    })
@@ -14,13 +14,29 @@ const Form = ({ dataForm }) => {
       register,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
-   } = useForm()
+   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' })
 
    const submitHandler = (data, e) => {
       e.stopPropagation()
       console.log(data)
    }
-   console.log(isSubmitted)
+   const onDrop = (file) => {
+      const img = URL.createObjectURL(file[0])
+      const { files, images } = selectedImages
+      setImages({
+         images: [...images, { img, id: files.length }],
+         files: [...files, { file: file[0], id: files.length }],
+      })
+   }
+
+   const deleteImgHandler = (id) => {
+      const { files, images } = selectedImages
+      setImages({
+         ...selectedImages,
+         images: images.filter((image) => image.id !== id),
+         files: files.filter((file) => file.id !== id),
+      })
+   }
 
    return (
       <FormStyled
@@ -38,12 +54,29 @@ const Form = ({ dataForm }) => {
                gap="5px"
             >
                <Label>{item.label}</Label>
-               <Input
-                  options={item.options}
-                  isValid={errors[item.requestName] && !isValid}
-                  {...register(item.requestName, { ...item.required })}
-                  type={item.type}
-               />
+               {(item.type === 'file' && (
+                  <Input
+                     deleteHandler={deleteImgHandler}
+                     onDrop={onDrop}
+                     files={selectedImages?.images}
+                     isValid={errors[item.requestName] && !isValid}
+                     {...register(item.requestName, {
+                        validate: () =>
+                           selectedImages.images.length > 0
+                              ? true
+                              : 'Суротсуз жонотуу мумкун эмес',
+                     })}
+                     type={item.type}
+                  />
+               )) || (
+                  <Input
+                     options={item.options}
+                     isValid={errors[item.requestName] && !isValid}
+                     {...register(item.requestName, { ...item.required })}
+                     type={item.type}
+                  />
+               )}
+
                <p style={{ color: 'tomato' }}>
                   {errors[item.requestName]
                      ? errors[item.requestName].message
@@ -56,9 +89,7 @@ const Form = ({ dataForm }) => {
             type="submit"
             style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
          >
-            {!isValid && isSubmitted
-               ? 'Жазуу талааларын толтурунуз'
-               : 'Жонотуу'}
+            Жонотуу
          </Button>
       </FormStyled>
    )
@@ -72,14 +103,10 @@ const FormStyled = styled.form`
    grid-auto-flow: column;
    -ms-grid-column-align: start;
    .btn__submit {
-      background: ${({ isValid, isSubmitted }) =>
-         !isValid && isSubmitted ? 'tomato' : ' #245aac'};
+      background: #245aac;
       color: white;
-      cursor: ${({ isValid, isSubmitted }) =>
-         !isValid && isSubmitted ? 'not-allowed' : 'pointer'};
       :hover {
-         background: ${({ isValid, isSubmitted }) =>
-            !isValid && isSubmitted ? 'red' : '#1c4481'};
+         background: #1c4481;
       }
    }
 `

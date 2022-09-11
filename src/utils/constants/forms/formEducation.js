@@ -43,12 +43,16 @@ export const FORM_SCHOOLS = {
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            minLength: {
+               value: 80,
+               message: 'Символдордун саны 80ден кем болбошу керек',
+            },
          },
       },
       {
          label: 'Сурот кошуу',
          styles: { gridArea: '3 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -117,7 +121,7 @@ export const FORM_KINGERGARTENS = {
       {
          label: 'Сурот кошуу',
          styles: { gridArea: '3 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -165,7 +169,7 @@ export const FORM_CIRCLES = {
       {
          label: 'Add photo',
          styles: { gridArea: '3 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -192,7 +196,7 @@ export const FORM_EVENTS = {
       {
          label: 'Сурот кошуу',
          styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -219,7 +223,7 @@ export const FORM_OLYMPIADS = {
       {
          label: 'Add photo',
          styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -246,7 +250,7 @@ export const FORM_GRT = {
       {
          label: 'Add photo',
          styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',

@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import uuid from 'react-uuid'
 import ImagePicker from '../image-picker/ImagePicker'
 
 const Input = forwardRef((props, ref) => {
@@ -21,7 +20,7 @@ const Input = forwardRef((props, ref) => {
                <option
                   value={option}
                   style={{ color: 'whitesmoke', background: '#0e1117' }}
-                  key={uuid()}
+                  key={option}
                >
                   {option}
                </option>

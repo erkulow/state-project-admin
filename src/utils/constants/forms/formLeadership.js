@@ -77,7 +77,7 @@ export const FORM_LEADERSHIP = {
       {
          label: 'Кызматкердин суроту',
          styles: { gridArea: '4 / 1 / 4 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
