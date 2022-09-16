@@ -95,4 +95,26 @@ export const ROUTES = {
          label: 'Religious Activities',
       },
    },
+   youthAffairs: {
+      headOfCommittee: {
+         path: '/admin/jashtar-ishteri/komitet-jetekchisi',
+         label: 'Head of the Committee',
+      },
+      sportActivities: {
+         path: '/admin/jashtar-ishteri/sport-ishteri',
+         label: 'Sport Activities',
+      },
+      activeYouth: {
+         path: '/admin/jashtar-ishteri/jigerduu-jashtar',
+         label: 'Active youth',
+      },
+      initiativies: {
+         path: '/admin/jashtar-ishteri/demilgeler',
+         label: 'Initiativies',
+      },
+      offersForYouth: {
+         path: '/admin/jashtar-ishteri/jashtarga-sunushtar',
+         label: 'Offers For Youth',
+      },
+   },
 }
