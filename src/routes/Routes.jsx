@@ -31,9 +31,18 @@ const Namaz = React.lazy(()=>import('../containers/religious-affairs/namaz'))
 const Ramadan = React.lazy(()=>import('../containers/religious-affairs/ramadan'))
 const ReligiousActivities = React.lazy(()=>import('../containers/religious-affairs/religious-activities'))
 
+const ActiveYouth = React.lazy(()=>import('../containers/youth-affairs/active-youth'))
+const HeadOfCommittee = React.lazy(()=>import('../containers/youth-affairs/head-of-committee'))
+const Initiatives = React.lazy(()=>import('../containers/youth-affairs/initiatives'))
+const OffersForYouth  = React.lazy(()=>import('../containers/youth-affairs/offers-for-youth'))
+const SportActivities  = React.lazy(()=>import('../containers/youth-affairs/sport-activities'))
+
+
+
+
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership, education, healthCare, religiousAffairs} = ROUTES
+   const { login, admin, leadership, education, healthCare, religiousAffairs, youthAffairs} = ROUTES
    return (
       <Routes>
          <Route
@@ -79,7 +88,12 @@ const AppRoutes = () => {
                <Route path={religiousAffairs.religiousActivities.path} 
                element={<ReligiousActivities/>}
                 />  
-                
+
+               <Route path={youthAffairs.activeYouth.path} element={<ActiveYouth/>} />  
+               <Route path={youthAffairs.headOfCommittee.path} element={<HeadOfCommittee/>} /> 
+               <Route path={youthAffairs.initiativies.path} element={<Initiatives/>} /> 
+               <Route path={youthAffairs.offersForYouth.path} element={<OffersForYouth/>} /> 
+               <Route path={youthAffairs.sportActivities.path} element={<SportActivities/>} /> 
             </Route>
          </Route>
       </Routes>

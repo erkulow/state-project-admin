@@ -1,10 +1,10 @@
 import React from 'react'
 import Form from '../../../components/forms/Form'
-import FullWidthTabs from '../../../components/tabs'
 import { TabPanel } from '../../../components/tabs/TabPanel'
-import { FORM_RELIGIOUS_ACTIVITIES } from '../../../utils/constants/forms/formReligious'
+import FullWidthTabs from '../../../components/tabs'
+import { FORM_ACTIVE_YOUTH } from '../../../utils/constants/forms/formYouthAffairs'
 
-const ReligiousActivities = () => {
+const ActiveYouth = () => {
    const [value, setValue] = React.useState(0)
 
    const handleChange = (event, newValue) => setValue(newValue)
@@ -12,7 +12,7 @@ const ReligiousActivities = () => {
    return (
       <FullWidthTabs value={value} onChange={handleChange}>
          <TabPanel index={0} value={value}>
-            <Form dataForm={FORM_RELIGIOUS_ACTIVITIES} />
+            <Form dataForm={FORM_ACTIVE_YOUTH} />
          </TabPanel>
          <TabPanel index={1} value={value}>
             <div>asdfasdfasdfasd</div>
@@ -21,4 +21,4 @@ const ReligiousActivities = () => {
    )
 }
 
-export default ReligiousActivities
+export default ActiveYouth
