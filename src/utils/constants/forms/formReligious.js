@@ -264,7 +264,7 @@ export const FORM_MORALITY = {
    forms: [
       {
          label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 1 / 2 / 4' },
+         styles: { gridArea: '1 / 1 / 2 / 3' },
          requestName: 'imamFullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

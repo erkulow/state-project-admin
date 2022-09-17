@@ -47,7 +47,7 @@ export const FORM_ACTIVE_YOUTH = {
    ],
 }
 export const FORM_HEAD_OF_COMMITTEE = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Комитеттин аты',
@@ -103,7 +103,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
    ],
 }
 export const FORM_INITIATIVIES = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Демилгенин аты',
@@ -114,7 +114,7 @@ export const FORM_INITIATIVIES = {
          },
       },
       {
-         label: 'Демилге башчысынын аты-жонү',
+         label: 'Жетекчинин аты-жонү',
          styles: { gridArea: '1 / 2 / 2 / 3' },
          requestName: 'initiaiveFullName',
          required: {
@@ -159,18 +159,26 @@ export const FORM_INITIATIVIES = {
    ],
 }
 export const FORM_OFFER_FOR_YOUTH = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
-         label: 'Сунуштун аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
+         label: 'Сунуштун аталышы',
+         styles: { gridArea: '1 / 1 / 3 / 3 ' },
          requestName: 'offeriveName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Жаштар учун сунуштар жөнүндө маалымат',
+         label: 'Сунуштоочунун аты-жонү',
+         styles: { gridArea: '1 / 3 / 2 / 5' },
+         requestName: 'offersFullName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Сунуш жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
@@ -190,12 +198,28 @@ export const FORM_OFFER_FOR_YOUTH = {
    ],
 }
 export const FORM_SPORT_ACTIVITIES = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Спорт иш-чаранын аталышы',
          styles: { gridArea: '1 / 1 / 2 / 3' },
          requestName: 'activitiFullName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Дареги',
+         styles: { gridArea: '1 / 3 / 3 / 4' },
+         requestName: 'address',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Убактысы',
+         styles: { gridArea: '1 / 4 / 4 / 5' },
+         requestName: 'time',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
