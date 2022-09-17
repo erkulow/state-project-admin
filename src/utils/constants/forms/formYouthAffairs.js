@@ -1,5 +1,5 @@
 export const FORM_ACTIVE_YOUTH = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 1fr',
    forms: [
       {
          label: 'Аты-жонү',
