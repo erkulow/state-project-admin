@@ -37,12 +37,28 @@ const Initiatives = React.lazy(()=>import('../containers/youth-affairs/initiativ
 const OffersForYouth  = React.lazy(()=>import('../containers/youth-affairs/offers-for-youth'))
 const SportActivities  = React.lazy(()=>import('../containers/youth-affairs/sport-activities'))
 
+const AnimalUsbandry = React.lazy(()=>import('../containers/agriculture/animal-usbandry'))
+const SeedsFarm = React.lazy(()=>import('../containers/agriculture/seeds-farm'))
+const PastureCommitee = React.lazy(()=>import('../containers/agriculture/pasture-committee'))
+const AgroLaws = React.lazy(()=>import('../containers/agriculture/laws'))
+const AgroActivities = React.lazy(()=>import('../containers/agriculture/agro-activities'))
+const AgroAdvices = React.lazy(()=>import('../containers/agriculture/advices'))
 
 
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
-   const { login, admin, leadership, education, healthCare, religiousAffairs, youthAffairs} = ROUTES
+   const {
+       login,
+       admin,
+       leadership,
+       education, 
+       healthCare,
+       religiousAffairs,
+       youthAffairs, 
+       agriculture
+         } = ROUTES
+
    return (
       <Routes>
          <Route
@@ -94,6 +110,13 @@ const AppRoutes = () => {
                <Route path={youthAffairs.initiativies.path} element={<Initiatives/>} /> 
                <Route path={youthAffairs.offersForYouth.path} element={<OffersForYouth/>} /> 
                <Route path={youthAffairs.sportActivities.path} element={<SportActivities/>} /> 
+
+               <Route path={agriculture.animalUsbandry.path} element={<AnimalUsbandry/>} />  
+               <Route path={agriculture.seedsFarm.path} element={<SeedsFarm/>} /> 
+               <Route path={agriculture.pastureCommittee.path} element={<PastureCommitee/>} /> 
+               <Route path={agriculture.laws.path} element={<AgroLaws/>} /> 
+               <Route path={agriculture.agroAdvices.path} element={<AgroAdvices/>} /> 
+               <Route path={agriculture.agroActivities.path} element={<AgroActivities/>} /> 
             </Route>
          </Route>
       </Routes>
