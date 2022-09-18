@@ -18,6 +18,7 @@ const {
    religiousAffairs,
    youthAffairs,
    agriculture,
+   culture,
 } = ROUTES
 
 export const CATEGORYES = [
@@ -227,22 +228,27 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'Маданият үйлөрү',
+            path: culture.cultureHouses.path,
          },
          {
             id: uuid(),
             title: 'Музейлер',
+            path: culture.museums.path,
          },
          {
             id: uuid(),
             title: 'Маданият кызматкерлери',
+            path: culture.culturalWorkers.path,
          },
          {
             id: uuid(),
             title: 'Маданий иш-чаралар',
+            path: culture.culturalActivities.path,
          },
          {
             id: uuid(),
             title: 'Маданий сынактар',
+            path: culture.culturalCompetitions.path,
          },
       ],
    },

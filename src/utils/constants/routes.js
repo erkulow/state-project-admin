@@ -143,4 +143,26 @@ export const ROUTES = {
          label: 'Agro Advices',
       },
    },
+   culture: {
+      cultureHouses: {
+         path: '/admin/madanyat/madanyat-uiloru',
+         label: 'Culture Houses',
+      },
+      museums: {
+         path: '/admin/madanyat/mezeyler',
+         label: 'Museums',
+      },
+      culturalWorkers: {
+         path: '/admin/madanyat/madanyat-kyzmatkerleri',
+         label: 'Cultural Workers',
+      },
+      culturalActivities: {
+         path: '/admin/madanyat/madanyat-ish-charalar',
+         label: 'Cultural Activities',
+      },
+      culturalCompetitions: {
+         path: '/admin/jashtar-ishteri/madanyat-synaktar',
+         label: 'Cultural Competitions',
+      },
+   },
 }

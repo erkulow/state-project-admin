@@ -44,6 +44,12 @@ const AgroLaws = React.lazy(()=>import('../containers/agriculture/laws'))
 const AgroActivities = React.lazy(()=>import('../containers/agriculture/agro-activities'))
 const AgroAdvices = React.lazy(()=>import('../containers/agriculture/advices'))
 
+const CulturalHouses = React.lazy(()=>import('../containers/culture/cultural-houses'))
+const Museums = React.lazy(()=>import('../containers/culture/museums'))
+const CulturalCompetitions = React.lazy(()=>import('../containers/culture/cultural-competitions'))
+const CulturalWorkers= React.lazy(()=>import('../containers/culture/cultural-workers'))
+const CulturalActivities= React.lazy(()=>import('../containers/culture/cultural-activities'))
+
 
 
 const AppRoutes = () => {
@@ -56,7 +62,8 @@ const AppRoutes = () => {
        healthCare,
        religiousAffairs,
        youthAffairs, 
-       agriculture
+       agriculture,
+       culture,
          } = ROUTES
 
    return (
@@ -117,8 +124,14 @@ const AppRoutes = () => {
                <Route path={agriculture.laws.path} element={<AgroLaws/>} /> 
                <Route path={agriculture.agroAdvices.path} element={<AgroAdvices/>} /> 
                <Route path={agriculture.agroActivities.path} element={<AgroActivities/>} /> 
+
+               <Route path={culture.cultureHouses.path} element={<CulturalHouses/>} />  
+               <Route path={culture.museums.path} element={<Museums/>} /> 
+               <Route path={culture.culturalWorkers.path} element={<CulturalWorkers/>} /> 
+               <Route path={culture.culturalCompetitions.path} element={<CulturalCompetitions/>} /> 
+               <Route path={culture.culturalActivities.path} element={<CulturalActivities/>} /> 
             </Route>
-         </Route>
+         </Route> 
       </Routes>
    )
 }
