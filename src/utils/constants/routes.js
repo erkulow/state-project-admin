@@ -117,4 +117,30 @@ export const ROUTES = {
          label: 'Offers For Youth',
       },
    },
+   agriculture: {
+      animalUsbandry: {
+         path: '/admin/aiyl-charba/mal-charba-comiteti',
+         label: 'Animal Usbandry Committee',
+      },
+      pastureCommittee: {
+         path: '/admin/aiyl-charba/jaiyt-comiteti',
+         label: 'Pasture Committee',
+      },
+      seedsFarm: {
+         path: '/admin/aiyl-charba/uroon',
+         label: 'Seeds Farm',
+      },
+      laws: {
+         path: '/admin/aiyl-charba/myizamdar',
+         label: 'Laws',
+      },
+      agroActivities: {
+         path: '/admin/jashtar-ishteri/agro-ish-charalar',
+         label: 'Agro Activities',
+      },
+      agroAdvices: {
+         path: '/admin/jashtar-ishteri/keneshter',
+         label: 'Agro Advices',
+      },
+   },
 }
