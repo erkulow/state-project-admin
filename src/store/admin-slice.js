@@ -43,7 +43,13 @@ const initialState = {
 const adminslice = createSlice({
    name: 'admin',
    initialState,
-   reducers: {},
+   reducers: {
+      logout(state) {
+         state.token = null
+         state.isAuthorized = false
+         state.role = null
+      },
+   },
    extraReducers: {
       [loginAsAdmin.pending]: (state) => {
          state.isLoading = true

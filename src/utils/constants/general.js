@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-export const SERVER_BASE_URL = 'https://mady-application.herokuapp.com/api'
+export const SERVER_BASE_URL = 'https://mady-app-kutu.herokuapp.com/api'
 
 export const _KEY_AUTH = 'STATE_PROJECT_'
 

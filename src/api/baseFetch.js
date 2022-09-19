@@ -1,12 +1,20 @@
 /* eslint-disable no-use-before-define */
 import { SERVER_BASE_URL } from '../utils/constants/general'
 
+import store from '../store'
+
 export const baseFetch = async (options) => {
+   const { token } = store.getState().auth
    try {
       const { path, body, method, params } = options
       const requestOptions = {
-         method: method || 'GET',
-         headers: { 'Content-Type': 'application/json' },
+         method: options.method || 'GET',
+         headers: token
+            ? {
+                 'Content-Type': 'application/json',
+                 Authorization: `Bearer ${token}`,
+              }
+            : { 'Content-Type': 'application/json' },
       }
       if (method !== 'GET') {
          requestOptions.body = JSON.stringify(body || {})

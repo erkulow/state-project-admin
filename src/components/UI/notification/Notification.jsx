@@ -21,7 +21,7 @@ export const showErrorMessage = (msg) =>
       </div>
    )
 const Notification = () => {
-   return <StyledToastContainer autoClose={2000} position="top-right" />
+   return <StyledToastContainer autoClose={2000} position="bottom-left" />
 }
 
 const StyledToastContainer = styled(ToastContainer)`
