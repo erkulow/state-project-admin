@@ -1,30 +1,34 @@
-import { getJwt } from '../utils/helpers/general'
+import store from '../store'
 import { SERVER_BASE_URL } from '../utils/constants/general'
 
-export const uploadFetch = async (options) => {
-   const token = getJwt()
+export const fetchFile = async (options) => {
+   const { token, role } = store.getState().auth
    try {
-      const { path, body, method } = options
       const requestOptions = {
-         method: method || 'GET',
-         headers: {
-            Authorization: `Bearer ${token}`,
-         },
+         method: options.method || 'GET',
+         headers: { Authorization: `Bearer ${token}`, Role: role },
       }
-      if (method !== 'GET') {
-         requestOptions.body = body || {}
+
+      if (options.method !== 'GET') {
+         requestOptions.body = options.body || {}
       }
-      const response = await fetch(`${SERVER_BASE_URL}/${path}`, requestOptions)
-      const result = await response.json()
+
+      const response = await fetch(
+         `${SERVER_BASE_URL}/${options.path}`,
+         requestOptions
+      )
+      const data = await response.json()
+
       if (!response.ok) {
-         let errorMessage = 'Some thing went wrong'
-         if (result && result.message) {
-            errorMessage = result.message
+         let errorMessage = 'Something went wrong'
+         if (data && data.message) {
+            errorMessage = data.message
          }
          throw new Error(errorMessage)
       }
-      return result
-   } catch (error) {
-      throw new Error(error.message)
+
+      return data
+   } catch (e) {
+      throw new Error(e.message)
    }
 }

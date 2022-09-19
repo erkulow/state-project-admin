@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BiLoaderCircle } from 'react-icons/bi'
 
 const Spinner = (props) => {
-   return <StyledLoading {...props} />
+   return <StyledLoading fontSize={24} {...props} />
 }
 const StyledLoading = styled(BiLoaderCircle)`
    & path {

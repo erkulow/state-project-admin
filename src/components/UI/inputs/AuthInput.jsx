@@ -64,6 +64,11 @@ const TextArea = styled.textarea`
             ? '0 0 0 3px rgba(255, 8, 0, 0.5)'
             : '0 0 0 3px rgba(31, 88, 174, 0.6)'};
    }
+   :disabled,
+   :disabled:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
+   }
 `
 
 const InputStyled = styled.input`
@@ -91,6 +96,11 @@ const InputStyled = styled.input`
             ? '0 0 0 3px rgba(255, 8, 0, 0.5)'
             : '0 0 0 3px rgba(31, 88, 174, 0.6)'};
    }
+   :disabled,
+   :disabled:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
+   }
 `
 const InputStyledSelect = styled.select`
    width: ${({ width }) => width || '100%'};
@@ -116,6 +126,11 @@ const InputStyledSelect = styled.select`
          isValid
             ? '0 0 0 3px rgba(255, 8, 0, 0.5)'
             : '0 0 0 3px rgba(31, 88, 174, 0.6)'};
+   }
+   :disabled,
+   :disabled:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
    }
 `
 export default Input
