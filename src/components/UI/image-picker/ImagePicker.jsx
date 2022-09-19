@@ -15,7 +15,7 @@ const ImagePicker = React.forwardRef(
       })
 
       return (
-         <Flex align="center" gap="16px">
+         <Wrapper disabled={props.disabled} align="center" gap="16px">
             <Flex gap="5px" wrap="wrap">
                {files.map((img) => (
                   <GroupImg key={img.id}>
@@ -25,7 +25,7 @@ const ImagePicker = React.forwardRef(
                      </DeleteBtn>
                   </GroupImg>
                ))}
-               {files.length < 4 && (
+               {files.length < 1 && (
                   <ImagePickerStyled {...getRootProps()}>
                      <input
                         accept="image/png, image/gif, image/jpeg"
@@ -40,17 +40,20 @@ const ImagePicker = React.forwardRef(
             </Flex>
             {files.length === 0 && (
                <Flex direction="column">
-                  <Title color="#266BD3">Add photos to the review</Title>
-                  <Text>
-                     it will become more noticeable and even more useful. You
-                     can upload up to 4 potos
-                  </Text>
+                  <Title color="#266BD3">
+                     Стандартка туура келген суротторду жуктонуз
+                  </Title>
+                  <Text>Сиз 1 суротко чейин жүктөй аласыз</Text>
                </Flex>
             )}
-         </Flex>
+         </Wrapper>
       )
    }
 )
+const Wrapper = styled(Flex)`
+   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+   pointer-events: ${({ disabled }) => (disabled ? 'none' : '')};
+`
 const DeleteBtn = styled.button`
    width: 100%;
    height: 100%;

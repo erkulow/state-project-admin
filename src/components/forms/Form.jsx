@@ -1,24 +1,36 @@
+/* eslint-disable no-param-reassign */
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
+import Spinner from '../UI/loader/Spinner'
 
-const Form = ({ dataForm }) => {
+const Form = ({ dataForm, onGetData, isLoading }) => {
    const [selectedImages, setImages] = useState({
       images: [],
       files: [],
    })
    const {
       register,
+      reset,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
    } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' })
 
+   const resetForm = () => {
+      reset()
+      setImages({
+         images: [],
+         files: [],
+      })
+   }
+
    const submitHandler = (data, e) => {
       e.stopPropagation()
-      console.log(data)
+      delete data.galery
+      onGetData(data, selectedImages.files, resetForm)
    }
    const onDrop = (file) => {
       const img = URL.createObjectURL(file[0])
@@ -56,6 +68,7 @@ const Form = ({ dataForm }) => {
                <Label>{item.label}</Label>
                {(item.type === 'file' && (
                   <Input
+                     disabled={isLoading}
                      deleteHandler={deleteImgHandler}
                      onDrop={onDrop}
                      files={selectedImages?.images}
@@ -70,6 +83,7 @@ const Form = ({ dataForm }) => {
                   />
                )) || (
                   <Input
+                     disabled={isLoading}
                      options={item.options}
                      isValid={errors[item.requestName] && !isValid}
                      {...register(item.requestName, { ...item.required })}
@@ -85,11 +99,12 @@ const Form = ({ dataForm }) => {
             </Flex>
          ))}
          <Button
+            disabled={isLoading}
             className="btn__submit"
             type="submit"
             style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
          >
-            Жонотуу
+            {isLoading ? <Spinner /> : 'Жонотуу'}
          </Button>
       </FormStyled>
    )
@@ -107,6 +122,11 @@ const FormStyled = styled.form`
       color: white;
       :hover {
          background: #1c4481;
+      }
+      :disabled,
+      :disabled:hover {
+         opacity: 0.5;
+         cursor: not-allowed;
       }
    }
 `

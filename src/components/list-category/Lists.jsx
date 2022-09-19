@@ -69,7 +69,7 @@ const Container = styled.div`
    width: 100%;
    padding: 1rem;
    margin: 0 auto;
-   margin-top: 50px;
+   margin-top: 100px;
    background-color: #161b22;
 `
 const List = styled.div`
