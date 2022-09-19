@@ -10,6 +10,14 @@ export const FORM_NEWS_AND_ANNOUNCMENT = {
          },
       },
       {
+         label: 'Убактысы',
+         styles: { gridArea: '1 / 3 / 3 / 5' },
+         requestName: 'farmName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
          label: 'Жанылык/куулакттандыруу жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
          requestName: 'text',

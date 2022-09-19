@@ -250,7 +250,7 @@ const AppRoutes = () => {
                />
                <Route path={okm.okm.path} element={<OKM/>} />
                <Route path={celebrities.celebrities.path} element={<Celebrities/>} />
-               <Route path={cleanliness.path} element={<CleanLines/>} />
+               <Route path={cleanliness.cleanline.path} element={<CleanLines/>} />
                <Route path={newsAndAnnouncements.newsAndAnnouncements.path}
                 element={<NewsAndAnnouncements/>}
                  />

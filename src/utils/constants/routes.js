@@ -172,20 +172,20 @@ export const ROUTES = {
       },
    },
    cleanliness: {
-      cleanliness: {
-         path: 'admin/tazalyk/tazalyk',
+      cleanline: {
+         path: '/admin/tazalyk/tazalyk',
          label: 'Cleanliness',
       },
    },
    celebrities: {
       celebrities: {
-         path: 'admin/ATA/ataktuular',
+         path: '/admin/ataktuular/ataktuular',
          label: 'Сelebrities',
       },
    },
    newsAndAnnouncements: {
       newsAndAnnouncements: {
-         path: 'admin/Janylyktar-jana-kulaktandyruular/janylyktar-jana-kulaktandyruular',
+         path: '/admin/Janylyktar-jana-kulaktandyruular/janylyktar-jana-kulaktandyruular',
          label: 'News and Announcements',
       },
    },

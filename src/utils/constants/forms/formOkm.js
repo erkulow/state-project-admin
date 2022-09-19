@@ -2,7 +2,7 @@ export const FORM_OKM = {
    style: '100px 100px 1fr',
    forms: [
       {
-         label: 'ОКМ аты',
+         label: 'ӨКМ аты',
          styles: { gridArea: '1 / 1 / 3 / 2' },
          requestName: 'committeName',
          required: {
@@ -10,7 +10,7 @@ export const FORM_OKM = {
          },
       },
       {
-         label: 'ОКМ башчынын аты-жону',
+         label: 'ӨКМ башчынын аты-жону',
          styles: { gridArea: '1 / 2 / 3 / 3' },
          requestName: 'directorFullName',
          required: {
@@ -35,7 +35,7 @@ export const FORM_OKM = {
          },
       },
       {
-         label: 'ОКМ жөнүндө маалымат',
+         label: 'ӨКМ жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',

@@ -3,7 +3,7 @@ export const FORM_CLEANLINES = {
    forms: [
       {
          label: 'Тазалык жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '1 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {

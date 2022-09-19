@@ -9,7 +9,6 @@ import { findOneCategory } from '../../utils/helpers/general'
 
 const TemplateLeaderShipPages = () => {
    const { pathname, state } = useLocation()
-   console.log(pathname)
 
    const pathsArray = [
       {

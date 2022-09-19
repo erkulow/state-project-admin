@@ -276,7 +276,7 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'Тазалык',
-            path: cleanliness.cleanliness.path,
+            path: cleanliness.cleanline.path,
          },
       ],
    },
