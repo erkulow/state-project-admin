@@ -93,21 +93,28 @@ const CulturalWorkers = React.lazy(() =>
 const CulturalActivities = React.lazy(() =>
    import('../containers/culture/cultural-activities')
 )
+const OKM = React.lazy(()=>import('../containers/okm'))
+const Celebrities = React.lazy(()=>import('../containers/celebrities'))
+const CleanLines = React.lazy(()=>import('../containers/cleanlines'))
+const NewsAndAnnouncements = React.lazy(()=>import('../containers/news-announcements'))
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
    const {
-      login,
-      admin,
-      leadership,
-      education,
-      healthCare,
-      religiousAffairs,
-      youthAffairs,
-      agriculture,
-      culture,
-   } = ROUTES
-
+       login,
+       admin,
+       leadership,
+       education, 
+       healthCare,
+       religiousAffairs,
+       youthAffairs, 
+       agriculture,
+       culture,
+       okm,
+       celebrities,
+       cleanliness,
+       newsAndAnnouncements,
+         } = ROUTES
    return (
       <Routes>
          <Route
@@ -241,6 +248,12 @@ const AppRoutes = () => {
                   path={culture.culturalActivities.path}
                   element={<CulturalActivities />}
                />
+               <Route path={okm.okm.path} element={<OKM/>} />
+               <Route path={celebrities.celebrities.path} element={<Celebrities/>} />
+               <Route path={cleanliness.cleanline.path} element={<CleanLines/>} />
+               <Route path={newsAndAnnouncements.newsAndAnnouncements.path}
+                element={<NewsAndAnnouncements/>}
+                 />
             </Route>
          </Route>
       </Routes>
