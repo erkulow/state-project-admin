@@ -19,6 +19,10 @@ const {
    youthAffairs,
    agriculture,
    culture,
+   okm,
+   cleanliness,
+   celebrities,
+   newsAndAnnouncements,
 } = ROUTES
 
 export const CATEGORYES = [
@@ -260,6 +264,7 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'ӨКМ',
+            path: okm.okm.path,
          },
       ],
    },
@@ -271,6 +276,7 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'Тазалык',
+            path: cleanliness.cleanliness.path,
          },
       ],
    },
@@ -282,6 +288,7 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'Атактуулар',
+            path: celebrities.celebrities.path,
          },
       ],
    },
@@ -293,6 +300,7 @@ export const CATEGORYES = [
          {
             id: uuid(),
             title: 'Жаңылыктар жана кулактандыруу',
+            path: newsAndAnnouncements.newsAndAnnouncements.path,
          },
       ],
    },

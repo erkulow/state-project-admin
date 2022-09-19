@@ -165,4 +165,28 @@ export const ROUTES = {
          label: 'Cultural Competitions',
       },
    },
+   okm: {
+      okm: {
+         path: '/admin/OKM/okm',
+         label: 'OKM',
+      },
+   },
+   cleanliness: {
+      cleanliness: {
+         path: 'admin/tazalyk/tazalyk',
+         label: 'Cleanliness',
+      },
+   },
+   celebrities: {
+      celebrities: {
+         path: 'admin/ATA/ataktuular',
+         label: 'Сelebrities',
+      },
+   },
+   newsAndAnnouncements: {
+      newsAndAnnouncements: {
+         path: 'admin/Janylyktar-jana-kulaktandyruular/janylyktar-jana-kulaktandyruular',
+         label: 'News and Announcements',
+      },
+   },
 }

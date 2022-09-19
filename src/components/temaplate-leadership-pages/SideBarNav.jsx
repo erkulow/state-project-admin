@@ -28,7 +28,7 @@ const SideBarNav = () => {
                      }}
                   >
                      {el.icon} {el.title}
-                  </span>{' '}
+                  </span>
                   <Icon
                      isvisibleinner={isVisibleInner(el.id) || undefined}
                      fontSize={14}

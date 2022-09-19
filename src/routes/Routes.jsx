@@ -47,8 +47,13 @@ const AgroAdvices = React.lazy(()=>import('../containers/agriculture/advices'))
 const CulturalHouses = React.lazy(()=>import('../containers/culture/cultural-houses'))
 const Museums = React.lazy(()=>import('../containers/culture/museums'))
 const CulturalCompetitions = React.lazy(()=>import('../containers/culture/cultural-competitions'))
-const CulturalWorkers= React.lazy(()=>import('../containers/culture/cultural-workers'))
-const CulturalActivities= React.lazy(()=>import('../containers/culture/cultural-activities'))
+const CulturalWorkers = React.lazy(()=>import('../containers/culture/cultural-workers'))
+const CulturalActivities = React.lazy(()=>import('../containers/culture/cultural-activities'))
+
+const OKM = React.lazy(()=>import('../containers/okm'))
+const Celebrities = React.lazy(()=>import('../containers/celebrities'))
+const CleanLines = React.lazy(()=>import('../containers/cleanlines'))
+const NewsAndAnnouncements = React.lazy(()=>import('../containers/news-announcements'))
 
 
 
@@ -64,8 +69,11 @@ const AppRoutes = () => {
        youthAffairs, 
        agriculture,
        culture,
+       okm,
+       celebrities,
+       cleanliness,
+       newsAndAnnouncements,
          } = ROUTES
-
    return (
       <Routes>
          <Route
@@ -77,7 +85,7 @@ const AppRoutes = () => {
 
          <Route element={<ProtectedRoute isAllowed={isAuthorized} />}>
             <Route path={admin.path} element={<Admin />} />
-            <Route element={<TemplateLeaderShipPages />}>
+            <Route  element={<TemplateLeaderShipPages />}>
                <Route
                   path={leadership.government.path}
                   element={<Employees />}
@@ -130,6 +138,16 @@ const AppRoutes = () => {
                <Route path={culture.culturalWorkers.path} element={<CulturalWorkers/>} /> 
                <Route path={culture.culturalCompetitions.path} element={<CulturalCompetitions/>} /> 
                <Route path={culture.culturalActivities.path} element={<CulturalActivities/>} /> 
+
+               <Route path={okm.okm.path} element={<OKM/>} />
+               <Route path={celebrities.celebrities.path} element={<Celebrities/>} />
+               <Route path={cleanliness.path} element={<CleanLines/>} />
+               <Route path={newsAndAnnouncements.newsAndAnnouncements.path}
+                element={<NewsAndAnnouncements/>}
+                 />
+
+      
+
             </Route>
          </Route> 
       </Routes>
