@@ -13,7 +13,7 @@ export const saveLeaderships = createAsyncThunk(
       if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
       if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
       if (data.positions === 'Айылдык кеңешинин төрагасы') data.type = '3'
-      if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '4'
+      if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
       try {
          const result = await baseFetch({
             path: 'homePage/employees/save',
@@ -70,10 +70,40 @@ export const getLeaderships = createAsyncThunk(
       }
    }
 )
+export const deleteLeaderships = createAsyncThunk(
+   'deleteLeadership/leadership',
+   async (id, { rejectWithValue, dispatch }) => {
+      try {
+         const result = await baseFetch({
+            path: `homePage/employees/${id}`,
+            method: 'DELETE',
+            isDelete: true,
+         })
+         if (result) {
+            showSuccessMessage({
+               title: 'Ура!',
+               message: 'Ийгиликтуу очурулду',
+            })
+            dispatch(getLeaderships())
+         }
+         return result
+      } catch (error) {
+         showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })
+         return rejectWithValue(error.message)
+      }
+   }
+)
+const initialState = {
+   isLoading: null,
+   error: null,
+   government: [],
+   governmentApparatus: [],
+   villageCouncil: [],
+}
 
 const leadershipSlice = createSlice({
    name: 'leadership',
-   initialState: { isLoading: null, error: null },
+   initialState,
    reducers: {},
    extraReducers: {
       [saveLeaderships.pending]: (state) => {
@@ -90,8 +120,9 @@ const leadershipSlice = createSlice({
       },
       [getLeaderships.fulfilled]: (state, { payload }) => {
          state.isLoading = false
-         const government = payload.filter((item) => item.type === '1')
-         state.government = government
+         state.government = payload.filter((item) => item.type === '1')
+         state.governmentApparatus = payload.filter((item) => item.type === '2')
+         state.villageCouncil = payload.filter((item) => item.type === '3')
       },
       [getLeaderships.rejected]: (state) => {
          state.isLoading = false
@@ -104,6 +135,15 @@ const leadershipSlice = createSlice({
       },
       [uploadImage.rejected]: (state) => {
          state.isLoadingUpload = false
+      },
+      [deleteLeaderships.pending]: (state) => {
+         state.isLoading = true
+      },
+      [deleteLeaderships.fulfilled]: (state) => {
+         state.isLoading = false
+      },
+      [deleteLeaderships.rejected]: (state) => {
+         state.isLoading = false
       },
    },
 })

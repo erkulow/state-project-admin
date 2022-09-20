@@ -19,7 +19,7 @@ export default function FullWidthTabs({ value, onChange, children }) {
             <Tabs
                value={value}
                onChange={onChange}
-               indicatorColor="primary"
+               indicatorColor="red"
                textColor="inherit"
                variant="fullWidth"
                aria-label="full width tabs example"

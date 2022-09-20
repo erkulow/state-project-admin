@@ -26,17 +26,21 @@ export const baseFetch = async (options) => {
          const path = `${path}?${queryParamsStringValue}`
       }
       const response = await fetch(`${SERVER_BASE_URL}/${path}`, requestOptions)
-      const result = await response.json()
-      if (!response.ok) {
-         let errorMessage = 'Some thing went wrong'
-         if (result && result.message) {
-            errorMessage = result.errors[0].defaultMessage || result.message
+      if (!options.isDelete) {
+         const result = await response.json()
+         if (!response.ok) {
+            let errorMessage = 'Some thing went wrong'
+            if (result && result.message) {
+               errorMessage = result.errors[0].defaultMessage || result.message
+            }
+            throw new Error(errorMessage)
          }
-         throw new Error(errorMessage)
+         if (response.ok && result.status === 'UNAUTHORIZED') {
+            throw new Error('Неправильный логин или пароль!!!')
+         }
+         return result
       }
-      if (response.ok && result.status === 'UNAUTHORIZED') {
-         throw new Error('Неправильный логин или пароль!!!')
-      }
+      const result = response.text()
       return result
    } catch (e) {
       throw new Error(e)

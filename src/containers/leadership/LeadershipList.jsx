@@ -1,0 +1,94 @@
+import styled from '@emotion/styled'
+import { Button } from '@mui/material'
+import React, { useState } from 'react'
+import { MdModeEditOutline } from 'react-icons/md'
+import { AiFillDelete } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import Text from '../../components/UI/typography/Text'
+import Title from '../../components/UI/typography/Title'
+import { Flex } from '../../styles/style-for-positions/style'
+import ModalDelete from '../../components/UI/modals/modalDelete'
+import { deleteLeaderships } from '../../store/leadership-slice'
+
+const LeadershipList = ({ item }) => {
+   const dispatch = useDispatch()
+   const [showDeleteModal, setShowDeleteModal] = useState(false)
+   return (
+      <>
+         <Section>
+            <Flex width="100%" gap="20px" align="center">
+               <Flex width="20%">
+                  <Image src={item?.fileInformation?.photo} />
+               </Flex>
+               <Flex
+                  width="50%"
+                  direction="column"
+                  gap="10px"
+                  align="flex-start"
+               >
+                  <Title uppercase size="20px" color="#7d97b8">
+                     {item?.firstName} {item?.lastName} {item?.patronymic}
+                  </Title>
+                  <Text size="16px">{item?.positions}</Text>
+               </Flex>
+               <Flex width="40%" justify="center" gap="20px">
+                  <ButtonEdit>
+                     <MdModeEditOutline /> Озгортуу
+                  </ButtonEdit>
+                  <ButtonDelete onClick={() => setShowDeleteModal(true)}>
+                     <AiFillDelete /> Очуруп салуу
+                  </ButtonDelete>
+               </Flex>
+            </Flex>
+         </Section>
+         <ModalDelete
+            open={showDeleteModal}
+            action={() => dispatch(deleteLeaderships(item.id))}
+            setShowModal={setShowDeleteModal}
+            title="Сиз чындап эле очуруп салууну каалайсызбы?"
+         />
+      </>
+   )
+}
+const ButtonEdit = styled(Button)`
+   color: green;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+
+   :hover {
+      background-color: #27c36a25;
+      border: none;
+   }
+`
+const ButtonDelete = styled(Button)`
+   color: tomato;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   :hover {
+      background-color: #ff634729;
+   }
+`
+const Section = styled.div`
+   width: 100%;
+   padding: 0.7rem;
+   background-color: #21262b;
+   margin: 10px 0;
+   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+   :hover {
+      background-color: #141c25;
+   }
+   :active {
+      opacity: 0.5;
+   }
+`
+const Image = styled.img`
+   width: 100%;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 4px;
+`
+
+export default LeadershipList

@@ -5,6 +5,7 @@ import FullWidthTabs from '../../components/tabs'
 import { TabPanel } from '../../components/tabs/TabPanel'
 import { saveLeaderships } from '../../store/leadership-slice'
 import { FORM_LEADERSHIP } from '../../utils/constants/forms/formLeadership'
+import Panel from './Panel'
 
 const Employees = () => {
    const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const Employees = () => {
             />
          </TabPanel>
          <TabPanel index={1} value={value}>
-            <div>asdfasdfasdfasd</div>
+            <Panel />
          </TabPanel>
       </FullWidthTabs>
    )
