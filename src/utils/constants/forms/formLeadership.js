@@ -24,9 +24,6 @@ export const FORM_LEADERSHIP = {
          label: 'Атасынын аты',
          styles: { gridArea: '1 / 4 / 2 / 5' },
          requestName: 'patronymic',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
       },
       {
          label: 'Туулган күнү',
@@ -48,6 +45,7 @@ export const FORM_LEADERSHIP = {
             'Айыл өкмөтүнүн орун басары',
             'Айылдык кеңешинин төрагасы',
             'Айылдык кеңешинин депутаты',
+            'Айылдык өкмөтүнүн катчысы',
          ],
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

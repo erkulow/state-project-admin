@@ -17,7 +17,7 @@ const LeadershipList = ({ item }) => {
       <>
          <Section>
             <Flex width="100%" gap="20px" align="center">
-               <Flex width="20%">
+               <Flex width="10%">
                   <Image src={item?.fileInformation?.photo} />
                </Flex>
                <Flex

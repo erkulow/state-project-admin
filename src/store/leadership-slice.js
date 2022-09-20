@@ -12,6 +12,7 @@ export const saveLeaderships = createAsyncThunk(
    async ({ data, image, reset }, { rejectWithValue, dispatch }) => {
       if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
       if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
+      if (data.positions === 'Айылдык өкмөтүнүн катчысы') data.type = '2'
       if (data.positions === 'Айылдык кеңешинин төрагасы') data.type = '3'
       if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
       try {
