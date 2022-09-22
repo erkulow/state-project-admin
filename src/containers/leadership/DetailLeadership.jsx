@@ -32,7 +32,7 @@ const DetailLeadership = ({ data, setShowDeleteModal }) => {
                      <b>Электрондук почтасы:</b> {data.email}
                   </li>
                </List>
-               <Flex width="100%" justify="center" gap="20px">
+               <Flex width="100%" justify="end" gap="20px">
                   <ButtonEdit>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
