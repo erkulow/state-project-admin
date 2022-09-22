@@ -9,13 +9,32 @@ import Title from '../../components/UI/typography/Title'
 import { Flex } from '../../styles/style-for-positions/style'
 import ModalDelete from '../../components/UI/modals/modalDelete'
 import { deleteLeaderships } from '../../store/leadership-slice'
+import Modal from '../../components/UI/modals/modal-container/Modal'
+import DetailLeadership from './DetailLeadership'
 
 const LeadershipList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
+   const [showDetail, setShowDetail] = useState(false)
+
+   const showDetailHandler = (e) => {
+      e.stopPropagation()
+      setShowDetail(true)
+   }
+
    return (
       <>
-         <Section>
+         <Modal
+            isVisible={showDetail}
+            onClose={() => setShowDetail(false)}
+            width="1000px"
+         >
+            <DetailLeadership
+               setShowDeleteModal={setShowDeleteModal}
+               data={item}
+            />
+         </Modal>
+         <Section onClick={showDetailHandler}>
             <Flex width="100%" gap="20px" align="center">
                <Flex width="10%">
                   <Image src={item?.fileInformation?.photo} />
@@ -35,7 +54,12 @@ const LeadershipList = ({ item }) => {
                   <ButtonEdit>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
-                  <ButtonDelete onClick={() => setShowDeleteModal(true)}>
+                  <ButtonDelete
+                     onClick={(e) => {
+                        e.stopPropagation()
+                        setShowDeleteModal(true)
+                     }}
+                  >
                      <AiFillDelete /> Очуруп салуу
                   </ButtonDelete>
                </Flex>

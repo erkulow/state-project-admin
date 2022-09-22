@@ -74,9 +74,7 @@ const Modal = styled.div`
    }
 `
 const Backdrop = styled.div`
-   background-color: rgba(0, 0, 0, 0.4);
-   -webkit-backdrop-filter: blur(5px);
-   backdrop-filter: blur(5px);
+   background-color: rgba(0, 0, 0, 0.8);
    position: fixed;
    top: 0;
    left: 0;

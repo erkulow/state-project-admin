@@ -100,12 +100,17 @@ const initialState = {
    government: [],
    governmentApparatus: [],
    villageCouncil: [],
+   oneLeadership: null,
 }
 
 const leadershipSlice = createSlice({
    name: 'leadership',
    initialState,
-   reducers: {},
+   reducers: {
+      showDetial(state, action) {
+         state.oneLeadership = { ...action.payload }
+      },
+   },
    extraReducers: {
       [saveLeaderships.pending]: (state) => {
          state.isLoading = true
