@@ -7,7 +7,7 @@ import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../components/UI/typography/Title'
 import { Flex } from '../../styles/style-for-positions/style'
 
-const DetailLeadership = ({ data, setShowDeleteModal }) => {
+const DetailLeadership = ({ data, setShowDeleteModal, editHandler }) => {
    return (
       <div>
          <Flex gap="30px" align="start">
@@ -33,7 +33,7 @@ const DetailLeadership = ({ data, setShowDeleteModal }) => {
                   </li>
                </List>
                <Flex width="100%" justify="end" gap="20px">
-                  <ButtonEdit>
+                  <ButtonEdit onClick={editHandler}>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
                   <ButtonDelete

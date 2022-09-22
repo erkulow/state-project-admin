@@ -1,14 +1,18 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-param-reassign */
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
-
 import { useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
+import { tabActions } from '../../store/tab-slice'
+import { isEditHandler } from '../../store/edit-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 import Spinner from '../UI/loader/Spinner'
 
-const Form = ({ dataForm, onGetData, isLoading, onGetSetValue }) => {
+const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
+   const dispatch = useDispatch()
    const [selectedImages, setImages] = useState({
       images: [],
       files: [],
@@ -49,6 +53,15 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue }) => {
          ...selectedImages,
          images: images.filter((image) => image.id !== id),
          files: files.filter((file) => file.id !== id),
+      })
+   }
+
+   const newHandler = () => {
+      dispatch(isEditHandler({ data: null, isEdit: false }))
+      reset()
+      setImages({
+         images: [],
+         files: [],
       })
    }
 
@@ -104,14 +117,37 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue }) => {
                </p>
             </Flex>
          ))}
-         <Button
-            disabled={isLoading}
-            className="btn__submit"
-            type="submit"
+         <Flex
             style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
+            direction="column"
+            width="100%"
+            gap="20px"
          >
-            {isLoading ? <Spinner /> : 'Жонотуу'}
-         </Button>
+            <Button
+               disabled={isLoading}
+               className="btn__submit"
+               type="submit"
+               style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
+            >
+               {isLoading ? <Spinner /> : isEdit ? 'Сактоо' : 'Жонотуу'}
+            </Button>
+            <Flex width="100%" gap="10px">
+               {isEdit && (
+                  <Button
+                     onClick={() => dispatch(tabActions.tabChange(1))}
+                     className="btn__submit"
+                     style={{ background: 'brown' }}
+                  >
+                     Жокко чыгаруу
+                  </Button>
+               )}
+               {isEdit && (
+                  <Button onClick={newHandler} className="btn_submit btn">
+                     Жаны кошуу
+                  </Button>
+               )}
+            </Flex>
+         </Flex>
       </FormStyled>
    )
 }
@@ -124,6 +160,7 @@ const FormStyled = styled.form`
    grid-auto-flow: column;
    -ms-grid-column-align: start;
    .btn__submit {
+      width: 100%;
       background: #245aac;
       color: white;
       :hover {
@@ -133,6 +170,14 @@ const FormStyled = styled.form`
       :disabled:hover {
          opacity: 0.5;
          cursor: not-allowed;
+      }
+   }
+   .btn {
+      width: 100%;
+      background-color: #2ba44e;
+      color: white;
+      :hover {
+         background-color: #268a42;
       }
    }
 `

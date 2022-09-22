@@ -16,7 +16,7 @@ const Employees = () => {
       (state) => state.leadership
    )
 
-   const handleChange = (event, newValue) => {
+   const handleChange = (_, newValue) => {
       dispatch(tabActions.tabChange(newValue))
    }
 
@@ -54,6 +54,7 @@ const Employees = () => {
                onGetData={getDataHandler}
                dataForm={FORM_LEADERSHIP}
                onGetSetValue={putInDataForm}
+               isEdit={isEdit}
             />
          </TabPanel>
          <TabPanel index={1} value={value}>

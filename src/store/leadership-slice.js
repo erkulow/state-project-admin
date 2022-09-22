@@ -32,7 +32,7 @@ export const saveLeaderships = createAsyncThunk(
 )
 export const editLeadership = createAsyncThunk(
    'saveLeaderships/leadership',
-   async ({ data, image, reset }, { rejectWithValue, dispatch }) => {
+   async ({ data, image, clear }, { rejectWithValue, dispatch }) => {
       try {
          const result = await baseFetch({
             path: `homePage/employees/${data.id}`,
@@ -41,8 +41,18 @@ export const editLeadership = createAsyncThunk(
          })
          if (image.length) {
             await dispatch(
-               uploadImage({ image, idLeadershipData: data.id, reset })
+               uploadImage({
+                  image,
+                  idLeadershipData: data.id,
+                  reset: clear,
+               })
             )
+         } else {
+            showSuccessMessage({
+               title: 'Ура',
+               message: 'Кызматкер ийгиликтуу кошулду:)',
+            })
+            clear()
          }
 
          return result

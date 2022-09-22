@@ -38,6 +38,7 @@ const LeadershipList = ({ item }) => {
             width="1000px"
          >
             <DetailLeadership
+               editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
             />
