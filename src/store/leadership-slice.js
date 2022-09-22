@@ -30,6 +30,27 @@ export const saveLeaderships = createAsyncThunk(
       }
    }
 )
+export const editLeadership = createAsyncThunk(
+   'saveLeaderships/leadership',
+   async ({ data, image, reset }, { rejectWithValue, dispatch }) => {
+      try {
+         const result = await baseFetch({
+            path: `homePage/employees/${data.id}`,
+            method: 'PATCH',
+            body: data,
+         })
+         if (image.length) {
+            await dispatch(
+               uploadImage({ image, idLeadershipData: data.id, reset })
+            )
+         }
+
+         return result
+      } catch (error) {
+         return rejectWithValue(error.message)
+      }
+   }
+)
 export const uploadImage = createAsyncThunk(
    'uploadImage/leadership',
    async ({ image, idLeadershipData, reset }, { rejectWithValue }) => {
@@ -101,14 +122,16 @@ const initialState = {
    governmentApparatus: [],
    villageCouncil: [],
    oneLeadership: null,
+   isEdit: false,
 }
 
 const leadershipSlice = createSlice({
    name: 'leadership',
    initialState,
    reducers: {
-      showDetial(state, action) {
-         state.oneLeadership = { ...action.payload }
+      isEdit(state, action) {
+         state.isEdit = action.payload.isEdit
+         state.oneLeadership = action.payload.data
       },
    },
    extraReducers: {

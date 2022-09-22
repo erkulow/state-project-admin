@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Alert } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { isEditHandler } from '../../store/edit-slice'
 import { getLeaderships } from '../../store/leadership-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import LeadershipList from './LeadershipList'
@@ -13,6 +14,7 @@ const Panel = () => {
    )
    useEffect(() => {
       dispatch(getLeaderships())
+      dispatch(isEditHandler({ data: null, isEdit: false }))
    }, [])
 
    return (

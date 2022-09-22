@@ -11,6 +11,8 @@ import ModalDelete from '../../components/UI/modals/modalDelete'
 import { deleteLeaderships } from '../../store/leadership-slice'
 import Modal from '../../components/UI/modals/modal-container/Modal'
 import DetailLeadership from './DetailLeadership'
+import { tabActions } from '../../store/tab-slice'
+import { isEditHandler } from '../../store/edit-slice'
 
 const LeadershipList = ({ item }) => {
    const dispatch = useDispatch()
@@ -20,6 +22,12 @@ const LeadershipList = ({ item }) => {
    const showDetailHandler = (e) => {
       e.stopPropagation()
       setShowDetail(true)
+   }
+
+   const editLeadershipHandler = (e) => {
+      e.stopPropagation()
+      dispatch(tabActions.tabChange(0))
+      dispatch(isEditHandler({ isEdit: true, data: item }))
    }
 
    return (
@@ -51,7 +59,7 @@ const LeadershipList = ({ item }) => {
                   <Text size="16px">{item?.positions}</Text>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
-                  <ButtonEdit>
+                  <ButtonEdit onClick={editLeadershipHandler}>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
                   <ButtonDelete

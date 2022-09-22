@@ -1,19 +1,21 @@
 /* eslint-disable no-param-reassign */
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import { useForm } from 'react-hook-form'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 import Spinner from '../UI/loader/Spinner'
 
-const Form = ({ dataForm, onGetData, isLoading }) => {
+const Form = ({ dataForm, onGetData, isLoading, onGetSetValue }) => {
    const [selectedImages, setImages] = useState({
       images: [],
       files: [],
    })
    const {
       register,
+      setValue,
       reset,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
@@ -49,6 +51,10 @@ const Form = ({ dataForm, onGetData, isLoading }) => {
          files: files.filter((file) => file.id !== id),
       })
    }
+
+   useEffect(() => {
+      onGetSetValue(setValue, setImages)
+   }, [])
 
    return (
       <FormStyled
@@ -135,4 +141,4 @@ const Label = styled.label`
    color: #7e7474;
 `
 
-export default Form
+export default React.memo(Form)
