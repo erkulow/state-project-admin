@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import Form from '../../../components/forms/Form'
 import FullWidthTabs from '../../../components/tabs'
 import { TabPanel } from '../../../components/tabs/TabPanel'
-import { editData, saveDataToServer } from '../../../store/crud-slice'
+import {
+   crudActions,
+   editData,
+   saveDataToServer,
+} from '../../../store/crud-slice'
 import { tabActions } from '../../../store/tab-slice'
 import { FORM_SCHOOLS } from '../../../utils/constants/forms/formEducation'
 import Panel from './Panel'
@@ -25,17 +29,21 @@ const Schools = () => {
 
    const getDataHandler = (data, image, reset) => {
       if (isEdit) {
-         const { id, type } = changingObj
          const editingData = {
-            data: { ...data, id, type },
-            image,
+            data: { ...data, id: changingObj.id },
             clear: clear.bind(null, reset),
             category: 'educationSC',
+            image,
          }
          dispatch(editData(editingData))
       } else {
          dispatch(
-            saveDataToServer({ data, image, reset, category: 'educationSC' })
+            saveDataToServer({
+               data,
+               image,
+               reset: clear.bind(null, reset),
+               category: 'educationSC',
+            })
          )
       }
    }
@@ -46,6 +54,7 @@ const Schools = () => {
             setValue(item.requestName, changingObj[item.requestName])
             return null
          })
+         dispatch(crudActions.changeTextEditor(changingObj.text))
          setImages({
             images: [{ img: changingObj.fileInformation.photo, id: '1' }],
             files: [],

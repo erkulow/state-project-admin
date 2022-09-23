@@ -22,19 +22,19 @@ const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <h2>Мектеп жонундо маалымат</h2>
-                  <li>
+                  <H2>Мектеп жонундо маалымат</H2>
+                  <Li>
                      <b>Диретордун аты-жону:</b> {data.directorFullName}
-                  </li>
-                  <li>
+                  </Li>
+                  <Li>
                      <b>Адрес:</b> {data.address}
-                  </li>
-                  <li>
+                  </Li>
+                  <Li>
                      <b>Байланыш телефону:</b> {data.phoneNumber}
-                  </li>
-                  <li>
-                     <b>Мектеп жонундо маалымат:</b> <li ref={refText} />
-                  </li>
+                  </Li>
+                  <Li>
+                     <b>Мектеп жонундо маалымат:</b> <span ref={refText} />
+                  </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">
                   <ButtonEdit onClick={editHandler}>
@@ -87,29 +87,34 @@ const TitlePosition = styled(Title)`
 const List = styled.ul`
    list-style: none;
    color: #89919e;
-   h2 {
-      text-align: center;
-      margin-bottom: 10px;
-      width: 100%;
-      padding: 1em;
-      background-color: #21262c;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
+`
+const Li = styled.li`
+   width: 100%;
+   padding: 1em;
+   background-color: #0e1117;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
+   b {
+      color: #94a0aa;
    }
-   li {
-      width: 100%;
-      padding: 1em;
-      background-color: #0e1117;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-      b {
-         color: #94a0aa;
+   span {
+      ul {
+         margin-left: 25px;
       }
    }
+`
+const H2 = styled.h2`
+   text-align: center;
+   margin-bottom: 10px;
+   width: 100%;
+   padding: 1em;
+   background-color: #21262c;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
 `
 const Img = styled.img`
    width: 100%;

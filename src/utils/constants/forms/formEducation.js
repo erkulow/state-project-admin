@@ -1,7 +1,7 @@
 import { REGEXP_EMAIL } from '../general'
 
 export const FORM_SCHOOLS = {
-   style: '100px 150px 1fr',
+   style: '100px 1fr 150px',
    forms: [
       {
          label: 'Мектептин аты',
@@ -38,7 +38,7 @@ export const FORM_SCHOOLS = {
       },
       {
          label: 'Мектеп жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -51,7 +51,7 @@ export const FORM_SCHOOLS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

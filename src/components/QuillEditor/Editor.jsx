@@ -6,16 +6,19 @@ import 'react-quill/dist/quill.snow.css'
 import katex from 'katex'
 import 'katex/dist/katex.min.css'
 import styled, { createGlobalStyle } from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux'
 import CustomToolbar from './CustomToolbar'
+import { crudActions } from '../../store/crud-slice'
 
 window.katex = katex
 
 // Quill.register('modules/ImageResize',ImageResize);
 const Editor = (props) => {
-   const [text, setText] = useState('')
+   const dispatch = useDispatch()
+   const { editorValue } = useSelector((state) => state.crud)
 
    const handleChange = (html) => {
-      setText(html)
+      dispatch(crudActions.changeTextEditor(html))
       props.change(html)
    }
    const modules = {
@@ -51,7 +54,7 @@ const Editor = (props) => {
          <GlobalStyle />
          <CustomToolbar />
          <ReactQuill
-            value={text}
+            value={editorValue}
             onChange={handleChange}
             modules={modules}
             formats={formats}
@@ -68,6 +71,9 @@ const GlobalStyle = createGlobalStyle`
 			p{
 				color: white;
 			}
+         ul,ol{
+            color: white;
+         }
 		}
 	}
 `

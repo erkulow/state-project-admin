@@ -10,6 +10,7 @@ import { isEditHandler } from '../../store/edit-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import Input from '../UI/inputs/AuthInput'
 import Spinner from '../UI/loader/Spinner'
+import { crudActions } from '../../store/crud-slice'
 
 const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
    const dispatch = useDispatch()
@@ -23,17 +24,13 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
       reset,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
-   } = useForm({
-      mode: 'onSubmit',
-      reValidateMode: 'onSubmit',
-   })
+   } = useForm()
 
    const resetForm = () => {
+      dispatch(isEditHandler({ data: null, isEdit: false }))
+      dispatch(crudActions.changeTextEditor(null))
       reset()
-      setImages({
-         images: [],
-         files: [],
-      })
+      setImages({ images: [], files: [] })
    }
 
    const submitHandler = (data, e) => {
@@ -41,6 +38,7 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
       delete data.galery
       onGetData(data, selectedImages.files, resetForm)
    }
+
    const onDrop = (file) => {
       const img = URL.createObjectURL(file[0])
       const { files, images } = selectedImages
@@ -53,18 +51,8 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
    const deleteImgHandler = (id) => {
       const { files, images } = selectedImages
       setImages({
-         ...selectedImages,
          images: images.filter((image) => image.id !== id),
          files: files.filter((file) => file.id !== id),
-      })
-   }
-
-   const newHandler = () => {
-      dispatch(isEditHandler({ data: null, isEdit: false }))
-      reset()
-      setImages({
-         images: [],
-         files: [],
       })
    }
 
@@ -73,47 +61,40 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
    }, [])
 
    return (
-      <FormStyled
-         isValid={isValid}
-         isSubmitted={isSubmitted}
-         styleForm={dataForm.style}
-         onSubmit={handleSubmit(submitHandler)}
-      >
-         {dataForm.forms.map((item) => (
-            <Flex
-               key={item.label}
-               style={item.styles}
-               margin="0 0 10px 0"
-               direction="column"
-               gap="5px"
-            >
-               <Label>{item.label}</Label>
-               {(item.type === 'file' && (
-                  <Input
-                     disabled={isLoading}
-                     deleteHandler={deleteImgHandler}
-                     onDrop={onDrop}
-                     files={selectedImages?.images}
-                     isValid={errors[item.requestName] && !isValid}
-                     {...register(item.requestName, {
-                        validate: () =>
-                           selectedImages.images.length > 0
-                              ? true
-                              : 'Суротсуз жонотуу мумкун эмес',
-                     })}
-                     type={item.type}
-                  />
-               )) ||
-                  (item.type === 'textarea' && (
+      <FormStyled onSubmit={handleSubmit(submitHandler)}>
+         <FormControl
+            isValid={isValid}
+            isSubmitted={isSubmitted}
+            styleForm={dataForm.style}
+            direction="column"
+         >
+            {dataForm.forms.map((item) => (
+               <Flex
+                  key={item.label}
+                  style={item.styles}
+                  margin="0 0 10px 0"
+                  direction="column"
+                  gap="5px"
+               >
+                  <Label>{item.label}</Label>
+                  {(item.type === 'file' && (
                      <Input
                         disabled={isLoading}
+                        deleteHandler={deleteImgHandler}
+                        onDrop={onDrop}
+                        files={selectedImages?.images}
                         isValid={errors[item.requestName] && !isValid}
-                        change={(html) => setValue(item.requestName, html)}
-                        {...register(item.requestName, { ...item.required })}
+                        {...register(item.requestName, {
+                           validate: () =>
+                              selectedImages.images.length > 0
+                                 ? true
+                                 : 'Суротсуз жонотуу мумкун эмес',
+                        })}
                         type={item.type}
                      />
                   )) || (
                      <Input
+                        change={(html) => setValue(item.requestName, html)}
                         disabled={isLoading}
                         options={item.options}
                         isValid={errors[item.requestName] && !isValid}
@@ -121,20 +102,15 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                         type={item.type}
                      />
                   )}
-
-               <p style={{ color: 'tomato' }}>
-                  {errors[item.requestName]
-                     ? errors[item.requestName].message
-                     : ''}
-               </p>
-            </Flex>
-         ))}
-         <Flex
-            style={{ gridArea: dataForm.styleBtn || '4 / 1 / 4 / 5' }}
-            direction="column"
-            width="100%"
-            gap="20px"
-         >
+                  <p style={{ color: 'tomato', fontSize: '12px' }}>
+                     {errors[item.requestName]
+                        ? errors[item.requestName].message
+                        : ''}
+                  </p>
+               </Flex>
+            ))}
+         </FormControl>
+         <Flex direction="column" width="100%" gap="20px">
             <Button
                disabled={isLoading}
                className="btn__submit"
@@ -154,7 +130,7 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                   </Button>
                )}
                {isEdit && (
-                  <Button onClick={newHandler} className="btn_submit btn">
+                  <Button onClick={resetForm} className="btn_submit btn">
                      Жаны кошуу
                   </Button>
                )}
@@ -163,7 +139,7 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
       </FormStyled>
    )
 }
-const FormStyled = styled.form`
+const FormControl = styled(Flex)`
    width: 100%;
    display: grid;
    grid-template-columns: repeat(4, 0.5fr);
@@ -171,6 +147,8 @@ const FormStyled = styled.form`
    gap: 20px 20px;
    grid-auto-flow: column;
    -ms-grid-column-align: start;
+`
+const FormStyled = styled.form`
    .btn__submit {
       width: 100%;
       background: #245aac;

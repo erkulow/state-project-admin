@@ -3,7 +3,7 @@ import { Alert } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
-import { getData } from '../../../store/crud-slice'
+import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
 import SchoolList from './SchoolList'
 
@@ -13,6 +13,7 @@ const Panel = () => {
    useEffect(() => {
       dispatch(getData('educationSC'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
+      dispatch(crudActions.changeTextEditor(null))
    }, [])
    return (
       <Container>

@@ -36,6 +36,10 @@ export const saveDataToServer = createAsyncThunk(
          )
          return result
       } catch (error) {
+         showErrorMessage({
+            title: ':(',
+            message: 'Бир жерден ката кетти:(',
+         })
          return rejectWithValue(error.message)
       }
    }
@@ -43,6 +47,13 @@ export const saveDataToServer = createAsyncThunk(
 export const editData = createAsyncThunk(
    'editData/crud',
    async ({ data, image, clear, category }, { rejectWithValue, dispatch }) => {
+      if (category === 'leadership') {
+         if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
+         if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
+         if (data.positions === 'Айылдык өкмөтүнүн катчысы') data.type = '2'
+         if (data.positions === 'Айылдык кеңешинин төрагасы') data.type = '3'
+         if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
+      }
       try {
          const result = await baseFetch({
             path: `${API_ROUTES_EDIT[category].path}/${data.id}`,
@@ -146,12 +157,17 @@ const initialState = {
    governmentApparatus: [],
    villageCouncil: [],
    datas: [],
+   editorValue: null,
 }
 
 const crudSlice = createSlice({
    name: 'crud',
    initialState,
-   reducers: {},
+   reducers: {
+      changeTextEditor(state, action) {
+         state.editorValue = action.payload
+      },
+   },
    extraReducers: {
       [saveDataToServer.pending]: (state) => {
          state.isLoading = true
