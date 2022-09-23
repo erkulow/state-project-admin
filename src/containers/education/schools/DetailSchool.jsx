@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
 
 const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
+   const refText = useRef()
+
+   useEffect(() => {
+      refText.current.innerHTML = data.text
+   }, [data])
    return (
       <div>
          <Flex gap="30px" align="start">
@@ -28,7 +33,7 @@ const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
                      <b>Байланыш телефону:</b> {data.phoneNumber}
                   </li>
                   <li>
-                     <b>Мектеп жонундо маалымат:</b> {data.text}
+                     <b>Мектеп жонундо маалымат:</b> <li ref={refText} />
                   </li>
                </List>
                <Flex width="100%" justify="end" gap="20px">

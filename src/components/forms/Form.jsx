@@ -23,7 +23,10 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
       reset,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
-   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' })
+   } = useForm({
+      mode: 'onSubmit',
+      reValidateMode: 'onSubmit',
+   })
 
    const resetForm = () => {
       reset()
@@ -100,15 +103,24 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                      })}
                      type={item.type}
                   />
-               )) || (
-                  <Input
-                     disabled={isLoading}
-                     options={item.options}
-                     isValid={errors[item.requestName] && !isValid}
-                     {...register(item.requestName, { ...item.required })}
-                     type={item.type}
-                  />
-               )}
+               )) ||
+                  (item.type === 'textarea' && (
+                     <Input
+                        disabled={isLoading}
+                        isValid={errors[item.requestName] && !isValid}
+                        change={(html) => setValue(item.requestName, html)}
+                        {...register(item.requestName, { ...item.required })}
+                        type={item.type}
+                     />
+                  )) || (
+                     <Input
+                        disabled={isLoading}
+                        options={item.options}
+                        isValid={errors[item.requestName] && !isValid}
+                        {...register(item.requestName, { ...item.required })}
+                        type={item.type}
+                     />
+                  )}
 
                <p style={{ color: 'tomato' }}>
                   {errors[item.requestName]

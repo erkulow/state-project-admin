@@ -1,7 +1,7 @@
 import { REGEXP_EMAIL } from '../general'
 
 export const FORM_SCHOOLS = {
-   style: '100px 100px 1fr',
+   style: '100px 150px 1fr',
    forms: [
       {
          label: 'Мектептин аты',

@@ -1,14 +1,11 @@
 import { forwardRef } from 'react'
 import styled from 'styled-components'
+import Editor from '../../QuillEditor/Editor'
 import ImagePicker from '../image-picker/ImagePicker'
 
 const Input = forwardRef((props, ref) => {
    if (props.type === 'textarea') {
-      return (
-         <TextArea ref={ref} type={null} {...props}>
-            {props.chilren}
-         </TextArea>
-      )
+      return <Editor {...props} ref={ref} type={null} />
    }
    if (props.type === 'file') {
       return <ImagePicker ref={ref} {...props} />
