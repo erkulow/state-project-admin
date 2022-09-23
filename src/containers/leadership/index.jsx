@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Form from '../../components/forms/Form'
 import FullWidthTabs from '../../components/tabs'
 import { TabPanel } from '../../components/tabs/TabPanel'
-import { editLeadership, saveLeaderships } from '../../store/leadership-slice'
+import { editData, saveDataToServer } from '../../store/crud-slice'
 import { tabActions } from '../../store/tab-slice'
 import { FORM_LEADERSHIP } from '../../utils/constants/forms/formLeadership'
 import Panel from './Panel'
@@ -12,24 +12,31 @@ const Employees = () => {
    const dispatch = useDispatch()
    const value = useSelector((state) => state.tab.tabValue)
    const { isEdit, changingObj } = useSelector((state) => state.edit)
-   const { isLoading, isLoadingUpload } = useSelector(
-      (state) => state.leadership
-   )
+   const { isLoading, isLoadingUpload } = useSelector((state) => state.crud)
 
    const handleChange = (_, newValue) => {
       dispatch(tabActions.tabChange(newValue))
    }
 
+   const clear = (reset) => {
+      reset()
+      dispatch(tabActions.tabChange(1))
+   }
+
    const getDataHandler = (data, image, reset) => {
-      const clear = () => {
-         reset()
-         dispatch(tabActions.tabChange(1))
-      }
       if (isEdit) {
-         const { id, type } = changingObj && changingObj
-         dispatch(editLeadership({ data: { ...data, id, type }, image, clear }))
+         const { id, type } = changingObj
+         const editingData = {
+            data: { ...data, id, type },
+            image,
+            clear: clear.bind(null, reset),
+            category: 'leadership',
+         }
+         dispatch(editData(editingData))
       } else {
-         dispatch(saveLeaderships({ data, image, reset }))
+         dispatch(
+            saveDataToServer({ data, image, reset, category: 'leadership' })
+         )
       }
    }
 

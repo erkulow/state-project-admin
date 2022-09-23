@@ -6,23 +6,33 @@ import {
    showErrorMessage,
    showSuccessMessage,
 } from '../components/UI/notification/Notification'
+import {
+   API_ROUTES_DELETE,
+   API_ROUTES_EDIT,
+   API_ROUTES_GET,
+   API_ROUTES_SAVE,
+   API_ROUTES_UPLOAD,
+} from '../utils/constants/api-routes/general'
 
-export const saveLeaderships = createAsyncThunk(
-   'saveLeaderships/leadership',
-   async ({ data, image, reset }, { rejectWithValue, dispatch }) => {
-      if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
-      if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
-      if (data.positions === 'Айылдык өкмөтүнүн катчысы') data.type = '2'
-      if (data.positions === 'Айылдык кеңешинин төрагасы') data.type = '3'
-      if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
+export const saveDataToServer = createAsyncThunk(
+   'saveDataToServer/crud',
+   async ({ data, image, reset, category }, { rejectWithValue, dispatch }) => {
+      if (category === 'leadership') {
+         if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
+         if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
+         if (data.positions === 'Айылдык өкмөтүнүн катчысы') data.type = '2'
+         if (data.positions === 'Айылдык кеңешинин төрагасы') data.type = '3'
+         if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
+      }
+
       try {
          const result = await baseFetch({
-            path: 'homePage/employees/save',
+            path: `${API_ROUTES_SAVE[category].path}`,
             method: 'POST',
             body: data,
          })
          await dispatch(
-            uploadImage({ image, idLeadershipData: result.id, reset })
+            uploadImage({ image, idLeadershipData: result.id, reset, category })
          )
          return result
       } catch (error) {
@@ -30,12 +40,12 @@ export const saveLeaderships = createAsyncThunk(
       }
    }
 )
-export const editLeadership = createAsyncThunk(
-   'saveLeaderships/leadership',
-   async ({ data, image, clear }, { rejectWithValue, dispatch }) => {
+export const editData = createAsyncThunk(
+   'editData/crud',
+   async ({ data, image, clear, category }, { rejectWithValue, dispatch }) => {
       try {
          const result = await baseFetch({
-            path: `homePage/employees/${data.id}`,
+            path: `${API_ROUTES_EDIT[category].path}/${data.id}`,
             method: 'PATCH',
             body: data,
          })
@@ -45,12 +55,13 @@ export const editLeadership = createAsyncThunk(
                   image,
                   idLeadershipData: data.id,
                   reset: clear,
+                  category,
                })
             )
          } else {
             showSuccessMessage({
                title: 'Ура',
-               message: 'Кызматкер ийгиликтуу кошулду:)',
+               message: 'ийгиликтуу озгорду:)',
             })
             clear()
          }
@@ -62,20 +73,23 @@ export const editLeadership = createAsyncThunk(
    }
 )
 export const uploadImage = createAsyncThunk(
-   'uploadImage/leadership',
-   async ({ image, idLeadershipData, reset }, { rejectWithValue }) => {
+   'uploadImage/crud',
+   async (
+      { image, idLeadershipData, reset, category },
+      { rejectWithValue }
+   ) => {
       const formData = new FormData()
       formData.append('firstPhoto', image[0].file)
       try {
          const result = await fetchFile({
-            path: `homePage/employees/upload-file/${idLeadershipData}`,
+            path: `${API_ROUTES_UPLOAD[category].path}/${idLeadershipData}`,
             method: 'POST',
             body: formData,
          })
          reset()
          showSuccessMessage({
             title: 'Ура',
-            message: 'Кызматкер ийгиликтуу кошулду:)',
+            message: 'ийгиликтуу кошулду:)',
          })
          return result
       } catch (error) {
@@ -87,27 +101,27 @@ export const uploadImage = createAsyncThunk(
       }
    }
 )
-export const getLeaderships = createAsyncThunk(
-   'getLeadership/leadership',
-   async (_, { rejectWithValue }) => {
+export const getData = createAsyncThunk(
+   'getData/crud',
+   async (category, { rejectWithValue }) => {
       try {
-         const result = baseFetch({
-            path: 'agriculture/acEvent/employees',
+         const result = await baseFetch({
+            path: `${API_ROUTES_GET[category].path}`,
             method: 'GET',
          })
-         return result
+         return { result, category }
       } catch (error) {
          showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })
          return rejectWithValue(error.message)
       }
    }
 )
-export const deleteLeaderships = createAsyncThunk(
-   'deleteLeadership/leadership',
-   async (id, { rejectWithValue, dispatch }) => {
+export const deleteData = createAsyncThunk(
+   'deleteData/crud',
+   async ({ id, category }, { rejectWithValue, dispatch }) => {
       try {
          const result = await baseFetch({
-            path: `homePage/employees/${id}`,
+            path: `${API_ROUTES_DELETE[category].path}/${id}`,
             method: 'DELETE',
             isDelete: true,
          })
@@ -116,11 +130,11 @@ export const deleteLeaderships = createAsyncThunk(
                title: 'Ура!',
                message: 'Ийгиликтуу очурулду',
             })
-            dispatch(getLeaderships())
+            dispatch(getData(category))
          }
          return result
       } catch (error) {
-         showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })
+         showErrorMessage({ title: 'Ката', message: 'Что то пошло не так:(' })
          return rejectWithValue(error.message)
       }
    }
@@ -131,39 +145,39 @@ const initialState = {
    government: [],
    governmentApparatus: [],
    villageCouncil: [],
-   oneLeadership: null,
-   isEdit: false,
+   datas: [],
 }
 
-const leadershipSlice = createSlice({
-   name: 'leadership',
+const crudSlice = createSlice({
+   name: 'crud',
    initialState,
-   reducers: {
-      isEdit(state, action) {
-         state.isEdit = action.payload.isEdit
-         state.oneLeadership = action.payload.data
-      },
-   },
+   reducers: {},
    extraReducers: {
-      [saveLeaderships.pending]: (state) => {
+      [saveDataToServer.pending]: (state) => {
          state.isLoading = true
       },
-      [saveLeaderships.fulfilled]: (state) => {
+      [saveDataToServer.fulfilled]: (state) => {
          state.isLoading = false
       },
-      [saveLeaderships.rejected]: (state) => {
+      [saveDataToServer.rejected]: (state) => {
          state.isLoading = false
       },
-      [getLeaderships.pending]: (state) => {
+      [getData.pending]: (state) => {
          state.isLoading = true
       },
-      [getLeaderships.fulfilled]: (state, { payload }) => {
+      [getData.fulfilled]: (state, { payload: { result, category } }) => {
          state.isLoading = false
-         state.government = payload.filter((item) => item.type === '1')
-         state.governmentApparatus = payload.filter((item) => item.type === '2')
-         state.villageCouncil = payload.filter((item) => item.type === '3')
+         if (category === 'leadership') {
+            state.government = result.filter((item) => item.type === '1')
+            state.governmentApparatus = result.filter(
+               (item) => item.type === '2'
+            )
+            state.villageCouncil = result.filter((item) => item.type === '3')
+         } else {
+            state.datas = result
+         }
       },
-      [getLeaderships.rejected]: (state) => {
+      [getData.rejected]: (state) => {
          state.isLoading = false
       },
       [uploadImage.pending]: (state) => {
@@ -175,16 +189,16 @@ const leadershipSlice = createSlice({
       [uploadImage.rejected]: (state) => {
          state.isLoadingUpload = false
       },
-      [deleteLeaderships.pending]: (state) => {
+      [deleteData.pending]: (state) => {
          state.isLoading = true
       },
-      [deleteLeaderships.fulfilled]: (state) => {
+      [deleteData.fulfilled]: (state) => {
          state.isLoading = false
       },
-      [deleteLeaderships.rejected]: (state) => {
+      [deleteData.rejected]: (state) => {
          state.isLoading = false
       },
    },
 })
-export const leadershipActions = leadershipSlice.actions
-export default leadershipSlice
+export const crudActions = crudSlice.actions
+export default crudSlice

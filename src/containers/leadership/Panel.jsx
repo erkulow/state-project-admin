@@ -3,17 +3,17 @@ import { Alert } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../store/edit-slice'
-import { getLeaderships } from '../../store/leadership-slice'
+import { getData } from '../../store/crud-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import LeadershipList from './LeadershipList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { government, governmentApparatus, villageCouncil } = useSelector(
-      (state) => state.leadership
+      (state) => state.crud
    )
    useEffect(() => {
-      dispatch(getLeaderships())
+      dispatch(getData('leadership'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
    }, [])
 
