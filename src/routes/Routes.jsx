@@ -6,6 +6,7 @@ import TemplateLeaderShipPages from '../components/temaplate-leadership-pages'
 import Admin from '../containers/admin'
 import Circles from '../containers/education/circles'
 import Events from '../containers/education/events'
+import GRT from '../containers/education/GRT'
 import Olympiads from '../containers/education/olympiads'
 import Layout from '../layout'
 import { ROUTES } from '../utils/constants/routes'
@@ -93,28 +94,30 @@ const CulturalWorkers = React.lazy(() =>
 const CulturalActivities = React.lazy(() =>
    import('../containers/culture/cultural-activities')
 )
-const OKM = React.lazy(()=>import('../containers/okm'))
-const Celebrities = React.lazy(()=>import('../containers/celebrities'))
-const CleanLines = React.lazy(()=>import('../containers/cleanlines'))
-const NewsAndAnnouncements = React.lazy(()=>import('../containers/news-announcements'))
+const OKM = React.lazy(() => import('../containers/okm'))
+const Celebrities = React.lazy(() => import('../containers/celebrities'))
+const CleanLines = React.lazy(() => import('../containers/cleanlines'))
+const NewsAndAnnouncements = React.lazy(() =>
+   import('../containers/news-announcements')
+)
 
 const AppRoutes = () => {
    const { isAuthorized } = useSelector((state) => state.auth)
    const {
-       login,
-       admin,
-       leadership,
-       education, 
-       healthCare,
-       religiousAffairs,
-       youthAffairs, 
-       agriculture,
-       culture,
-       okm,
-       celebrities,
-       cleanliness,
-       newsAndAnnouncements,
-         } = ROUTES
+      login,
+      admin,
+      leadership,
+      education,
+      healthCare,
+      religiousAffairs,
+      youthAffairs,
+      agriculture,
+      culture,
+      okm,
+      celebrities,
+      cleanliness,
+      newsAndAnnouncements,
+   } = ROUTES
    return (
       <Routes>
          <Route
@@ -146,6 +149,7 @@ const AppRoutes = () => {
                <Route path={education.iyrymder.path} element={<Circles />} />
                <Route path={education.аctivities.path} element={<Events />} />
                <Route path={education.olympiads.path} element={<Olympiads />} />
+               <Route path={education.GRT.path} element={<GRT />} />
 
                <Route
                   path={healthCare.hospitals.path}
@@ -248,12 +252,19 @@ const AppRoutes = () => {
                   path={culture.culturalActivities.path}
                   element={<CulturalActivities />}
                />
-               <Route path={okm.okm.path} element={<OKM/>} />
-               <Route path={celebrities.celebrities.path} element={<Celebrities/>} />
-               <Route path={cleanliness.cleanline.path} element={<CleanLines/>} />
-               <Route path={newsAndAnnouncements.newsAndAnnouncements.path}
-                element={<NewsAndAnnouncements/>}
-                 />
+               <Route path={okm.okm.path} element={<OKM />} />
+               <Route
+                  path={celebrities.celebrities.path}
+                  element={<Celebrities />}
+               />
+               <Route
+                  path={cleanliness.cleanline.path}
+                  element={<CleanLines />}
+               />
+               <Route
+                  path={newsAndAnnouncements.newsAndAnnouncements.path}
+                  element={<NewsAndAnnouncements />}
+               />
             </Route>
          </Route>
       </Routes>

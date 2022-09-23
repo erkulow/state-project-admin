@@ -61,7 +61,7 @@ export const FORM_SCHOOLS = {
    ],
 }
 export const FORM_KINGERGARTENS = {
-   style: '100px 100px 1fr',
+   style: '100px 1fr 150px',
    forms: [
       {
          label: 'Бала бакчанын аты',
@@ -120,7 +120,7 @@ export const FORM_KINGERGARTENS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -130,7 +130,7 @@ export const FORM_KINGERGARTENS = {
    ],
 }
 export const FORM_CIRCLES = {
-   style: '100px 100px 1fr',
+   style: '100px 1fr 150px',
    forms: [
       {
          label: 'Ийримдин аты',
@@ -150,7 +150,7 @@ export const FORM_CIRCLES = {
       },
       {
          label: 'Маалымат',
-         styles: { gridArea: '2 / 1 / 2 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'info',
          type: 'textarea',
          required: {
@@ -168,7 +168,7 @@ export const FORM_CIRCLES = {
       },
       {
          label: 'Add photo',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -178,11 +178,11 @@ export const FORM_CIRCLES = {
    ],
 }
 export const FORM_EVENTS = {
-   style: '100px 1fr',
+   style: '170px 1fr',
    forms: [
       {
          label: 'Маалымат',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -195,7 +195,7 @@ export const FORM_EVENTS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -205,11 +205,11 @@ export const FORM_EVENTS = {
    ],
 }
 export const FORM_OLYMPIADS = {
-   style: '100px 1fr',
+   style: '170px 1fr',
    forms: [
       {
          label: 'Маалымат',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -221,8 +221,8 @@ export const FORM_OLYMPIADS = {
          },
       },
       {
-         label: 'Add photo',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         label: 'Сурот кошуу',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -232,13 +232,13 @@ export const FORM_OLYMPIADS = {
    ],
 }
 export const FORM_GRT = {
-   style: '90px 0.5fr',
+   style: '170px 1fr',
    forms: [
       {
          label: 'Маалымат',
-         type: 'textarea',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
+         type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
             minLength: {
@@ -248,8 +248,8 @@ export const FORM_GRT = {
          },
       },
       {
-         label: 'Add photo',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         label: 'Сурот кошуу',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

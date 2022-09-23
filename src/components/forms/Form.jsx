@@ -57,7 +57,7 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
    }
 
    useEffect(() => {
-      onGetSetValue(setValue, setImages)
+      if (isEdit) onGetSetValue(setValue, setImages)
    }, [])
 
    return (
