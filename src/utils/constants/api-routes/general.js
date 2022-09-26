@@ -8,6 +8,9 @@ export const API_ROUTES_SAVE = {
    educationDrivingSC: {
       path: 'education/drivingSchool/save',
    },
+   educationCircles: {
+      path: 'education/circles/save',
+   },
 }
 export const API_ROUTES_EDIT = {
    leadership: {
@@ -18,6 +21,9 @@ export const API_ROUTES_EDIT = {
    },
    educationDrivingSC: {
       path: 'education/drivingSchool',
+   },
+   educationCircles: {
+      path: 'education/circles',
    },
 }
 export const API_ROUTES_DELETE = {
@@ -30,6 +36,9 @@ export const API_ROUTES_DELETE = {
    educationDrivingSC: {
       path: 'education/drivingSchool',
    },
+   educationCircles: {
+      path: 'education/circles',
+   },
 }
 export const API_ROUTES_UPLOAD = {
    leadership: {
@@ -41,6 +50,9 @@ export const API_ROUTES_UPLOAD = {
    educationDrivingSC: {
       path: 'education/drivingSchool/upload-file',
    },
+   educationCircles: {
+      path: 'education/circles/upload-file',
+   },
 }
 export const API_ROUTES_GET = {
    leadership: {
@@ -51,5 +63,8 @@ export const API_ROUTES_GET = {
    },
    educationDrivingSC: {
       path: 'agriculture/acEvent/drivingSchool',
+   },
+   educationCircles: {
+      path: 'agriculture/acEvent/circles',
    },
 }

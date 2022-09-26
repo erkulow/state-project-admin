@@ -1,6 +1,9 @@
 /* eslint-disable no-alert */
-
 import { CATEGORYES } from '../constants/categoryes'
+import { tabActions } from '../../store/tab-slice'
+import { crudActions, editData, saveDataToServer } from '../../store/crud-slice'
+
+import store from '../../store'
 
 export const saveToSessionStorage = (key, data) => {
    try {
@@ -18,39 +21,6 @@ export const getDataFromSessionStorage = (key) => {
 }
 export const removeWithKeyFromSessionStorage = (key) => {
    sessionStorage.removeItem(key)
-}
-
-export const paramsSet = (value, key, setParams, params) => {
-   params.set(key, value)
-   setParams(params)
-   if (value === '') {
-      params.delete(key)
-      setParams(params)
-   }
-}
-export const getParams = (key, mode = 'get') => {
-   const url = new URLSearchParams(window.location.search)
-   if (mode === 'values') {
-      const value = url.values()
-      return value
-   }
-   if (mode === 'get') {
-      const value = url.get(key)
-      return value
-   }
-   return null
-}
-export function getNumberOfDays(start, end) {
-   const startDate = new Date(start)
-   const endDate = new Date(end)
-
-   const oneDay = 1000 * 60 * 60 * 24
-
-   const diffInTime = endDate.getTime() - startDate.getTime()
-
-   const diffInDays = Math.round(diffInTime / oneDay)
-
-   return diffInDays
 }
 
 export const convertDateInToString = (date) => {
@@ -116,4 +86,58 @@ export const findOneCategory = (pathname) => {
       })
    )
    return oneCategory
+}
+
+const clear = (reset) => {
+   reset()
+   store.dispatch(tabActions.tabChange(1))
+}
+
+export const sendOrEditData = ({
+   reset,
+   data,
+   image,
+   category,
+   isEdit,
+   changingObj,
+}) => {
+   if (isEdit) {
+      const editingData = {
+         data: { ...data, id: changingObj.id },
+         clear: clear.bind(null, reset),
+         category,
+         image,
+      }
+      store.dispatch(editData(editingData))
+   } else {
+      store.dispatch(
+         saveDataToServer({
+            data,
+            image,
+            reset: clear.bind(null, reset),
+            category,
+         })
+      )
+   }
+}
+
+export const putInDataForm = ({
+   setValue,
+   setImages,
+   dataForm,
+   template = 'text',
+   isEdit,
+   changingObj,
+}) => {
+   if (changingObj && isEdit) {
+      dataForm.forms.map((item) => {
+         setValue(item.requestName, changingObj[item.requestName])
+         return null
+      })
+      store.dispatch(crudActions.changeTextEditor(changingObj[template]))
+      setImages({
+         images: [{ img: changingObj.fileInformation.photo, id: '1' }],
+         files: [],
+      })
+   }
 }

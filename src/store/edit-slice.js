@@ -5,6 +5,7 @@ const editSlice = createSlice({
    initialState: { changingObj: null, isEdit: false },
    reducers: {
       isEditHandler(state, action) {
+         console.log(action.payload)
          state.isEdit = action.payload.isEdit
          state.changingObj = action.payload.data
       },

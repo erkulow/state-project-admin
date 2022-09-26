@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import Form from '../../components/forms/Form'
 import FullWidthTabs from '../../components/tabs'
 import { TabPanel } from '../../components/tabs/TabPanel'
-import { editData, saveDataToServer } from '../../store/crud-slice'
 import { tabActions } from '../../store/tab-slice'
 import { FORM_LEADERSHIP } from '../../utils/constants/forms/formLeadership'
+import { putInDataForm, sendOrEditData } from '../../utils/helpers/general'
 import Panel from './Panel'
 
 const Employees = () => {
@@ -18,39 +18,15 @@ const Employees = () => {
       dispatch(tabActions.tabChange(newValue))
    }
 
-   const clear = (reset) => {
-      reset()
-      dispatch(tabActions.tabChange(1))
-   }
-
    const getDataHandler = (data, image, reset) => {
-      if (isEdit) {
-         const { id, type } = changingObj
-         const editingData = {
-            data: { ...data, id, type },
-            image,
-            clear: clear.bind(null, reset),
-            category: 'leadership',
-         }
-         dispatch(editData(editingData))
-      } else {
-         dispatch(
-            saveDataToServer({ data, image, reset, category: 'leadership' })
-         )
-      }
-   }
-
-   const putInDataForm = (setValue, setImages) => {
-      if (changingObj && isEdit) {
-         FORM_LEADERSHIP.forms.map((item) => {
-            setValue(item.requestName, changingObj[item.requestName])
-            return null
-         })
-         setImages({
-            images: [{ img: changingObj.fileInformation.photo, id: '1' }],
-            files: [],
-         })
-      }
+      sendOrEditData({
+         isEdit,
+         changingObj,
+         reset,
+         data,
+         image,
+         category: 'leadership',
+      })
    }
 
    return (
@@ -60,8 +36,16 @@ const Employees = () => {
                isLoading={isLoading || isLoadingUpload}
                onGetData={getDataHandler}
                dataForm={FORM_LEADERSHIP}
-               onGetSetValue={putInDataForm}
                isEdit={isEdit}
+               onGetSetValue={({ setValue, setImages }) =>
+                  putInDataForm({
+                     dataForm: FORM_LEADERSHIP,
+                     setImages,
+                     setValue,
+                     isEdit,
+                     changingObj,
+                  })
+               }
             />
          </TabPanel>
          <TabPanel index={1} value={value}>
