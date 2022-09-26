@@ -2,22 +2,22 @@
 
 import { CATEGORYES } from '../constants/categoryes'
 
-export const saveToLocalStorage = (key, data) => {
+export const saveToSessionStorage = (key, data) => {
    try {
-      localStorage.setItem(key, JSON.stringify(data))
+      sessionStorage.setItem(key, JSON.stringify(data))
    } catch (error) {
       window.alert(error.message)
    }
 }
-export const getDataFromLocalStorage = (key) => {
+export const getDataFromSessionStorage = (key) => {
    try {
-      return JSON.parse(localStorage.getItem(key))
+      return JSON.parse(sessionStorage.getItem(key))
    } catch (error) {
       return window.alert(error.message)
    }
 }
-export const removeWithKeyFromLocalStorage = (key) => {
-   localStorage.removeItem(key)
+export const removeWithKeyFromSessionStorage = (key) => {
+   sessionStorage.removeItem(key)
 }
 
 export const paramsSet = (value, key, setParams, params) => {

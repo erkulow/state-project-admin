@@ -4,7 +4,7 @@ import {
    showSuccessMessage,
 } from '../components/UI/notification/Notification'
 import { baseFetch } from '../api/baseFetch'
-import { getDataFromLocalStorage } from '../utils/helpers/general'
+import { getDataFromSessionStorage } from '../utils/helpers/general'
 import { _KEY_AUTH } from '../utils/constants/general'
 
 export const loginAsAdmin = createAsyncThunk(
@@ -31,7 +31,7 @@ export const loginAsAdmin = createAsyncThunk(
       }
    }
 )
-const localData = getDataFromLocalStorage(_KEY_AUTH) || {}
+const localData = getDataFromSessionStorage(_KEY_AUTH) || {}
 const initialState = {
    token: localData?.token || null,
    isAuthorized: localData?.isAuthorized || false,
