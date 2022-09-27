@@ -7,25 +7,36 @@ import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
 
-const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailKindergartens = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
       refText.current.innerHTML = data.text
    }, [data])
-
    return (
       <div>
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">Иш-чаранын суроту</TitlePosition>
+               <TitlePosition size="20px">{data.schoolName}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Иш-чара жонундо маалымат</H2>
+                  <H2>Мектеп жонундо маалымат</H2>
                   <Li>
-                     <b>Иш-чаранын аталышы:</b> {data.title}
+                     <b>Диретордун аты-жону:</b> {data.directorFullName}
+                  </Li>
+                  <Li>
+                     <b>Бала бакчанын тили:</b> {data.language}
+                  </Li>
+                  <Li>
+                     <b>Адрес:</b> {data.address}
+                  </Li>
+                  <Li>
+                     <b>Электрондук почтасы:</b> {data.email}
+                  </Li>
+                  <Li>
+                     <b>Байланыш телефону:</b> {data.phoneNumber}
                   </Li>
                   <Li>
                      <b>Мектеп жонундо маалымат:</b> <span ref={refText} />
@@ -117,4 +128,4 @@ const Img = styled.img`
    height: 100%;
 `
 
-export default DetailEvent
+export default DetailKindergartens

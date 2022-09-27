@@ -14,6 +14,9 @@ export const API_ROUTES_SAVE = {
    educationEvents: {
       path: 'education/bEvent/save',
    },
+   educationKinger: {
+      path: 'education/kindergartens/save',
+   },
 }
 export const API_ROUTES_EDIT = {
    leadership: {
@@ -30,6 +33,9 @@ export const API_ROUTES_EDIT = {
    },
    educationEvents: {
       path: 'education/bEvent',
+   },
+   educationKinger: {
+      path: 'education/kindergartens',
    },
 }
 export const API_ROUTES_DELETE = {
@@ -48,6 +54,9 @@ export const API_ROUTES_DELETE = {
    educationEvents: {
       path: 'education/bEvent',
    },
+   educationKinger: {
+      path: 'education/kindergartens',
+   },
 }
 export const API_ROUTES_UPLOAD = {
    leadership: {
@@ -65,6 +74,9 @@ export const API_ROUTES_UPLOAD = {
    educationEvents: {
       path: 'education/bEvent/upload-file',
    },
+   educationKinger: {
+      path: 'education/kindergartens/upload-file',
+   },
 }
 export const API_ROUTES_GET = {
    leadership: {
@@ -81,5 +93,8 @@ export const API_ROUTES_GET = {
    },
    educationEvents: {
       path: 'agriculture/acEvent/moeEvent',
+   },
+   educationKinger: {
+      path: 'agriculture/acEvent/kindergartens',
    },
 }
