@@ -4,17 +4,16 @@ import React, { useState } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import Text from '../../components/UI/typography/Text'
-import Title from '../../components/UI/typography/Title'
-import { Flex } from '../../styles/style-for-positions/style'
-import ModalDelete from '../../components/UI/modals/modalDelete'
-import { deleteData } from '../../store/crud-slice'
-import Modal from '../../components/UI/modals/modal-container/Modal'
-import DetailLeadership from './DetailLeadership'
-import { tabActions } from '../../store/tab-slice'
-import { isEditHandler } from '../../store/edit-slice'
+import Title from '../../../components/UI/typography/Title'
+import { Flex } from '../../../styles/style-for-positions/style'
+import ModalDelete from '../../../components/UI/modals/modalDelete'
+import { deleteData } from '../../../store/crud-slice'
+import Modal from '../../../components/UI/modals/modal-container/Modal'
+import { tabActions } from '../../../store/tab-slice'
+import { isEditHandler } from '../../../store/edit-slice'
+import DetailEvent from './DetailEvent'
 
-const LeadershipList = ({ item }) => {
+const EventsList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -37,31 +36,30 @@ const LeadershipList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailLeadership
+            <DetailEvent
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
             />
          </Modal>
          <Section onClick={showDetailHandler}>
-            <ContainerFlex width="100%" gap="20px" align="center">
-               <WrapperImage width="10%">
+            <Flex width="100%" gap="20px" align="center">
+               <Flex width="10%">
                   <Image src={item?.fileInformation?.photo} />
-               </WrapperImage>
-               <WrapperText
+               </Flex>
+               <Flex
                   width="50%"
                   direction="column"
                   gap="10px"
                   align="flex-start"
                >
-                  <TitleLead uppercase size="20px" color="#7d97b8">
-                     {item?.firstName} {item?.lastName} {item?.patronymic}
-                  </TitleLead>
-                  <TextLead size="16px">{item?.positions}</TextLead>
-               </WrapperText>
-               <WrapperButtons width="40%" justify="center" gap="20px">
+                  <Title uppercase size="20px" color="#7d97b8">
+                     {item?.title}
+                  </Title>
+               </Flex>
+               <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
-                     <MdModeEditOutline /> <span>Озгортуу</span>
+                     <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
                   <ButtonDelete
                      onClick={(e) => {
@@ -69,15 +67,17 @@ const LeadershipList = ({ item }) => {
                         setShowDeleteModal(true)
                      }}
                   >
-                     <AiFillDelete /> <span>Очуруп салуу</span>
+                     <AiFillDelete /> Очуруп салуу
                   </ButtonDelete>
-               </WrapperButtons>
-            </ContainerFlex>
+               </Flex>
+            </Flex>
          </Section>
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'leadership' }))
+               dispatch(
+                  deleteData({ id: item.id, category: 'educationEvents' })
+               )
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -85,41 +85,6 @@ const LeadershipList = ({ item }) => {
       </>
    )
 }
-const ContainerFlex = styled(Flex)`
-   @media screen and (max-width: 550px) {
-      justify-content: space-between;
-      gap: 5px;
-   }
-`
-const WrapperText = styled(Flex)`
-   @media screen and (max-width: 550px) {
-      width: 60%;
-   }
-`
-const WrapperImage = styled(Flex)`
-   @media screen and (max-width: 550px) {
-      width: 25%;
-   }
-`
-const WrapperButtons = styled(Flex)`
-   @media screen and (max-width: 550px) {
-      flex-direction: column;
-      width: 15%;
-      span {
-         display: none;
-      }
-   }
-`
-const TitleLead = styled(Title)`
-   @media screen and (max-width: 550px) {
-      font-size: 12px;
-   }
-`
-const TextLead = styled(Text)`
-   @media screen and (max-width: 550px) {
-      font-size: 10px;
-   }
-`
 const ButtonEdit = styled(Button)`
    color: green;
    display: flex;
@@ -130,10 +95,6 @@ const ButtonEdit = styled(Button)`
       background-color: #27c36a25;
       border: none;
    }
-   @media screen and (max-width: 550px) {
-      font-size: 10px;
-      width: 20px !important;
-   }
 `
 const ButtonDelete = styled(Button)`
    color: tomato;
@@ -142,9 +103,6 @@ const ButtonDelete = styled(Button)`
    gap: 4px;
    :hover {
       background-color: #ff634729;
-   }
-   @media screen and (max-width: 550px) {
-      font-size: 10px;
    }
 `
 const Section = styled.div`
@@ -160,10 +118,6 @@ const Section = styled.div`
    :active {
       opacity: 0.5;
    }
-
-   @media screen and (max-width: 550px) {
-      padding: 0.4rem;
-   }
 `
 const Image = styled.img`
    width: 100%;
@@ -172,4 +126,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default LeadershipList
+export default EventsList

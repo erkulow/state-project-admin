@@ -60,8 +60,68 @@ export const FORM_SCHOOLS = {
       },
    ],
 }
-export const FORM_KINGERGARTENS = {
+export const FORM_DRIVING_SCHOOLS = {
    style: '100px 1fr 150px',
+   forms: [
+      {
+         label: 'Авто мектептин аты',
+         styles: { gridArea: '1 / 1 / 3 / 2' },
+         requestName: 'drivingCourseName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Директордун аты-жонү',
+         styles: { gridArea: '1 / 2 / 2 / 3' },
+         requestName: 'director',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Дареги',
+         styles: { gridArea: '1 / 3 / 2 / 4' },
+         requestName: 'address',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Байланыш телефону',
+         styles: { gridArea: '1 / 4 / 3 / 5' },
+         requestName: 'phoneNumber',
+         type: 'number',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Мектеп жөнүндө маалымат',
+         styles: { gridArea: '3 / 1 / 5 / 5' },
+         requestName: 'text',
+         type: 'textarea',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            minLength: {
+               value: 80,
+               message: 'Символдордун саны 80ден кем болбошу керек',
+            },
+         },
+      },
+      {
+         label: 'Сурот кошуу',
+         styles: { gridArea: '2 / 1 / 3 / 5' },
+         requestName: 'galery',
+         type: 'file',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
+   ],
+}
+export const FORM_KINGERGARTENS = {
+   style: '100px 100px 150px 1fr',
    forms: [
       {
          label: 'Бала бакчанын аты',
@@ -113,7 +173,7 @@ export const FORM_KINGERGARTENS = {
          styles: { gridArea: '2 / 3 / 5 / 5' },
          requestName: 'language',
          type: 'select',
-         options: ['Кыргыз тили', 'Орус тили', 'Англис тили'],
+         options: ['', 'Кыргыз тили', 'Орус тили', 'Англис тили'],
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -125,6 +185,19 @@ export const FORM_KINGERGARTENS = {
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
+         },
+      },
+      {
+         label: 'Бала-бакча жонундо маалымат',
+         styles: { gridArea: '5 / 1 / 5 / 5' },
+         requestName: 'text',
+         type: 'textarea',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            minLength: {
+               value: 100,
+               message: '100 белгиден аз болбосун',
+            },
          },
       },
    ],
@@ -178,11 +251,19 @@ export const FORM_CIRCLES = {
    ],
 }
 export const FORM_EVENTS = {
-   style: '170px 1fr',
+   style: '100px 170px 1fr',
    forms: [
       {
+         label: 'Иш-чаранын аталышы',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
+         requestName: 'title',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
          label: 'Маалымат',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -195,7 +276,7 @@ export const FORM_EVENTS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

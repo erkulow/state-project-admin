@@ -5,6 +5,18 @@ export const API_ROUTES_SAVE = {
    educationSC: {
       path: 'education/schools/save',
    },
+   educationDrivingSC: {
+      path: 'education/drivingSchool/save',
+   },
+   educationCircles: {
+      path: 'education/circles/save',
+   },
+   educationEvents: {
+      path: 'education/bEvent/save',
+   },
+   educationKinger: {
+      path: 'education/kindergartens/save',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/save',
    },
@@ -21,6 +33,7 @@ export const API_ROUTES_SAVE = {
       path: 'youthAffairs/enterprisingYouth/save',
    },
 }
+
 export const API_ROUTES_EDIT = {
    leadership: {
       path: 'homePage/employees',
@@ -28,6 +41,18 @@ export const API_ROUTES_EDIT = {
    educationSC: {
       path: 'education/schools',
    },
+   educationDrivingSC: {
+      path: 'education/drivingSchool',
+   },
+   educationCircles: {
+      path: 'education/circles',
+   },
+   educationEvents: {
+      path: 'education/bEvent',
+   },
+   educationKinger: {
+      path: 'education/kindergartens',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives',
    },
@@ -44,6 +69,7 @@ export const API_ROUTES_EDIT = {
       path: 'youthAffairs/enterprisingYouth',
    },
 }
+
 export const API_ROUTES_DELETE = {
    leadership: {
       path: 'homePage/employees',
@@ -51,6 +77,18 @@ export const API_ROUTES_DELETE = {
    educationSC: {
       path: 'education/schools',
    },
+   educationDrivingSC: {
+      path: 'education/drivingSchool',
+   },
+   educationCircles: {
+      path: 'education/circles',
+   },
+   educationEvents: {
+      path: 'education/bEvent',
+   },
+   educationKinger: {
+      path: 'education/kindergartens',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives',
    },
@@ -67,12 +105,25 @@ export const API_ROUTES_DELETE = {
       path: 'youthAffairs/enterprisingYouth',
    },
 }
+
 export const API_ROUTES_UPLOAD = {
    leadership: {
       path: 'homePage/employees/upload-file',
    },
    educationSC: {
       path: 'education/schools/upload-file',
+   },
+   educationDrivingSC: {
+      path: 'education/drivingSchool/upload-file',
+   },
+   educationCircles: {
+      path: 'education/circles/upload-file',
+   },
+   educationEvents: {
+      path: 'education/bEvent/upload-file',
+   },
+   educationKinger: {
+      path: 'education/kindergartens/upload-file',
    },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/upload-file',
@@ -90,12 +141,25 @@ export const API_ROUTES_UPLOAD = {
       path: 'youthAffairs/enterprisingYouth/upload-file',
    },
 }
+
 export const API_ROUTES_GET = {
    leadership: {
       path: 'agriculture/acEvent/employees',
    },
    educationSC: {
       path: 'agriculture/acEvent/schools',
+   },
+   educationDrivingSC: {
+      path: 'agriculture/acEvent/drivingSchool',
+   },
+   educationCircles: {
+      path: 'agriculture/acEvent/circles',
+   },
+   educationEvents: {
+      path: 'agriculture/acEvent/moeEvent',
+   },
+   educationKinger: {
+      path: 'agriculture/acEvent/kindergartens',
    },
    youthAffairsYI: {
       path: 'agriculture/acEvent/youthInitiatives',

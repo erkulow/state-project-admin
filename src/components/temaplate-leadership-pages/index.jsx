@@ -39,8 +39,7 @@ const TemplateLeaderShipPages = () => {
             justify="center"
             mobileJustify="center"
          >
-            <Flex
-               mobileDirection="column"
+            <WrapperContent
                maxWidth="1440px"
                width="90%"
                justify="space-between"
@@ -55,11 +54,19 @@ const TemplateLeaderShipPages = () => {
                <ContainerContent>
                   <Outlet />
                </ContainerContent>
-            </Flex>
+            </WrapperContent>
          </Flex>
       </Container>
    )
 }
+const WrapperContent = styled(Flex)`
+   @media (max-width: 840px) {
+      flex-direction: column-reverse;
+      width: 100%;
+      max-width: 100%;
+      align-items: center;
+   }
+`
 
 const TitleHeader = styled(Title)`
    color: #b5b9bb;
@@ -104,7 +111,7 @@ const ContainerContent = styled.div`
    width: 100%;
    background-color: #161b22;
    box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
-   @media (max-width: 800px) {
+   @media (max-width: 840px) {
       max-width: 100%;
    }
 `
@@ -125,10 +132,11 @@ const NavigationBlock = styled.div`
    background-color: #21262c;
    color: #b5b9bb;
    margin-right: 15px;
-   @media (max-width: 800px) {
+   @media (max-width: 840px) {
       width: 100%;
       margin-bottom: 20px;
       margin-right: 0;
+      padding: 1rem;
    }
 `
 const InnerNavigationLi = styled.ul`
