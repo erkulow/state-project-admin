@@ -8,7 +8,7 @@ const ModalDelete = ({ action, open, setShowModal, title }) => {
    return (
       open &&
       ReactDOM.createPortal(
-         <>
+         <ModalWrapper>
             <Modal>
                <Flex width="100%" justify="center" margin="10px 0">
                   <Message>{title}</Message>
@@ -28,11 +28,24 @@ const ModalDelete = ({ action, open, setShowModal, title }) => {
                </Flex>
             </Modal>
             <Backdrop onClick={() => setShowModal(false)} />
-         </>,
+         </ModalWrapper>,
          document.getElementById('modal-delete')
       )
    )
 }
+const ModalWrapper = styled.div`
+   width: 100%;
+   min-height: ${`${window.innerHeight}px`};
+   position: fixed;
+   top: 0;
+   height: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @media (max-width: 500px) {
+      align-items: flex-end;
+   }
+`
 
 const Message = styled.h3`
    color: #434f5e;
@@ -47,9 +60,6 @@ const ConfirmButton = styled(Button)`
 const Modal = styled.div`
    padding: 1rem;
    background-color: #1c1e21;
-   position: fixed;
-   top: 40%;
-   left: 38%;
    z-index: 1000;
    width: 400px;
    border-radius: 10px;
