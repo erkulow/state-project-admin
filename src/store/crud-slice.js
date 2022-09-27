@@ -55,7 +55,6 @@ export const editData = createAsyncThunk(
          if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
       }
       try {
-         console.log(data)
          const result = await baseFetch({
             path: `${API_ROUTES_EDIT[category].path}/${data.id}`,
             method: 'PATCH',
@@ -121,6 +120,7 @@ export const getData = createAsyncThunk(
             path: `${API_ROUTES_GET[category].path}`,
             method: 'GET',
          })
+         console.log(result)
          return { result, category }
       } catch (error) {
          showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })

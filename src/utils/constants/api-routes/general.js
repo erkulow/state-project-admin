@@ -8,6 +8,9 @@ export const API_ROUTES_SAVE = {
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/save',
    },
+   youthAffairsHC: {
+      path: 'youthAffairs/YouthCommitteeManager/save',
+   },
 }
 export const API_ROUTES_EDIT = {
    leadership: {
@@ -17,7 +20,10 @@ export const API_ROUTES_EDIT = {
       path: 'education/schools',
    },
    youthAffairsYI: {
-      path: '/api/youthAffairs/youthInitiatives',
+      path: 'youthAffairs/youthInitiatives',
+   },
+   youthAffairsHC: {
+      path: 'youthAffairs/YouthCommitteeManager',
    },
 }
 export const API_ROUTES_DELETE = {
@@ -30,6 +36,9 @@ export const API_ROUTES_DELETE = {
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives',
    },
+   youthAffairsHC: {
+      path: 'youthAffairs/YouthCommitteeManager',
+   },
 }
 export const API_ROUTES_UPLOAD = {
    leadership: {
@@ -41,6 +50,9 @@ export const API_ROUTES_UPLOAD = {
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/upload-file',
    },
+   youthAffairsHC: {
+      path: 'youthAffairs/YouthCommitteeManager/upload-file',
+   },
 }
 export const API_ROUTES_GET = {
    leadership: {
@@ -51,5 +63,8 @@ export const API_ROUTES_GET = {
    },
    youthAffairsYI: {
       path: 'agriculture/acEvent/youthInitiatives',
+   },
+   youthAffairsHC: {
+      path: 'agriculture/acEvent/youthCommitteeManager',
    },
 }

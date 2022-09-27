@@ -85,7 +85,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитет жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'infoManager',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
