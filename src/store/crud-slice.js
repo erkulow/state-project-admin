@@ -34,7 +34,7 @@ export const saveDataToServer = createAsyncThunk(
          await dispatch(
             uploadImage({ image, idLeadershipData: result.id, reset, category })
          )
-         return result
+         return console.log(result)
       } catch (error) {
          showErrorMessage({
             title: ':(',
@@ -55,6 +55,7 @@ export const editData = createAsyncThunk(
          if (data.positions === 'Айылдык кеңешинин депутаты') data.type = '3'
       }
       try {
+         console.log(data)
          const result = await baseFetch({
             path: `${API_ROUTES_EDIT[category].path}/${data.id}`,
             method: 'PATCH',

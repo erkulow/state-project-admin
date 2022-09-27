@@ -5,6 +5,9 @@ export const API_ROUTES_SAVE = {
    educationSC: {
       path: 'education/schools/save',
    },
+   youthAffairsYI: {
+      path: 'youthAffairs/youthInitiatives/save',
+   },
 }
 export const API_ROUTES_EDIT = {
    leadership: {
@@ -12,6 +15,9 @@ export const API_ROUTES_EDIT = {
    },
    educationSC: {
       path: 'education/schools',
+   },
+   youthAffairsYI: {
+      path: '/api/youthAffairs/youthInitiatives',
    },
 }
 export const API_ROUTES_DELETE = {
@@ -21,6 +27,9 @@ export const API_ROUTES_DELETE = {
    educationSC: {
       path: 'education/schools',
    },
+   youthAffairsYI: {
+      path: 'youthAffairs/youthInitiatives',
+   },
 }
 export const API_ROUTES_UPLOAD = {
    leadership: {
@@ -29,6 +38,9 @@ export const API_ROUTES_UPLOAD = {
    educationSC: {
       path: 'education/schools/upload-file',
    },
+   youthAffairsYI: {
+      path: 'youthAffairs/youthInitiatives/upload-file',
+   },
 }
 export const API_ROUTES_GET = {
    leadership: {
@@ -36,5 +48,8 @@ export const API_ROUTES_GET = {
    },
    educationSC: {
       path: 'agriculture/acEvent/schools',
+   },
+   youthAffairsYI: {
+      path: 'agriculture/acEvent/youthInitiatives',
    },
 }

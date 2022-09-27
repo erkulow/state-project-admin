@@ -4,7 +4,7 @@ export const FORM_ACTIVE_YOUTH = {
       {
          label: 'Аты-жонү',
          styles: { gridArea: '1 / 1 / 3 / 3' },
-         requestName: 'imamFullName',
+         requestName: 'youthName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
