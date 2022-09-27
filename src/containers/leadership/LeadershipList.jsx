@@ -44,24 +44,24 @@ const LeadershipList = ({ item }) => {
             />
          </Modal>
          <Section onClick={showDetailHandler}>
-            <Flex width="100%" gap="20px" align="center">
-               <Flex width="10%">
+            <ContainerFlex width="100%" gap="20px" align="center">
+               <WrapperImage width="10%">
                   <Image src={item?.fileInformation?.photo} />
-               </Flex>
-               <Flex
+               </WrapperImage>
+               <WrapperText
                   width="50%"
                   direction="column"
                   gap="10px"
                   align="flex-start"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
+                  <TitleLead uppercase size="20px" color="#7d97b8">
                      {item?.firstName} {item?.lastName} {item?.patronymic}
-                  </Title>
-                  <Text size="16px">{item?.positions}</Text>
-               </Flex>
-               <Flex width="40%" justify="center" gap="20px">
+                  </TitleLead>
+                  <TextLead size="16px">{item?.positions}</TextLead>
+               </WrapperText>
+               <WrapperButtons width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
-                     <MdModeEditOutline /> Озгортуу
+                     <MdModeEditOutline /> <span>Озгортуу</span>
                   </ButtonEdit>
                   <ButtonDelete
                      onClick={(e) => {
@@ -69,10 +69,10 @@ const LeadershipList = ({ item }) => {
                         setShowDeleteModal(true)
                      }}
                   >
-                     <AiFillDelete /> Очуруп салуу
+                     <AiFillDelete /> <span>Очуруп салуу</span>
                   </ButtonDelete>
-               </Flex>
-            </Flex>
+               </WrapperButtons>
+            </ContainerFlex>
          </Section>
          <ModalDelete
             open={showDeleteModal}
@@ -85,6 +85,41 @@ const LeadershipList = ({ item }) => {
       </>
    )
 }
+const ContainerFlex = styled(Flex)`
+   @media screen and (max-width: 550px) {
+      justify-content: space-between;
+      gap: 5px;
+   }
+`
+const WrapperText = styled(Flex)`
+   @media screen and (max-width: 550px) {
+      width: 60%;
+   }
+`
+const WrapperImage = styled(Flex)`
+   @media screen and (max-width: 550px) {
+      width: 25%;
+   }
+`
+const WrapperButtons = styled(Flex)`
+   @media screen and (max-width: 550px) {
+      flex-direction: column;
+      width: 15%;
+      span {
+         display: none;
+      }
+   }
+`
+const TitleLead = styled(Title)`
+   @media screen and (max-width: 550px) {
+      font-size: 12px;
+   }
+`
+const TextLead = styled(Text)`
+   @media screen and (max-width: 550px) {
+      font-size: 10px;
+   }
+`
 const ButtonEdit = styled(Button)`
    color: green;
    display: flex;
@@ -95,6 +130,10 @@ const ButtonEdit = styled(Button)`
       background-color: #27c36a25;
       border: none;
    }
+   @media screen and (max-width: 550px) {
+      font-size: 10px;
+      width: 20px !important;
+   }
 `
 const ButtonDelete = styled(Button)`
    color: tomato;
@@ -103,6 +142,9 @@ const ButtonDelete = styled(Button)`
    gap: 4px;
    :hover {
       background-color: #ff634729;
+   }
+   @media screen and (max-width: 550px) {
+      font-size: 10px;
    }
 `
 const Section = styled.div`
@@ -117,6 +159,10 @@ const Section = styled.div`
    }
    :active {
       opacity: 0.5;
+   }
+
+   @media screen and (max-width: 550px) {
+      padding: 0.4rem;
    }
 `
 const Image = styled.img`

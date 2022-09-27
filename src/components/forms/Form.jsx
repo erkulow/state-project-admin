@@ -56,8 +56,6 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
       })
    }
 
-   console.log(isEdit)
-
    useEffect(() => {
       if (isEdit) onGetSetValue({ setValue, setImages })
    }, [])
@@ -149,6 +147,10 @@ const FormControl = styled(Flex)`
    gap: 20px 20px;
    grid-auto-flow: column;
    -ms-grid-column-align: start;
+   @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column;
+   }
 `
 const FormStyled = styled.form`
    .btn__submit {
