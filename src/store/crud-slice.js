@@ -34,7 +34,7 @@ export const saveDataToServer = createAsyncThunk(
          await dispatch(
             uploadImage({ image, idLeadershipData: result.id, reset, category })
          )
-         return result
+         return console.log(result)
       } catch (error) {
          showErrorMessage({
             title: ':(',
@@ -120,6 +120,7 @@ export const getData = createAsyncThunk(
             path: `${API_ROUTES_GET[category].path}`,
             method: 'GET',
          })
+         console.log(result)
          return { result, category }
       } catch (error) {
          showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })

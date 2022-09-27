@@ -4,32 +4,33 @@ export const FORM_ACTIVE_YOUTH = {
       {
          label: 'Аты-жонү',
          styles: { gridArea: '1 / 1 / 3 / 3' },
-         requestName: 'imamFullName',
+         requestName: 'fullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Дареги',
+         label: 'Жаш-курагы',
          styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
+         requestName: 'age',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Байланыш телефону',
+         label: 'Тармагы',
          styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
+         requestName: 'direction',
+         type: 'text',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Маалымат',
+         label: 'Кошумча маалымат(Жетишкендиктери)',
          styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'result',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -85,7 +86,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитет жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'infoManager',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -164,7 +165,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуштун аталышы',
          styles: { gridArea: '1 / 1 / 3 / 3 ' },
-         requestName: 'offeriveName',
+         requestName: 'offer',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -227,7 +228,7 @@ export const FORM_SPORT_ACTIVITIES = {
       {
          label: 'Спорт иш-чара жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'infoSportEvents',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
