@@ -11,9 +11,9 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailActiveYouth from './DetailActiveYouth'
+import DetailSportActivities from './DetailSportActivities'
 
-const YouthList = ({ item }) => {
+const SportActivitiesList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -36,7 +36,7 @@ const YouthList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailActiveYouth
+            <DetailSportActivities
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -54,7 +54,7 @@ const YouthList = ({ item }) => {
                   align="flex-start"
                >
                   <Title uppercase size="20px" color="#7d97b8">
-                     {item?.fullName}
+                     {item?.infoSportEvents}
                   </Title>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
@@ -75,7 +75,7 @@ const YouthList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'youthAffairsAY' }))
+               dispatch(deleteData({ id: item.id, category: 'youthAffairsSA' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -124,4 +124,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default YouthList
+export default SportActivitiesList

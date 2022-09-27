@@ -32,7 +32,7 @@ const ActiveYouth = () => {
          const editingData = {
             data: { ...data, id: changingObj.id },
             clear: clear.bind(null, reset),
-            category: 'youthAffairsYI',
+            category: 'youthAffairsAY',
             image,
          }
          dispatch(editData(editingData))
@@ -42,7 +42,7 @@ const ActiveYouth = () => {
                data,
                image,
                reset: clear.bind(null, reset),
-               category: 'youthAffairsYI',
+               category: 'youthAffairsAY',
             })
          )
       }

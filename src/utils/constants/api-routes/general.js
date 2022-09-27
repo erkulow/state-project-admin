@@ -11,6 +11,15 @@ export const API_ROUTES_SAVE = {
    youthAffairsHC: {
       path: 'youthAffairs/YouthCommitteeManager/save',
    },
+   youthAffairsOY: {
+      path: 'youthAffairs/offerForYouth/save',
+   },
+   youthAffairsSA: {
+      path: 'youthAffairs/sports/save',
+   },
+   youthAffairsAY: {
+      path: 'youthAffairs/enterprisingYouth/save',
+   },
 }
 export const API_ROUTES_EDIT = {
    leadership: {
@@ -24,6 +33,15 @@ export const API_ROUTES_EDIT = {
    },
    youthAffairsHC: {
       path: 'youthAffairs/YouthCommitteeManager',
+   },
+   youthAffairsOY: {
+      path: 'youthAffairs/offerForYouth',
+   },
+   youthAffairsSA: {
+      path: 'youthAffairs/sports',
+   },
+   youthAffairsAY: {
+      path: 'youthAffairs/enterprisingYouth',
    },
 }
 export const API_ROUTES_DELETE = {
@@ -39,6 +57,15 @@ export const API_ROUTES_DELETE = {
    youthAffairsHC: {
       path: 'youthAffairs/YouthCommitteeManager',
    },
+   youthAffairsOY: {
+      path: 'youthAffairs/offerForYouth',
+   },
+   youthAffairsSA: {
+      path: 'youthAffairs/sports',
+   },
+   youthAffairsAY: {
+      path: 'youthAffairs/enterprisingYouth',
+   },
 }
 export const API_ROUTES_UPLOAD = {
    leadership: {
@@ -53,6 +80,15 @@ export const API_ROUTES_UPLOAD = {
    youthAffairsHC: {
       path: 'youthAffairs/YouthCommitteeManager/upload-file',
    },
+   youthAffairsOY: {
+      path: 'youthAffairs/offerForYouth/upload-file',
+   },
+   youthAffairsSA: {
+      path: 'youthAffairs/sports/upload-file',
+   },
+   youthAffairsAY: {
+      path: 'youthAffairs/enterprisingYouth/upload-file',
+   },
 }
 export const API_ROUTES_GET = {
    leadership: {
@@ -66,5 +102,14 @@ export const API_ROUTES_GET = {
    },
    youthAffairsHC: {
       path: 'agriculture/acEvent/youthCommitteeManager',
+   },
+   youthAffairsOY: {
+      path: 'agriculture/acEvent/offerForYouth',
+   },
+   youthAffairsSA: {
+      path: 'agriculture/acEvent/sportsEvents',
+   },
+   youthAffairsAY: {
+      path: 'agriculture/acEvent/enterprisingYouth',
    },
 }

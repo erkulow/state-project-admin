@@ -7,33 +7,27 @@ import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
 
-const DetailActiveYouth = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailOfferForYouth = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data?.result
+      refText.current.innerHTML = data?.text
    }, [data])
    return (
       <div>
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.fullName}</TitlePosition>
+               <TitlePosition size="20px">{data?.offer}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Толук маалымат</H2>
+                  <H2>Сунуш жонундо маалымат</H2>
                   <Li>
-                     <b>Аты-жону:</b> {data.fullName}
+                     <b>Сунушттун аталышы:</b> {data?.offer}
                   </Li>
                   <Li>
-                     <b>Жашы:</b> {data?.age}
-                  </Li>
-                  <Li>
-                     <b>Тармагы:</b> {data?.direction}
-                  </Li>
-                  <Li>
-                     <b>Кошумча маалымат:</b>
+                     <b>Сунуш жонундо жонундо маалымат:</b>
                      <span ref={refText} />
                   </Li>
                </List>
@@ -123,4 +117,4 @@ const Img = styled.img`
    height: 100%;
 `
 
-export default DetailActiveYouth
+export default DetailOfferForYouth

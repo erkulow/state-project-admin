@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
-import YouthList from './YouthList'
+import SportActivitiesList from './SportActivitiesList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('youthAffairsAY'))
+      dispatch(getData('youthAffairsSA'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Жигердуу жаштар</SectionTitle>
+               <SectionTitle>Спорттук иш-чаралар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <YouthList key={item.id} item={item} />
+                     <SportActivitiesList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Жигердуу жаштар боюнча маалымат табылган жок:(
+                     Спорттук иш-чаралар боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>
