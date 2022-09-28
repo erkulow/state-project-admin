@@ -19,7 +19,7 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Мектептер</SectionTitle>
+               <SectionTitle>Бала-бакчалар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
                      <KindergartensList key={item.id} item={item} />

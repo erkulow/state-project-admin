@@ -17,6 +17,9 @@ export const API_ROUTES_SAVE = {
    educationKinger: {
       path: 'education/kindergartens/save',
    },
+   educationGRT: {
+      path: 'education/ort/save',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/save',
    },
@@ -52,6 +55,9 @@ export const API_ROUTES_EDIT = {
    },
    educationKinger: {
       path: 'education/kindergartens',
+   },
+   educationGRT: {
+      path: 'education/ort',
    },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives',
@@ -89,6 +95,9 @@ export const API_ROUTES_DELETE = {
    educationKinger: {
       path: 'education/kindergartens',
    },
+   educationGRT: {
+      path: 'education/ort',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives',
    },
@@ -125,6 +134,9 @@ export const API_ROUTES_UPLOAD = {
    educationKinger: {
       path: 'education/kindergartens/upload-file',
    },
+   educationGRT: {
+      path: 'education/ort/upload-file',
+   },
    youthAffairsYI: {
       path: 'youthAffairs/youthInitiatives/upload-file',
    },
@@ -160,6 +172,9 @@ export const API_ROUTES_GET = {
    },
    educationKinger: {
       path: 'agriculture/acEvent/kindergartens',
+   },
+   educationGRT: {
+      path: 'agriculture/acEvent/ort',
    },
    youthAffairsYI: {
       path: 'agriculture/acEvent/youthInitiatives',

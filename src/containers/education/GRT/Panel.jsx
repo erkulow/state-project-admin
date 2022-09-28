@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
-import SchoolList from './SchoolList'
+import GRTList from './GRTList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('educationDrivingSC'))
+      dispatch(getData('educationGRT'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Мектептер</SectionTitle>
+               <SectionTitle>ЖРТ</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <SchoolList key={item.id} item={item} />
+                     <GRTList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Авто мектептер боюнча маалымат табылган жок:(
+                     Бала-бакчалар боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>

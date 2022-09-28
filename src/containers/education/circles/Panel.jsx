@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Мектептер</SectionTitle>
+               <SectionTitle>Ийримдер</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
                      <CircleList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Мектептер боюнча маалымат табылган жок:(
+                     Ийримдер боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>

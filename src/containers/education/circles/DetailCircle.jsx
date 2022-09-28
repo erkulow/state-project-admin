@@ -34,7 +34,7 @@ const DetailCircle = ({ data, setShowDeleteModal, editHandler }) => {
                      <b>Байланыш телефону:</b> {data.phoneNumber}
                   </Li>
                   <Li>
-                     <b>Мектеп жонундо маалымат:</b> <span ref={refText} />
+                     <b>Ийрим жонундо маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">
