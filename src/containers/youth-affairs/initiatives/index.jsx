@@ -3,13 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import Form from '../../../components/forms/Form'
 import FullWidthTabs from '../../../components/tabs'
 import { TabPanel } from '../../../components/tabs/TabPanel'
-import {
-   crudActions,
-   editData,
-   saveDataToServer,
-} from '../../../store/crud-slice'
 import { tabActions } from '../../../store/tab-slice'
 import { FORM_INITIATIVIES } from '../../../utils/constants/forms/formYouthAffairs'
+import { putInDataForm, sendOrEditData } from '../../../utils/helpers/general'
 import Panel from './Panel'
 
 const Initiatives = () => {
@@ -22,54 +18,35 @@ const Initiatives = () => {
       dispatch(tabActions.tabChange(newValue))
    }
 
-   const clear = (reset) => {
-      reset()
-      dispatch(tabActions.tabChange(1))
-   }
-
    const getDataHandler = (data, image, reset) => {
-      if (isEdit) {
-         const editingData = {
-            data: { ...data, id: changingObj.id },
-            clear: clear.bind(null, reset),
-            category: 'youthAffairsYI',
-            image,
-         }
-         dispatch(editData(editingData))
-      } else {
-         dispatch(
-            saveDataToServer({
-               data,
-               image,
-               reset: clear.bind(null, reset),
-               category: 'youthAffairsYI',
-            })
-         )
-      }
+      sendOrEditData({
+         isEdit,
+         changingObj,
+         reset,
+         data,
+         image,
+         category: 'youthAffairsYI',
+      })
    }
 
-   const putInDataForm = (setValue, setImages) => {
-      if (changingObj && isEdit) {
-         FORM_INITIATIVIES.forms.map((item) => {
-            setValue(item.requestName, changingObj[item.requestName])
-            return null
-         })
-         dispatch(crudActions.changeTextEditor(changingObj.text))
-         setImages({
-            images: [{ img: changingObj.fileInformation.photo, id: '1' }],
-            files: [],
-         })
-      }
-   }
    return (
       <FullWidthTabs value={value} onChange={handleChange}>
          <TabPanel index={0} value={value}>
             <Form
                dataForm={FORM_INITIATIVIES}
-               onGetSetValue={putInDataForm}
                isEdit={isEdit}
                isLoading={isLoading || isLoadingUpload}
                onGetData={getDataHandler}
+               onGetSetValue={({ setValue, setImages }) =>
+                  putInDataForm({
+                     dataForm: FORM_INITIATIVIES,
+                     setImages,
+                     setValue,
+                     isEdit,
+                     changingObj,
+                     template: 'result',
+                  })
+               }
             />
          </TabPanel>
          <TabPanel index={1} value={value}>

@@ -1,5 +1,5 @@
 export const FORM_ACTIVE_YOUTH = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Аты-жонү',
@@ -29,7 +29,7 @@ export const FORM_ACTIVE_YOUTH = {
       },
       {
          label: 'Кошумча маалымат(Жетишкендиктери)',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'result',
          type: 'textarea',
          required: {
@@ -38,7 +38,7 @@ export const FORM_ACTIVE_YOUTH = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -48,7 +48,7 @@ export const FORM_ACTIVE_YOUTH = {
    ],
 }
 export const FORM_HEAD_OF_COMMITTEE = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Комитеттин аты',
@@ -85,7 +85,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       },
       {
          label: 'Комитет жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'infoManager',
          type: 'textarea',
          required: {
@@ -94,7 +94,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -104,7 +104,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
    ],
 }
 export const FORM_INITIATIVIES = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Демилгенин аты',
@@ -141,7 +141,7 @@ export const FORM_INITIATIVIES = {
       },
       {
          label: 'Демилге жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -150,7 +150,7 @@ export const FORM_INITIATIVIES = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -160,7 +160,7 @@ export const FORM_INITIATIVIES = {
    ],
 }
 export const FORM_OFFER_FOR_YOUTH = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Сунуштун аталышы',
@@ -180,7 +180,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       },
       {
          label: 'Сунуш жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -189,7 +189,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -199,7 +199,7 @@ export const FORM_OFFER_FOR_YOUTH = {
    ],
 }
 export const FORM_SPORT_ACTIVITIES = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Спорт иш-чаранын аталышы',
@@ -221,13 +221,14 @@ export const FORM_SPORT_ACTIVITIES = {
          label: 'Убактысы',
          styles: { gridArea: '1 / 4 / 4 / 5' },
          requestName: 'time',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Спорт иш-чара жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'infoSportEvents',
          type: 'textarea',
          required: {
@@ -236,7 +237,7 @@ export const FORM_SPORT_ACTIVITIES = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
