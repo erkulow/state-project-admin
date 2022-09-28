@@ -18,13 +18,12 @@ const DetailHeadOfCommittee = ({ data, setShowDeleteModal, editHandler }) => {
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.schoolName}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
                   <H2>Комитеттер жонундо маалымат</H2>
                   <Li>
-                     <b>Аты-жону:</b> {data.committeeName}
+                     <b>Аты-жону:</b> {data.commitetName}
                   </Li>
                   <Li>
                      <b>Дареги:</b> {data?.address}

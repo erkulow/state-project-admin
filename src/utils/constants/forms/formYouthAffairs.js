@@ -172,7 +172,16 @@ export const FORM_OFFER_FOR_YOUTH = {
       },
       {
          label: 'Сунуштоочунун аты-жонү',
-         styles: { gridArea: '1 / 3 / 2 / 5' },
+         styles: { gridArea: '1 / 3 / 2 / 4' },
+         requestName: 'offersFullName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Байланыш телефону',
+         styles: { gridArea: '1 / 4 / 2 / 5' },
+         type: 'number',
          requestName: 'offersFullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

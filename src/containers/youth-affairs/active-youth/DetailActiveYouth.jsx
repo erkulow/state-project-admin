@@ -18,7 +18,6 @@ const DetailActiveYouth = ({ data, setShowDeleteModal, editHandler }) => {
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.fullName}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
@@ -27,7 +26,7 @@ const DetailActiveYouth = ({ data, setShowDeleteModal, editHandler }) => {
                      <b>Аты-жону:</b> {data.fullName}
                   </Li>
                   <Li>
-                     <b>Жашы:</b> {data?.age}
+                     <b>Туулган датасы:</b> {data?.age}
                   </Li>
                   <Li>
                      <b>Тармагы:</b> {data?.direction}

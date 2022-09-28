@@ -207,7 +207,7 @@ export const FORM_CIRCLES = {
    forms: [
       {
          label: 'Ийримдин аты',
-         styles: { gridArea: '1 / 1 / 3 / 3' },
+         styles: { gridArea: '1 / 1 / 3 / 2' },
          requestName: 'courseName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -215,8 +215,17 @@ export const FORM_CIRCLES = {
       },
       {
          label: 'Ийрим жетекчиси',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
+         styles: { gridArea: '1 / 2 / 3 / 3' },
          requestName: 'courseTeacher',
+         type: 'address',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Адрес',
+         styles: { gridArea: '1 / 3 / 2 / 4' },
+         requestName: 'address',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },

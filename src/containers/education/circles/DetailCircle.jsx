@@ -77,10 +77,8 @@ const ButtonDelete = styled(Button)`
 `
 const TitlePosition = styled(Title)`
    width: 100%;
-   color: #2c2e38;
+   color: white;
    padding: 1em;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
-   background-color: rgba(255, 255, 255, 0.4);
    -webkit-backdrop-filter: blur(5px);
    backdrop-filter: blur(5px);
    text-align: center;
@@ -92,10 +90,7 @@ const List = styled.ul`
 const Li = styled.li`
    width: 100%;
    padding: 1em;
-   background-color: #0e1117;
-   text-transform: uppercase;
    margin-bottom: 10px;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
    border-radius: 5px;
    b {
       color: #94a0aa;
@@ -111,11 +106,9 @@ const H2 = styled.h2`
    margin-bottom: 10px;
    width: 100%;
    padding: 1em;
-   background-color: #21262c;
-   text-transform: uppercase;
    margin-bottom: 10px;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
    border-radius: 5px;
+   color: #235694;
 `
 const Img = styled.img`
    width: 100%;
