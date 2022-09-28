@@ -286,11 +286,19 @@ export const FORM_EVENTS = {
    ],
 }
 export const FORM_OLYMPIADS = {
-   style: '170px 1fr',
+   style: '100px 170px 1fr',
    forms: [
       {
+         label: 'Аталышы',
+         styles: { gridArea: '1 / 1 / 2 / 5' },
+         requestName: 'title',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
          label: 'Маалымат',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -303,7 +311,7 @@ export const FORM_OLYMPIADS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -313,11 +321,19 @@ export const FORM_OLYMPIADS = {
    ],
 }
 export const FORM_GRT = {
-   style: '170px 1fr',
+   style: '100px 170px 1fr',
    forms: [
       {
+         label: 'Аталышы',
+         styles: { gridArea: '1 / 1 / 2 / 5' },
+         requestName: 'title',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
          label: 'Маалымат',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -330,7 +346,7 @@ export const FORM_GRT = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

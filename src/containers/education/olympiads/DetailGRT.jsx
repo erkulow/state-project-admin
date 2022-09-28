@@ -21,12 +21,12 @@ const DetailGRT = ({ data, setShowDeleteModal, editHandler }) => {
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>ЖРТ жонундо маалымат</H2>
+                  <H2>Олимпиада жонундо маалымат</H2>
                   <Li>
                      <b>Аталышы:</b> {data.title}
                   </Li>
                   <Li>
-                     <b>ЖРТ жонундо маалымат:</b> <span ref={refText} />
+                     <b>Олимпиада жонундо маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">

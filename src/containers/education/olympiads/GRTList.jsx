@@ -75,7 +75,9 @@ const GRTList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'educationGRT' }))
+               dispatch(
+                  deleteData({ id: item.id, category: 'educationOlympiads' })
+               )
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
