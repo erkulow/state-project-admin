@@ -44,6 +44,9 @@ export const API_ROUTES_SAVE = {
    healthDoctorAdvice: {
       path: 'healthcare/doctorsAdvice/save',
    },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -91,6 +94,9 @@ export const API_ROUTES_EDIT = {
    },
    healthHospitals: {
       path: 'healthcare/doctorsAdvice',
+   },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter',
    },
 }
 
@@ -140,6 +146,9 @@ export const API_ROUTES_DELETE = {
    healthDoctorAdvice: {
       path: 'healthcare/doctorsAdvice',
    },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -188,6 +197,9 @@ export const API_ROUTES_UPLOAD = {
    healthDoctorAdvice: {
       path: 'healthcare/doctorsAdvice/upload-file',
    },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -235,5 +247,8 @@ export const API_ROUTES_GET = {
    },
    healthDoctorAdvice: {
       path: 'agriculture/acEvent/doctorsAdvice',
+   },
+   healthFAPs: {
+      path: 'agriculture/acEvent/medicalCenter',
    },
 }

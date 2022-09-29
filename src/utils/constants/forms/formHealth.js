@@ -70,12 +70,20 @@ export const FORM_HEALTHCARE = {
 }
 
 export const FORM_FAPS = {
-   style: 'repeat(2,1fr)',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'ФАПтын аты',
-         styles: { gridArea: '1 / 1 / 3 / 3' },
+         styles: { gridArea: '1 / 1 / 3 / 2' },
          requestName: 'hospitalName',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
+      },
+      {
+         label: 'ФАПтын жетекчиси',
+         styles: { gridArea: '1 / 2 / 3 / 3' },
+         requestName: 'directorHospital',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
@@ -99,7 +107,7 @@ export const FORM_FAPS = {
       },
       {
          label: 'ФАП жонундо маалымат',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 3 / 5' },
          requestName: 'infoAboutHospital',
          type: 'textarea',
          required: {
@@ -108,7 +116,7 @@ export const FORM_FAPS = {
       },
       {
          label: 'Add photo',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'file',
          required: {
