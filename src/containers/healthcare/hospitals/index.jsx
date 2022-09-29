@@ -25,7 +25,7 @@ const Hospitals = () => {
          reset,
          data,
          image,
-         category: 'healthDoctorAdvice',
+         category: 'healthHospitals',
       })
    }
 

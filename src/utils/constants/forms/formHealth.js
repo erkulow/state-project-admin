@@ -119,7 +119,7 @@ export const FORM_FAPS = {
 }
 
 export const FORM_OMS = {
-   style: 'repeat(2,1fr)',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: ' ОМСтин аты',
@@ -160,7 +160,7 @@ export const FORM_OMS = {
 }
 
 export const FORM_DOCTORS_ADVICE = {
-   style: 'repeat(2,1fr)',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: ' Доктордун аты',
@@ -172,8 +172,9 @@ export const FORM_DOCTORS_ADVICE = {
       },
       {
          label: 'Кенештер',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'infoAboutHospital',
+         styles: { gridArea: '3 / 1 / 3 / 5' },
+         requestName: 'text',
+         type: 'textarea',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
@@ -182,14 +183,14 @@ export const FORM_DOCTORS_ADVICE = {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 3 / 3 / 5' },
          requestName: 'phoneNumber',
-         type: 'number  ',
+         type: 'number',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
       {
          label: 'Add photo',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'file',
          required: {

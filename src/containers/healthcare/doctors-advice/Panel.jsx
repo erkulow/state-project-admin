@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Ооруканалар</SectionTitle>
+               <SectionTitle>Дарыгердин кенеши</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
                      <DoctorAdvicelList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Ооруканалар боюнча маалымат табылган жок:(
+                     Дарыгердин кенеши табылган жок:(
                   </Alert>
                )}
             </div>

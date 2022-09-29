@@ -22,18 +22,15 @@ const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Оорукана жонундо маалымат</H2>
+                  <H2>Дарыгердин кенеши</H2>
                   <Li>
-                     <b>Диретордун аты-жону:</b> {data.directorFullName}
-                  </Li>
-                  <Li>
-                     <b>Адрес:</b> {data.address}
+                     <b>Дарыгердин аты-жону:</b> {data.directorFullName}
                   </Li>
                   <Li>
                      <b>Байланыш телефону:</b> {data.phoneNumber}
                   </Li>
                   <Li>
-                     <b>Оорукана жонундо маалымат:</b> <span ref={refText} />
+                     <b>Дарыгердин кенеши:</b> <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">

@@ -76,7 +76,7 @@ const HospitalList = ({ item }) => {
             open={showDeleteModal}
             action={() =>
                dispatch(
-                  deleteData({ id: item.id, category: 'healthDoctorAdvice' })
+                  deleteData({ id: item.id, category: 'healthHospitals' })
                )
             }
             setShowModal={setShowDeleteModal}
