@@ -11,14 +11,13 @@ const DetailOfferForYouth = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data?.text
+      refText.current.innerHTML = data?.info
    }, [data])
    return (
       <div>
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.offer}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>

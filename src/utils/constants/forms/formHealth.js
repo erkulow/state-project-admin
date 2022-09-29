@@ -1,9 +1,11 @@
+import { REGEXP_EMAIL } from '../general'
+
 export const FORM_HEALTHCARE = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 200px 1fr',
    forms: [
       {
          label: 'Оорукананын аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
+         styles: { gridArea: '1 / 1 / 3 / 3' },
          requestName: 'hospitalName',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -11,15 +13,15 @@ export const FORM_HEALTHCARE = {
       },
       {
          label: 'Директордун аты-жону',
-         styles: { gridArea: '1 / 2 / 2 / 3' },
-         requestName: 'directorFullName',
+         styles: { gridArea: '1 / 3 / 2 / 5' },
+         requestName: 'directorHospital',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
       {
          label: 'Адрес',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
+         styles: { gridArea: '2 / 1 / 2 / 3' },
          requestName: 'address',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -27,7 +29,7 @@ export const FORM_HEALTHCARE = {
       },
       {
          label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
+         styles: { gridArea: '2 / 3 / 3 / 4' },
          requestName: 'phoneNumber',
          type: 'number',
          required: {
@@ -35,8 +37,20 @@ export const FORM_HEALTHCARE = {
          },
       },
       {
+         label: 'Электрондук почтасы',
+         styles: { gridArea: '2 / 4 / 3 / 5' },
+         requestName: 'email',
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+            pattern: {
+               value: REGEXP_EMAIL,
+               message: 'Электрондук почта форматында болуу керек',
+            },
+         },
+      },
+      {
          label: 'Оорукана жонундо маалымат',
-         styles: { gridArea: '2 / 1 / 3 / 5' },
+         styles: { gridArea: '4 / 1 / 4 / 5' },
          type: 'textarea',
          requestName: 'infoAboutHospital',
          required: {

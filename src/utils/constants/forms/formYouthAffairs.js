@@ -142,7 +142,7 @@ export const FORM_INITIATIVIES = {
       {
          label: 'Демилге жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -165,7 +165,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуштун аталышы',
          styles: { gridArea: '1 / 1 / 3 / 3 ' },
-         requestName: 'offer',
+         requestName: 'title',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -173,7 +173,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуштоочунун аты-жонү',
          styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'offersFullName',
+         requestName: 'offer',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -182,7 +182,7 @@ export const FORM_OFFER_FOR_YOUTH = {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 4 / 2 / 5' },
          type: 'number',
-         requestName: 'offersFullName',
+         requestName: 'phone',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -190,7 +190,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуш жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -213,7 +213,7 @@ export const FORM_SPORT_ACTIVITIES = {
       {
          label: 'Спорт иш-чаранын аталышы',
          styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'activitiFullName',
+         requestName: 'sportEventsName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -238,7 +238,7 @@ export const FORM_SPORT_ACTIVITIES = {
       {
          label: 'Спорт иш-чара жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 5 / 5' },
-         requestName: 'infoSportEvents',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

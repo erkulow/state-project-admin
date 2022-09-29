@@ -38,6 +38,9 @@ export const API_ROUTES_SAVE = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth/save',
    },
+   healthDoctorAdvice: {
+      path: 'healthcare/hospitals/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -79,6 +82,9 @@ export const API_ROUTES_EDIT = {
    },
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth',
+   },
+   healthDoctorAdvice: {
+      path: 'healthcare/hospitals',
    },
 }
 
@@ -122,6 +128,9 @@ export const API_ROUTES_DELETE = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth',
    },
+   healthDoctorAdvice: {
+      path: 'healthcare/hospitals',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -164,6 +173,9 @@ export const API_ROUTES_UPLOAD = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth/upload-file',
    },
+   healthDoctorAdvice: {
+      path: 'healthcare/hospitals/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -205,5 +217,8 @@ export const API_ROUTES_GET = {
    },
    youthAffairsAY: {
       path: 'agriculture/acEvent/enterprisingYouth',
+   },
+   healthDoctorAdvice: {
+      path: 'agriculture/acEvent/hospitals',
    },
 }
