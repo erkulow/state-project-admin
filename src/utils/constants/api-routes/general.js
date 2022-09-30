@@ -47,6 +47,9 @@ export const API_ROUTES_SAVE = {
    healthFAPs: {
       path: 'healthcare/medicalCenter/save',
    },
+   religiousMosques: {
+      path: 'din/mosques/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -97,6 +100,9 @@ export const API_ROUTES_EDIT = {
    },
    healthFAPs: {
       path: 'healthcare/medicalCenter',
+   },
+   religiousMosques: {
+      path: 'din/mosques',
    },
 }
 
@@ -149,6 +155,9 @@ export const API_ROUTES_DELETE = {
    healthFAPs: {
       path: 'healthcare/medicalCenter',
    },
+   religiousMosques: {
+      path: 'din/mosques',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -200,6 +209,9 @@ export const API_ROUTES_UPLOAD = {
    healthFAPs: {
       path: 'healthcare/medicalCenter/upload-file',
    },
+   religiousMosques: {
+      path: 'din/mosques/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -250,5 +262,8 @@ export const API_ROUTES_GET = {
    },
    healthFAPs: {
       path: 'agriculture/acEvent/medicalCenter',
+   },
+   religiousMosques: {
+      path: 'agriculture/acEvent/mechitter',
    },
 }
