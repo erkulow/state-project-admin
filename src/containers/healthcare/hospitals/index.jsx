@@ -42,6 +42,7 @@ const Hospitals = () => {
                      dataForm: FORM_HEALTHCARE,
                      setImages,
                      setValue,
+                     template: 'info',
                      isEdit,
                      changingObj,
                   })

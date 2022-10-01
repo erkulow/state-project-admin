@@ -7,7 +7,7 @@ import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
 
-const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailOMS = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
@@ -18,19 +18,19 @@ const DetailSchool = ({ data, setShowDeleteModal, editHandler }) => {
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data.nameDoctors}</TitlePosition>
+               <TitlePosition size="20px">{data.schoolName}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Дарыгердин кенеши</H2>
+                  <H2>ОМС жонундо маалымат</H2>
                   <Li>
-                     <b>Дарыгердин аты-жону:</b> {data.nameDoctors}
+                     <b>ОМСтин аталышы:</b> {data.title}
                   </Li>
                   <Li>
                      <b>Байланыш телефону:</b> {data.phone}
                   </Li>
                   <Li>
-                     <b>Дарыгердин кенеши:</b> <span ref={refText} />
+                     <b>ОМС жонундо маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">
@@ -119,4 +119,4 @@ const Img = styled.img`
    height: 100%;
 `
 
-export default DetailSchool
+export default DetailOMS

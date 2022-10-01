@@ -42,6 +42,7 @@ const FAPs = () => {
                      dataForm: FORM_FAPS,
                      setImages,
                      setValue,
+                     template: 'info',
                      isEdit,
                      changingObj,
                   })

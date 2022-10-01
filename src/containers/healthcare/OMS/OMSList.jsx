@@ -11,9 +11,9 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailDoctorAdvice from './DetailDoctorAdvice'
+import DetailOMS from './DetailOMS'
 
-const DoctorAdvicelList = ({ item }) => {
+const OMSList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -36,7 +36,7 @@ const DoctorAdvicelList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailDoctorAdvice
+            <DetailOMS
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -54,7 +54,7 @@ const DoctorAdvicelList = ({ item }) => {
                   align="flex-start"
                >
                   <Title uppercase size="20px" color="#7d97b8">
-                     {item?.nameDoctors}
+                     {item?.title}
                   </Title>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
@@ -75,9 +75,7 @@ const DoctorAdvicelList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(
-                  deleteData({ id: item.id, category: 'healthDoctorAdvice' })
-               )
+               dispatch(deleteData({ id: item.id, category: 'healthOMS' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -126,4 +124,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default DoctorAdvicelList
+export default OMSList

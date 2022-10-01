@@ -52,7 +52,7 @@ export const FORM_HEALTHCARE = {
          label: 'Оорукана жонундо маалымат',
          styles: { gridArea: '4 / 1 / 4 / 5' },
          type: 'textarea',
-         requestName: 'infoAboutHospital',
+         requestName: 'info',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
@@ -108,7 +108,7 @@ export const FORM_FAPS = {
       {
          label: 'ФАП жонундо маалымат',
          styles: { gridArea: '3 / 1 / 3 / 5' },
-         requestName: 'infoAboutHospital',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -148,7 +148,7 @@ export const FORM_OMS = {
       },
       {
          label: 'Маалымат',
-         styles: { gridArea: '2 / 1/ 2 / 5' },
+         styles: { gridArea: '3 / 1/ 5 / 5' },
          requestName: 'info',
          type: 'textarea',
          required: {
@@ -157,7 +157,7 @@ export const FORM_OMS = {
       },
       {
          label: 'Add photo',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'file',
          required: {
@@ -173,15 +173,15 @@ export const FORM_DOCTORS_ADVICE = {
       {
          label: ' Доктордун аты',
          styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'doctorlName',
+         requestName: 'nameDoctors',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
       },
       {
          label: 'Кенештер',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
-         requestName: 'text',
+         styles: { gridArea: '3 / 1 / 5 / 5' },
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -190,7 +190,7 @@ export const FORM_DOCTORS_ADVICE = {
       {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 3 / 3 / 5' },
-         requestName: 'phoneNumber',
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -199,7 +199,7 @@ export const FORM_DOCTORS_ADVICE = {
       {
          label: 'Add photo',
          styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
