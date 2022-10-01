@@ -44,7 +44,7 @@ const ActiveYouth = () => {
                      setValue,
                      isEdit,
                      changingObj,
-                     template: 'result',
+                     template: 'info',
                   })
                }
             />

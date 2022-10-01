@@ -44,7 +44,7 @@ const OfferForYouth = () => {
                      setValue,
                      isEdit,
                      changingObj,
-                     template: 'result',
+                     template: 'info',
                   })
                }
             />

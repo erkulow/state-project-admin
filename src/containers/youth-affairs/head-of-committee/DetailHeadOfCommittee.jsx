@@ -11,7 +11,7 @@ const DetailHeadOfCommittee = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data?.infoManager
+      refText.current.innerHTML = data?.info
    }, [data])
    return (
       <div>
@@ -21,18 +21,21 @@ const DetailHeadOfCommittee = ({ data, setShowDeleteModal, editHandler }) => {
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Комитеттер жонундо маалымат</H2>
+                  <H2>Комитет жонундо маалымат</H2>
                   <Li>
-                     <b>Аты-жону:</b> {data.commitetName}
+                     <b>Комитеттин аталышы:</b> {data.managerName}
+                  </Li>
+                  <Li>
+                     <b>Аты-жону:</b> {data.managerDirectorName}
                   </Li>
                   <Li>
                      <b>Дареги:</b> {data?.address}
                   </Li>
                   <Li>
-                     <b>Байланыш телефону:</b> {data?.phoneNumber}
+                     <b>Байланыш телефону:</b> {data?.phone}
                   </Li>
                   <Li>
-                     <b>Комитеттер жонундо жонундо маалымат:</b>
+                     <b>Комитет жонундо жонундо маалымат:</b>
                      <span ref={refText} />
                   </Li>
                </List>

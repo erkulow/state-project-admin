@@ -53,15 +53,15 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитеттин аты',
          styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'committeName',
+         requestName: 'managerName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Комитет башчынын аты-жону',
+         label: 'Комитет башчысы',
          styles: { gridArea: '1 / 2 / 3 / 3' },
-         requestName: 'directorFullName',
+         requestName: 'managerDirectorName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -77,7 +77,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -86,7 +86,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитет жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 5 / 5' },
-         requestName: 'infoManager',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -109,7 +109,7 @@ export const FORM_INITIATIVIES = {
       {
          label: 'Демилгенин аты',
          styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'initiaiveName',
+         requestName: 'initiativesName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -117,7 +117,7 @@ export const FORM_INITIATIVIES = {
       {
          label: 'Жетекчинин аты-жонү',
          styles: { gridArea: '1 / 2 / 2 / 3' },
-         requestName: 'initiaiveFullName',
+         requestName: 'initiativesDirectorName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -133,7 +133,7 @@ export const FORM_INITIATIVIES = {
       {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -165,7 +165,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуштун аталышы',
          styles: { gridArea: '1 / 1 / 3 / 3 ' },
-         requestName: 'title',
+         requestName: 'offer',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -173,7 +173,7 @@ export const FORM_OFFER_FOR_YOUTH = {
       {
          label: 'Сунуштоочунун аты-жонү',
          styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'offer',
+         requestName: 'title',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },

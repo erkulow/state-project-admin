@@ -13,6 +13,7 @@ const DetailOfferForYouth = ({ data, setShowDeleteModal, editHandler }) => {
    useEffect(() => {
       refText.current.innerHTML = data?.info
    }, [data])
+
    return (
       <div>
          <Flex gap="30px" align="start">
@@ -24,6 +25,12 @@ const DetailOfferForYouth = ({ data, setShowDeleteModal, editHandler }) => {
                   <H2>Сунуш жонундо маалымат</H2>
                   <Li>
                      <b>Сунушттун аталышы:</b> {data?.offer}
+                  </Li>
+                  <Li>
+                     <b>Сунуштоочунун аты-жонү:</b> {data?.title}
+                  </Li>
+                  <Li>
+                     <b>Байланыш номери:</b> {data?.phone}
                   </Li>
                   <Li>
                      <b>Сунуш жонундо жонундо маалымат:</b>

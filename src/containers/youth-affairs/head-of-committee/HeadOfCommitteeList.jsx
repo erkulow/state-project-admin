@@ -12,6 +12,7 @@ import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
 import DetailHeadOfCommittee from './DetailHeadOfCommittee'
+import Text from '../../../components/UI/typography/Text'
 
 const HeadOfCommitteeList = ({ item }) => {
    const dispatch = useDispatch()
@@ -53,9 +54,12 @@ const HeadOfCommitteeList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
-                     {item?.committeName}
+                  <Title size="20px" color="#7d97b8">
+                     {item?.managerName}
                   </Title>
+                  <Text size="15px" color="#747678">
+                     {item?.managerDirectorName}
+                  </Text>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>

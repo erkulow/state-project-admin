@@ -12,6 +12,7 @@ import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
 import DetailOfferForYouth from './DetailOfferForYouth'
+import Text from '../../../components/UI/typography/Text'
 
 const OfferYouthList = ({ item }) => {
    const dispatch = useDispatch()
@@ -53,9 +54,12 @@ const OfferYouthList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
-                     {item?.offer}
+                  <Title size="20px" color="#7d97b8">
+                     {item?.title}
                   </Title>
+                  <Text size="15px" color="#a9adb1">
+                     {item?.offer}
+                  </Text>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
