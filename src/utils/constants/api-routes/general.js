@@ -50,6 +50,9 @@ export const API_ROUTES_SAVE = {
    religiousMosques: {
       path: 'din/mosques/save',
    },
+   religiousMadrasa: {
+      path: 'din/religionSchool/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -103,6 +106,9 @@ export const API_ROUTES_EDIT = {
    },
    religiousMosques: {
       path: 'din/mosques',
+   },
+   religiousMadrasa: {
+      path: 'din/religionSchool',
    },
 }
 
@@ -158,6 +164,9 @@ export const API_ROUTES_DELETE = {
    religiousMosques: {
       path: 'din/mosques',
    },
+   religiousMadrasa: {
+      path: 'din/religionSchool',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -212,6 +221,9 @@ export const API_ROUTES_UPLOAD = {
    religiousMosques: {
       path: 'din/mosques/upload-file',
    },
+   religiousMadrasa: {
+      path: 'din/religionSchool/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -265,5 +277,8 @@ export const API_ROUTES_GET = {
    },
    religiousMosques: {
       path: 'agriculture/acEvent/mechitter',
+   },
+   religiousMadrasa: {
+      path: 'agriculture/acEvent/religionSchool',
    },
 }
