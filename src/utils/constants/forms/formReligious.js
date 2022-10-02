@@ -148,44 +148,19 @@ export const FORM_MADRASAS = {
    ],
 }
 export const FORM_PILGRIMAGE = {
-   style: 'repeat(2,1fr)',
+   style: '70px 170px 150px 1fr',
    forms: [
       {
-         label: 'Ажы сапардын аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'pilgrimageName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 2 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
+         label: 'Ажынын аты-жонү',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
+         requestName: 'fullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Ажылык жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -194,7 +169,7 @@ export const FORM_PILGRIMAGE = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

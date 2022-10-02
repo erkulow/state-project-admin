@@ -53,6 +53,9 @@ export const API_ROUTES_SAVE = {
    religiousMadrasa: {
       path: 'din/religionSchool/save',
    },
+   religiousPilgrimage: {
+      path: 'din/hadj/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -109,6 +112,9 @@ export const API_ROUTES_EDIT = {
    },
    religiousMadrasa: {
       path: 'din/religionSchool',
+   },
+   religiousPilgrimage: {
+      path: 'din/hadj',
    },
 }
 
@@ -167,6 +173,9 @@ export const API_ROUTES_DELETE = {
    religiousMadrasa: {
       path: 'din/religionSchool',
    },
+   religiousPilgrimage: {
+      path: 'din/hadj',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -224,6 +233,9 @@ export const API_ROUTES_UPLOAD = {
    religiousMadrasa: {
       path: 'din/religionSchool/upload-file',
    },
+   religiousPilgrimage: {
+      path: 'din/hadj/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -280,5 +292,8 @@ export const API_ROUTES_GET = {
    },
    religiousMadrasa: {
       path: 'agriculture/acEvent/religionSchool',
+   },
+   religiousPilgrimage: {
+      path: 'agriculture/acEvent/hadj',
    },
 }
