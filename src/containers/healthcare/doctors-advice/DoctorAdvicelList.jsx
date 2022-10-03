@@ -11,10 +11,9 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailOfferForYouth from './DetailOfferForYouth'
-import Text from '../../../components/UI/typography/Text'
+import DetailDoctorAdvice from './DetailDoctorAdvice'
 
-const OfferYouthList = ({ item }) => {
+const DoctorAdvicelList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -37,7 +36,7 @@ const OfferYouthList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailOfferForYouth
+            <DetailDoctorAdvice
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -54,12 +53,9 @@ const OfferYouthList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
-                  <Title size="20px" color="#7d97b8">
-                     {item?.title}
+                  <Title uppercase size="20px" color="#7d97b8">
+                     {item?.nameDoctors}
                   </Title>
-                  <Text size="15px" color="#a9adb1">
-                     {item?.offer}
-                  </Text>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
@@ -79,7 +75,9 @@ const OfferYouthList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'youthAffairsOY' }))
+               dispatch(
+                  deleteData({ id: item.id, category: 'healthDoctorAdvice' })
+               )
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -128,4 +126,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default OfferYouthList
+export default DoctorAdvicelList

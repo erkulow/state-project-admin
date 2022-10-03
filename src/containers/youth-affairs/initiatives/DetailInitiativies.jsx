@@ -11,29 +11,34 @@ const DetailInitiativies = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data?.text
+      refText.current.innerHTML = data?.info
    }, [data])
    return (
       <div>
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.schoolName}</TitlePosition>
+               <TitlePosition size="20px">
+                  {data?.initiativesDirectorName}
+               </TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Жаштар жонундо маалымат</H2>
+                  <H2>Демилге жонундо маалымат</H2>
                   <Li>
-                     <b>Аты-жону:</b> {data.youthName}
+                     <b>Демилгенин аталышы:</b> {data.initiativesName}
+                  </Li>
+                  <Li>
+                     <b>Аты-жону:</b> {data.initiativesDirectorName}
                   </Li>
                   <Li>
                      <b>Дареги:</b> {data?.address}
                   </Li>
                   <Li>
-                     <b>Байланыш телефону:</b> {data?.phoneNumber}
+                     <b>Байланыш телефону:</b> {data?.phone}
                   </Li>
                   <Li>
-                     <b>Жигердуу жаштар жонундо маалымат:</b>
+                     <b>Демилге жонундо маалымат:</b>
                      <span ref={refText} />
                   </Li>
                </List>

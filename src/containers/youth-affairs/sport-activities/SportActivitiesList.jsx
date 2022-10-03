@@ -54,7 +54,7 @@ const SportActivitiesList = ({ item }) => {
                   align="flex-start"
                >
                   <Title uppercase size="20px" color="#7d97b8">
-                     {item?.infoSportEvents}
+                     {item?.sportEventsName}
                   </Title>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">

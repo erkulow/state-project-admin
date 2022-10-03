@@ -44,7 +44,7 @@ const SportActivities = () => {
                      setValue,
                      isEdit,
                      changingObj,
-                     template: 'result',
+                     template: 'info',
                   })
                }
             />

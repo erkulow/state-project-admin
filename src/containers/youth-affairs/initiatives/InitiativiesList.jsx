@@ -12,6 +12,7 @@ import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
 import DetailInitiativies from './DetailInitiativies'
+import Text from '../../../components/UI/typography/Text'
 
 const InitiativiesList = ({ item }) => {
    const dispatch = useDispatch()
@@ -53,9 +54,12 @@ const InitiativiesList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
-                     {item?.youthName}
+                  <Title size="20px" color="#7d97b8">
+                     {item?.initiativesName}
                   </Title>
+                  <Text size="15px" color="#b8bcc2">
+                     {item?.initiativesDirectorName}
+                  </Text>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>

@@ -38,6 +38,18 @@ export const API_ROUTES_SAVE = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth/save',
    },
+   healthHospitals: {
+      path: 'healthcare/hospitals/save',
+   },
+   healthDoctorAdvice: {
+      path: 'healthcare/doctorsAdvice/save',
+   },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter/save',
+   },
+   healthOMS: {
+      path: 'healthcare/insurance/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -79,6 +91,18 @@ export const API_ROUTES_EDIT = {
    },
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth',
+   },
+   healthDoctorAdvice: {
+      path: 'healthcare/hospitals',
+   },
+   healthHospitals: {
+      path: 'healthcare/doctorsAdvice',
+   },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter',
+   },
+   healthOMS: {
+      path: 'healthcare/insurance',
    },
 }
 
@@ -122,6 +146,18 @@ export const API_ROUTES_DELETE = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth',
    },
+   healthHospitals: {
+      path: 'healthcare/hospitals',
+   },
+   healthDoctorAdvice: {
+      path: 'healthcare/doctorsAdvice',
+   },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter',
+   },
+   healthOMS: {
+      path: 'healthcare/insurance',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -164,6 +200,18 @@ export const API_ROUTES_UPLOAD = {
    youthAffairsAY: {
       path: 'youthAffairs/enterprisingYouth/upload-file',
    },
+   healthHospitals: {
+      path: 'healthcare/hospitals/upload-file',
+   },
+   healthDoctorAdvice: {
+      path: 'healthcare/doctorsAdvice/upload-file',
+   },
+   healthFAPs: {
+      path: 'healthcare/medicalCenter/upload-file',
+   },
+   healthOMS: {
+      path: 'healthcare/insurance/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -205,5 +253,17 @@ export const API_ROUTES_GET = {
    },
    youthAffairsAY: {
       path: 'agriculture/acEvent/enterprisingYouth',
+   },
+   healthHospitals: {
+      path: 'agriculture/acEvent/hospitals',
+   },
+   healthDoctorAdvice: {
+      path: 'agriculture/acEvent/doctorsAdvice',
+   },
+   healthFAPs: {
+      path: 'agriculture/acEvent/medicalCenter',
+   },
+   healthOMS: {
+      path: 'agriculture/acEvent/insurance',
    },
 }

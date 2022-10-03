@@ -11,20 +11,26 @@ const DetailOfferForYouth = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data?.text
+      refText.current.innerHTML = data?.info
    }, [data])
+
    return (
       <div>
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data?.offer}</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
                   <H2>Сунуш жонундо маалымат</H2>
                   <Li>
                      <b>Сунушттун аталышы:</b> {data?.offer}
+                  </Li>
+                  <Li>
+                     <b>Сунуштоочунун аты-жонү:</b> {data?.title}
+                  </Li>
+                  <Li>
+                     <b>Байланыш номери:</b> {data?.phone}
                   </Li>
                   <Li>
                      <b>Сунуш жонундо жонундо маалымат:</b>

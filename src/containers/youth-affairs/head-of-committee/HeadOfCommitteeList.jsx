@@ -57,7 +57,7 @@ const HeadOfCommitteeList = ({ item }) => {
                   <Title size="20px" color="#7d97b8">
                      {item?.managerDirectorName}
                   </Title>
-                  <Text size="20px" color="#7d97b8">
+                  <Text size="15px" color="#7d97b8">
                      {item?.managerName}
                   </Text>
                </Flex>

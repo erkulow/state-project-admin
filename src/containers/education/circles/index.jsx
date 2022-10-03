@@ -5,8 +5,8 @@ import FullWidthTabs from '../../../components/tabs'
 import { FORM_CIRCLES } from '../../../utils/constants/forms/formEducation'
 import { TabPanel } from '../../../components/tabs/TabPanel'
 import { tabActions } from '../../../store/tab-slice'
-import Panel from './Panel'
 import { putInDataForm, sendOrEditData } from '../../../utils/helpers/general'
+import Panel from './Panel'
 
 const Circles = () => {
    const dispatch = useDispatch()

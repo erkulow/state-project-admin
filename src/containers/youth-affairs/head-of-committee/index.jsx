@@ -44,7 +44,7 @@ const HeadOfCommittee = () => {
                      setValue,
                      isEdit,
                      changingObj,
-                     template: 'result',
+                     template: 'info',
                   })
                }
             />
