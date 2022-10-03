@@ -50,6 +50,10 @@ export const API_ROUTES_SAVE = {
    healthOMS: {
       path: 'healthcare/insurance/save',
    },
+
+   agroAdvice: {
+      path: 'agriculture/tips/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -103,6 +107,10 @@ export const API_ROUTES_EDIT = {
    },
    healthOMS: {
       path: 'healthcare/insurance',
+   },
+
+   agroAdvice: {
+      path: 'agriculture/tips',
    },
 }
 
@@ -158,6 +166,10 @@ export const API_ROUTES_DELETE = {
    healthOMS: {
       path: 'healthcare/insurance',
    },
+
+   agroAdvice: {
+      path: 'agriculture/tips',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -212,6 +224,10 @@ export const API_ROUTES_UPLOAD = {
    healthOMS: {
       path: 'healthcare/insurance/upload-file',
    },
+
+   agroAdvice: {
+      path: 'agriculture/tips/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -265,5 +281,9 @@ export const API_ROUTES_GET = {
    },
    healthOMS: {
       path: 'agriculture/acEvent/insurance',
+   },
+
+   agroAdvice: {
+      path: 'agriculture/tips',
    },
 }

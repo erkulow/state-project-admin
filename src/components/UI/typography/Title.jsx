@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
-const Title = (props) => {
-   return <TitleStyled {...props}>{props.children}</TitleStyled>
-}
+const Title = forwardRef((props, ref) => {
+   return (
+      <TitleStyled ref={ref} {...props}>
+         {props.children}
+      </TitleStyled>
+   )
+})
 const TitleStyled = styled.h4`
    font-family: 'Inter';
    font-weight: ${({ weight }) => weight || '500'};

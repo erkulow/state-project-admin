@@ -159,26 +159,10 @@ export const FORM_SEEDS_FARM = {
    ],
 }
 export const FORM_AGRO_ADVICES = {
-   style: '100px 100px 1fr',
+   style: '200px 1fr',
    forms: [
       {
-         label: 'Сунуштун аталышы',
-         styles: { gridArea: '1 / 1 / 3 / 3 ' },
-         requestName: 'offeriveName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Сунуштоочунун аты-жонү',
-         styles: { gridArea: '1 / 3 / 2 / 5' },
-         requestName: 'offersFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Сунуш жөнүндө маалымат',
+         label: 'Айыл-чарба жонундо кенештер',
          styles: { gridArea: '2 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
@@ -187,8 +171,8 @@ export const FORM_AGRO_ADVICES = {
          },
       },
       {
-         label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         label: 'Кенештерге тиешелуу сурот жуктонуз',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
