@@ -99,7 +99,7 @@ const Container = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-color: #0e1117;
+   background-color: #01031e;
    height: 100vh;
    @media screen and (max-width: 700px) {
       width: 100%;

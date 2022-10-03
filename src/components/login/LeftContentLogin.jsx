@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Back from '../../assets/images/846EB5D0-97A1-4D1C-8D6E-533A15C52203_1_105_c.jpeg'
+import Back from '../../assets/images/nasa-1lfI7wkGWZ4-unsplash.jpg'
 
 const LeftContentLogin = () => {
    return <Container />
@@ -11,7 +11,7 @@ const Container = styled.div`
    background: url(${Back});
    background-position: center;
    background-size: cover;
-   background-attachment: fixed;
+   background-repeat: no-repeat;
    @media screen and (max-width: 700px) {
       display: none;
    }
