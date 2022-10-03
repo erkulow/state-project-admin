@@ -53,7 +53,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитеттин аты',
          styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'committeName',
+         requestName: 'managerName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -61,7 +61,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитет башчынын аты-жону',
          styles: { gridArea: '1 / 2 / 3 / 3' },
-         requestName: 'directorFullName',
+         requestName: 'managerDirectorName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
@@ -77,7 +77,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -86,7 +86,7 @@ export const FORM_HEAD_OF_COMMITTEE = {
       {
          label: 'Комитет жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 5 / 5' },
-         requestName: 'infoManager',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

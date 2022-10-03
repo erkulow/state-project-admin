@@ -42,6 +42,7 @@ const ModalWrapper = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
+   z-index: 20;
    @media (max-width: 500px) {
       align-items: flex-end;
    }

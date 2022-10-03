@@ -25,12 +25,12 @@ const LoginForm = () => {
    const input = {
       login: {
          ...register('email', {
-            required: 'Please enter login',
+            required: 'Сураныч, электрондук почтанызды жазыныз',
          }),
       },
       password: {
          ...register('password', {
-            required: 'Enter password',
+            required: 'Сураныч, паролунузду жазыныз',
          }),
       },
    }
@@ -44,20 +44,21 @@ const LoginForm = () => {
    const errorMessage = errorLoginMessage || errorPasswordMessage
    return (
       <Container>
+         <Title>Администратор катары жеке кабинетке кируу</Title>
          <Form onSubmit={handleSubmit(submitHandler)}>
             {errorMessage && (
                <Alert className="alert" severity="error">
                   {errorLoginMessage || errorPasswordMessage}
                </Alert>
             )}
+            <Text style={{ textAlign: 'center' }}>авторизация</Text>
             <Flex
                width="100%"
                margin="10px 0 20px 0"
                justify="center"
                align="center"
-            >
-               <Title>Login to Admin!!!</Title>
-            </Flex>
+            />
+
             <Flex direction="column" gap="16px">
                <Input
                   isValid={errors?.email && !isValid}
@@ -80,14 +81,22 @@ const LoginForm = () => {
    )
 }
 
-const Title = styled.h3`
+const Title = styled.h2`
    color: #bfcdd6;
+   position: absolute;
+   top: 100px;
+   text-transform: uppercase;
+`
+const Text = styled.p`
+   color: #155aa9;
+   text-transform: uppercase;
 `
 
 const Container = styled.div`
    width: 50%;
    padding: 1rem;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    background-color: #0e1117;
@@ -99,12 +108,17 @@ const Container = styled.div`
 const Form = styled.form`
    max-width: 500px;
    width: 100%;
-   padding: 0.8rem;
-   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
-   background-color: #161b22;
-   border: 1px solid #3e4450;
+   position: relative;
+   /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4); */
+   /* background-color: #161b22;
+   border: 1px solid #3e4450; */
    .alert {
       animation: alert 0.4s ease;
+      width: 100%;
+      background-color: #21262c;
+      color: tomato;
+      position: absolute;
+      top: -110px;
    }
    @keyframes alert {
       0% {
