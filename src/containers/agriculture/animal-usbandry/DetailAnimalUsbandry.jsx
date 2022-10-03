@@ -23,12 +23,10 @@ const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Иш-чара жонундо маалымат</H2>
+                  <H2>Мал-чарба жонундо маалымат</H2>
                   <Li>
-                     <b>Иш-чаранын аталышы:</b> {data.title}
-                  </Li>
-                  <Li>
-                     <b>Иш-чара жонундо маалымат:</b> <span ref={refText} />
+                     <b>Мал-чарбачылык жонундо маалымат:</b>{' '}
+                     <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">

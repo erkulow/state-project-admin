@@ -1,19 +1,41 @@
-import React, { Fragment, useState } from 'react'
+/* eslint-disable consistent-return */
+import React, { Fragment, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AiOutlineCaretRight } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import { CATEGORYES } from '../../utils/constants/categoryes'
 
+let useEffectOnes = true
+
 const SideBarNav = () => {
    const navigate = useNavigate()
-   const [toggle, setToggle] = useState(false)
    const [listId, setlistId] = useState(null)
-   const isVisibleInner = (id) => listId === id && toggle
+   const isVisibleInner = (id) => listId === id
 
    const toggleInnerMenu = (id) => {
-      setToggle(!toggle)
-      setlistId(id)
+      switch (id) {
+         case listId:
+            setlistId(null)
+            break
+         default:
+            setlistId(id)
+            break
+      }
    }
+
+   useEffect(() => {
+      if (useEffectOnes) {
+         useEffectOnes = false
+         return
+      }
+      const timeFunction = setTimeout(() => {
+         setlistId(null)
+      }, 50000)
+
+      return () => {
+         clearTimeout(timeFunction)
+      }
+   }, [listId])
 
    return (
       <Container>

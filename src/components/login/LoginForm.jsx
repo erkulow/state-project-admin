@@ -18,7 +18,7 @@ const LoginForm = () => {
    }, [isAuthorized, navigate])
    const {
       register,
-      formState: { errors, isValid },
+      formState: { errors, isValid, isSubmitted },
       handleSubmit,
       reset,
    } = useForm({ mode: 'onChange' })
@@ -45,7 +45,8 @@ const LoginForm = () => {
    return (
       <Container>
          <Title>Администратор катары жеке кабинетке кируу</Title>
-         <Form onSubmit={handleSubmit(submitHandler)}>
+
+         <Form isValid={!errorMessage} onSubmit={handleSubmit(submitHandler)}>
             {errorMessage && (
                <Alert className="alert" severity="error">
                   {errorLoginMessage || errorPasswordMessage}
@@ -72,15 +73,26 @@ const LoginForm = () => {
                   placeholder="Пароль"
                   {...input.password}
                />
-               <Button className="btn" disabled={isLoading} type="submit">
+               <ButtonLogin
+                  isValid={!errorMessage}
+                  className="btn"
+                  disabled={isLoading}
+                  type="submit"
+               >
                   {isLoading ? <Spinner /> : 'Кируу'}
-               </Button>
+               </ButtonLogin>
             </Flex>
          </Form>
       </Container>
    )
 }
-
+const ButtonLogin = styled(Button)`
+   background-color: ${({ isValid }) => (isValid ? '#135ba9' : 'red')};
+   :hover {
+      background-color: ${({ isValid }) => (isValid ? '#135ba993' : 'tomato')};
+   }
+   color: white;
+`
 const Title = styled.h2`
    color: #bfcdd6;
    position: absolute;
@@ -135,12 +147,6 @@ const Form = styled.form`
       }
       100% {
          transform: scale(1);
-      }
-   }
-   .btn {
-      :disabled {
-         cursor: not-allowed;
-         background: gray;
       }
    }
 `

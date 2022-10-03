@@ -54,6 +54,9 @@ export const API_ROUTES_SAVE = {
    agroAdvice: {
       path: 'agriculture/tips/save',
    },
+   agroAnimalUsbundry: {
+      path: 'agriculture/animalHusbandry/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -111,6 +114,9 @@ export const API_ROUTES_EDIT = {
 
    agroAdvice: {
       path: 'agriculture/tips',
+   },
+   agroAnimalUsbundry: {
+      path: 'agriculture/animalHusbandry',
    },
 }
 
@@ -170,6 +176,9 @@ export const API_ROUTES_DELETE = {
    agroAdvice: {
       path: 'agriculture/tips',
    },
+   agroAnimalUsbundry: {
+      path: 'agriculture/animalHusbandry',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -228,6 +237,9 @@ export const API_ROUTES_UPLOAD = {
    agroAdvice: {
       path: 'agriculture/tips/upload-file',
    },
+   agroAnimalUsbundry: {
+      path: 'agriculture/animalHusbandry/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -285,5 +297,8 @@ export const API_ROUTES_GET = {
 
    agroAdvice: {
       path: 'agriculture/tips',
+   },
+   agroAnimalUsbundry: {
+      path: 'agriculture/animalHusbandry',
    },
 }

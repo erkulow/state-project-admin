@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AiOutlineCaretRight } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
@@ -6,13 +6,18 @@ import { CATEGORYES } from '../../utils/constants/categoryes'
 
 const Lists = () => {
    const navigate = useNavigate()
-   const [toggle, setToggle] = useState(false)
    const [listId, setlistId] = useState(null)
-   const isVisibleInner = (id) => listId === id && toggle
+   const isVisibleInner = (id) => listId === id
 
    const toggleInnerMenu = (id) => {
-      setToggle(!toggle)
-      setlistId(id)
+      switch (id) {
+         case listId:
+            setlistId(null)
+            break
+         default:
+            setlistId(id)
+            break
+      }
    }
 
    return (
