@@ -56,6 +56,9 @@ export const API_ROUTES_SAVE = {
    religiousPilgrimage: {
       path: 'din/hadj/save',
    },
+   religiousAit: {
+      path: 'din/ait/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -115,6 +118,9 @@ export const API_ROUTES_EDIT = {
    },
    religiousPilgrimage: {
       path: 'din/hadj',
+   },
+   religiousAit: {
+      path: 'din/ait',
    },
 }
 
@@ -176,6 +182,9 @@ export const API_ROUTES_DELETE = {
    religiousPilgrimage: {
       path: 'din/hadj',
    },
+   religiousAit: {
+      path: 'din/ait',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -236,6 +245,9 @@ export const API_ROUTES_UPLOAD = {
    religiousPilgrimage: {
       path: 'din/hadj/upload-file',
    },
+   religiousAit: {
+      path: 'din/ait/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -295,5 +307,8 @@ export const API_ROUTES_GET = {
    },
    religiousPilgrimage: {
       path: 'agriculture/acEvent/hadj',
+   },
+   religiousAit: {
+      path: 'agriculture/acEvent/ait',
    },
 }

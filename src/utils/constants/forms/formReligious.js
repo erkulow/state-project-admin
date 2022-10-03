@@ -179,7 +179,7 @@ export const FORM_PILGRIMAGE = {
    ],
 }
 export const FORM_AIT = {
-   style: 'repeat(2,1fr)',
+   style: '70px 170px 150px 1fr',
    forms: [
       {
          label: 'Имамдын аты-жонү',
@@ -191,7 +191,7 @@ export const FORM_AIT = {
       },
       {
          label: 'Айт жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -200,7 +200,7 @@ export const FORM_AIT = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
