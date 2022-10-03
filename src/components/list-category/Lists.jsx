@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { AiOutlineCaretRight } from 'react-icons/ai'
+import { MdArrowRight } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import { CATEGORYES } from '../../utils/constants/categoryes'
 
@@ -47,9 +47,11 @@ const Lists = () => {
       </Container>
    )
 }
-const Icon = styled(AiOutlineCaretRight)`
+const Icon = styled(MdArrowRight)`
    transform: ${({ isvisibleinner }) =>
       isvisibleinner ? 'rotate(90deg)' : 'rotate(0deg)'};
+   position: relative;
+   z-index: 0;
 `
 const InnerList = styled.div`
    width: 100%;
@@ -88,6 +90,11 @@ const List = styled.div`
    gap: 10px;
    margin-bottom: 6px;
    cursor: pointer;
+   span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+   }
    :hover {
       background-color: #2e343b;
    }
