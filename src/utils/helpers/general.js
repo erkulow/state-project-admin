@@ -100,6 +100,7 @@ export const sendOrEditData = ({
    category,
    isEdit,
    changingObj,
+   notFile,
 }) => {
    if (isEdit) {
       const editingData = {
@@ -116,6 +117,7 @@ export const sendOrEditData = ({
             image,
             reset: clear.bind(null, reset),
             category,
+            notFile,
          })
       )
    }
@@ -136,7 +138,7 @@ export const putInDataForm = ({
       })
       store.dispatch(crudActions.changeTextEditor(changingObj[template]))
       setImages({
-         images: [{ img: changingObj.fileInformation.photo, id: '1' }],
+         images: [{ img: changingObj?.fileInformation?.photo, id: '1' }],
          files: [],
       })
    }

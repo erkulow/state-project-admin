@@ -19,16 +19,17 @@ const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
          <Flex gap="30px" align="start">
             <Flex direction="column" align="center" width="50%" gap="10px">
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">Иш-чаранын суроту</TitlePosition>
+               <TitlePosition size="20px">Урон-чарбасынын суроту</TitlePosition>
             </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Иш-чара жонундо маалымат</H2>
+                  <H2>Урон-чарбасы жонундо маалымат</H2>
                   <Li>
                      <b>Иш-чаранын аталышы:</b> {data.title}
                   </Li>
                   <Li>
-                     <b>Иш-чара жонундо маалымат:</b> <span ref={refText} />
+                     <b>Урон-чарбасы жонундо маалымат:</b>{' '}
+                     <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">

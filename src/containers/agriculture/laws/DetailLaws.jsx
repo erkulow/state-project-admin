@@ -17,18 +17,11 @@ const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
    return (
       <div>
          <Flex gap="30px" align="start">
-            <Flex direction="column" align="center" width="50%" gap="10px">
-               <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">Иш-чаранын суроту</TitlePosition>
-            </Flex>
             <Flex width="100%" justify="center" direction="column" gap="30px">
                <List>
-                  <H2>Иш-чара жонундо маалымат</H2>
+                  <H2>Айыл-чарба мыйзамы</H2>
                   <Li>
-                     <b>Иш-чаранын аталышы:</b> {data.title}
-                  </Li>
-                  <Li>
-                     <b>Иш-чара жонундо маалымат:</b> <span ref={refText} />
+                     <span ref={refText} />
                   </Li>
                </List>
                <Flex width="100%" justify="end" gap="20px">
@@ -69,27 +62,16 @@ const ButtonDelete = styled(Button)`
       background-color: #ff634729;
    }
 `
-const TitlePosition = styled(Title)`
-   width: 100%;
-   color: #2c2e38;
-   padding: 1em;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
-   background-color: rgba(255, 255, 255, 0.4);
-   -webkit-backdrop-filter: blur(5px);
-   backdrop-filter: blur(5px);
-   text-align: center;
-`
 const List = styled.ul`
    list-style: none;
    color: #89919e;
+   max-height: 500px;
+   overflow-y: auto;
 `
 const Li = styled.li`
    width: 100%;
    padding: 1em;
-   background-color: #0e1117;
-   text-transform: uppercase;
    margin-bottom: 10px;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
    border-radius: 5px;
    b {
       color: #94a0aa;
@@ -105,10 +87,7 @@ const H2 = styled.h2`
    margin-bottom: 10px;
    width: 100%;
    padding: 1em;
-   background-color: #21262c;
-   text-transform: uppercase;
    margin-bottom: 10px;
-   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
    border-radius: 5px;
 `
 const Img = styled.img`

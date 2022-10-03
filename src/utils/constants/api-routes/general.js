@@ -57,6 +57,12 @@ export const API_ROUTES_SAVE = {
    agroAnimalUsbundry: {
       path: 'agriculture/animalHusbandry/save',
    },
+   agroGrainGrowing: {
+      path: 'agriculture/grainGrowing/save',
+   },
+   agroLaws: {
+      path: 'agriculture/laws/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -117,6 +123,12 @@ export const API_ROUTES_EDIT = {
    },
    agroAnimalUsbundry: {
       path: 'agriculture/animalHusbandry',
+   },
+   agroGrainGrowing: {
+      path: 'agriculture/grainGrowing',
+   },
+   agroLaws: {
+      path: 'agriculture/laws',
    },
 }
 
@@ -179,6 +191,12 @@ export const API_ROUTES_DELETE = {
    agroAnimalUsbundry: {
       path: 'agriculture/animalHusbandry',
    },
+   agroGrainGrowing: {
+      path: 'agriculture/grainGrowing',
+   },
+   agroLaws: {
+      path: 'agriculture/laws',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -240,6 +258,12 @@ export const API_ROUTES_UPLOAD = {
    agroAnimalUsbundry: {
       path: 'agriculture/animalHusbandry/upload-file',
    },
+   agroGrainGrowing: {
+      path: 'agriculture/grainGrowing/upload-file',
+   },
+   agroLaws: {
+      path: 'agriculture/laws/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -300,5 +324,11 @@ export const API_ROUTES_GET = {
    },
    agroAnimalUsbundry: {
       path: 'agriculture/animalHusbandry',
+   },
+   agroGrainGrowing: {
+      path: 'agriculture/grainGrowing',
+   },
+   agroLaws: {
+      path: 'agriculture/laws',
    },
 }

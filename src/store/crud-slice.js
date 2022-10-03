@@ -16,7 +16,10 @@ import {
 
 export const saveDataToServer = createAsyncThunk(
    'saveDataToServer/crud',
-   async ({ data, image, reset, category }, { rejectWithValue, dispatch }) => {
+   async (
+      { data, image, reset, category, notFile },
+      { rejectWithValue, dispatch }
+   ) => {
       if (category === 'leadership') {
          if (data.positions === 'Айыл өкмөт башчысы') data.type = '1'
          if (data.positions === 'Айыл өкмөтүнүн орун басары') data.type = '2'
@@ -31,9 +34,23 @@ export const saveDataToServer = createAsyncThunk(
             method: 'POST',
             body: data,
          })
-         await dispatch(
-            uploadImage({ image, idLeadershipData: result.id, reset, category })
-         )
+         if (!notFile) {
+            await dispatch(
+               uploadImage({
+                  image,
+                  idLeadershipData: result.id,
+                  reset,
+                  category,
+               })
+            )
+         } else {
+            reset()
+            showSuccessMessage({
+               title: 'Ура',
+               message: 'ийгиликтуу кошулду:)',
+            })
+         }
+
          return result
       } catch (error) {
          showErrorMessage({

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
@@ -11,12 +11,13 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailEvent from './DetailEvent'
+import DetailLaws from './DetailLaws'
 
 const EventsList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
+   const refText = useRef()
 
    const showDetailHandler = (e) => {
       e.stopPropagation()
@@ -29,6 +30,10 @@ const EventsList = ({ item }) => {
       dispatch(isEditHandler({ isEdit: true, data: item }))
    }
 
+   useEffect(() => {
+      refText.current.innerHTML = item.text
+   }, [item])
+
    return (
       <>
          <Modal
@@ -36,28 +41,23 @@ const EventsList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailEvent
+            <DetailLaws
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
             />
          </Modal>
          <Section onClick={showDetailHandler}>
-            <Flex width="100%" gap="20px" align="center">
-               <Flex width="10%">
-                  <Image src={item?.fileInformation?.photo} />
-               </Flex>
+            <Flex width="100%" align="center" justify="space-between">
                <Flex
-                  width="50%"
+                  style={{ overflow: 'hidden' }}
                   direction="column"
-                  gap="10px"
                   align="flex-start"
+                  width="65%"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
-                     {item?.title}
-                  </Title>
+                  <TitleAdvice ref={refText} size="13px" color="#7d97b8" />
                </Flex>
-               <Flex width="40%" justify="center" gap="20px">
+               <Flex gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
@@ -75,9 +75,7 @@ const EventsList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(
-                  deleteData({ id: item.id, category: 'educationEvents' })
-               )
+               dispatch(deleteData({ id: item.id, category: 'agroLaws' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -85,6 +83,16 @@ const EventsList = ({ item }) => {
       </>
    )
 }
+const TitleAdvice = styled(Title)`
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   ul,
+   ol {
+      margin-left: 25px;
+   }
+`
 const ButtonEdit = styled(Button)`
    color: green;
    display: flex;
