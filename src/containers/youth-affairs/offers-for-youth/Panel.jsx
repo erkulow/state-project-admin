@@ -15,7 +15,6 @@ const Panel = () => {
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
-   console.log(datas)
    return (
       <Container>
          <Flex width="100%" direction="column" gap="20px">
