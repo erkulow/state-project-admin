@@ -63,17 +63,17 @@ const LoginForm = () => {
                <Input
                   isValid={errors?.email && !isValid}
                   type="text"
-                  placeholder="Username"
+                  placeholder="Email"
                   {...input.login}
                />
                <Input
                   isValid={errors?.password && !isValid}
                   type="Password"
-                  placeholder="Password"
+                  placeholder="Пароль"
                   {...input.password}
                />
                <Button className="btn" disabled={isLoading} type="submit">
-                  {isLoading ? <Spinner /> : 'LOGIN'}
+                  {isLoading ? <Spinner /> : 'Кируу'}
                </Button>
             </Flex>
          </Form>

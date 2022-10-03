@@ -76,7 +76,12 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                   direction="column"
                   gap="5px"
                >
-                  <Label>{item.label}</Label>
+                  <Label>
+                     {item.label}{' '}
+                     {item?.required?.required && (
+                        <span style={{ color: 'tomato' }}>*</span>
+                     )}
+                  </Label>
                   {(item.type === 'file' && (
                      <Input
                         disabled={isLoading}
@@ -177,7 +182,7 @@ const FormStyled = styled.form`
 `
 const Label = styled.label`
    font-size: 16px;
-   color: #7e7474;
+   color: #c7ccd2;
 `
 
 export default React.memo(Form)
