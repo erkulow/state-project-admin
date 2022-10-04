@@ -22,19 +22,19 @@ export const FORM_CULTURE_HOUSES = {
    ],
 }
 export const FORM_MUSEUMS = {
-   style: '100px 100px 1fr',
+   style: '100px 100px 200px 1fr',
    forms: [
       {
          label: 'Музейдин аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'museumName',
+         styles: { gridArea: '1 / 1 / 3 / 3' },
+         requestName: 'titleMuseum',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Музей башчысынын аты-жону',
-         styles: { gridArea: '1 / 2 / 3 / 3' },
+         styles: { gridArea: '1 / 3 / 3 / 5' },
          requestName: 'directorFullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -42,7 +42,7 @@ export const FORM_MUSEUMS = {
       },
       {
          label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
+         styles: { gridArea: '2 / 1 / 2 / 3' },
          requestName: 'address',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -50,8 +50,8 @@ export const FORM_MUSEUMS = {
       },
       {
          label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         styles: { gridArea: '2 / 3 / 3 / 5' },
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -59,7 +59,7 @@ export const FORM_MUSEUMS = {
       },
       {
          label: 'Музей жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '4 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -68,7 +68,7 @@ export const FORM_MUSEUMS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 4 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

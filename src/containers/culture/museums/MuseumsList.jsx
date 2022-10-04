@@ -11,9 +11,9 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailAdvice from './DetailAdvice'
+import DetailMuseums from './DetailMuseums'
 
-const AdviceList = ({ item }) => {
+const MuseumsList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -41,7 +41,7 @@ const AdviceList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailAdvice
+            <DetailMuseums
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -59,6 +59,7 @@ const AdviceList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
+                  <Title color="white">{item.titleMuseum}</Title>
                   <TitleAdvice ref={refText} size="10px" color="#7d97b8" />
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
@@ -79,7 +80,7 @@ const AdviceList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'agroAdvice' }))
+               dispatch(deleteData({ id: item.id, category: 'museums' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -138,4 +139,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default AdviceList
+export default MuseumsList

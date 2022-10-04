@@ -14,7 +14,7 @@ import {
    WrapperImage,
 } from '../../styles'
 
-const DetailAdvice = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailMuseums = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
@@ -29,9 +29,22 @@ const DetailAdvice = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2>Айыл чарба жонундо кенештер</H2>
+                  <H2>Музей жонундо маалымат</H2>
                   <Li>
-                     <b>Айыл чарба жонундо кенештер:</b> <span ref={refText} />
+                     <b>Музейдин аталышы:</b> {data.titleMuseum}
+                  </Li>
+                  <Li>
+                     <b>Музей жетекчиси:</b> {data.directorFullName}
+                  </Li>
+                  <Li>
+                     <b>Музейдин дареги:</b> {data.address}
+                  </Li>
+                  <Li>
+                     <b>Байланыш телефону:</b> {data.phone}
+                  </Li>
+                  <Li>
+                     <strong>Музей жонундо маалымат:</strong>
+                     <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>
@@ -53,4 +66,4 @@ const DetailAdvice = ({ data, setShowDeleteModal, editHandler }) => {
    )
 }
 
-export default DetailAdvice
+export default DetailMuseums
