@@ -69,6 +69,10 @@ export const API_ROUTES_SAVE = {
    agroPasture: {
       path: 'agriculture/pasture/save',
    },
+
+   cultureWorkers: {
+      path: 'culture/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -141,6 +145,10 @@ export const API_ROUTES_EDIT = {
    },
    agroPasture: {
       path: 'agriculture/pasture',
+   },
+
+   cultureWorkers: {
+      path: 'culture',
    },
 }
 
@@ -215,6 +223,10 @@ export const API_ROUTES_DELETE = {
    agroPasture: {
       path: 'agriculture/pasture',
    },
+
+   cultureWorkers: {
+      path: 'culture',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -288,6 +300,10 @@ export const API_ROUTES_UPLOAD = {
    agroPasture: {
       path: 'agriculture/pasture/upload-file',
    },
+
+   cultureWorkers: {
+      path: 'culture/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -360,5 +376,9 @@ export const API_ROUTES_GET = {
    },
    agroPasture: {
       path: 'agriculture/pasture',
+   },
+
+   cultureWorkers: {
+      path: 'agriculture/acEvent/culturalFigures',
    },
 }

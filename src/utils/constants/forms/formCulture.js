@@ -103,36 +103,19 @@ export const FORM_MUSEUMS = {
    ],
 }
 export const FORM_CULTURAL_WORKERS = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Маданият жумушчунун аты-жону',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'workersName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
+         requestName: 'fullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Маданият жумушчу жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -141,7 +124,7 @@ export const FORM_CULTURAL_WORKERS = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
