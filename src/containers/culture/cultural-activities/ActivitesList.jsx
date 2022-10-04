@@ -11,9 +11,9 @@ import { deleteData } from '../../../store/crud-slice'
 import Modal from '../../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../../store/tab-slice'
 import { isEditHandler } from '../../../store/edit-slice'
-import DetailAdvice from './DetailAdvice'
+import DetailActivites from './DetailActivites'
 
-const AdviceList = ({ item }) => {
+const ActivitesList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -41,7 +41,7 @@ const AdviceList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailAdvice
+            <DetailActivites
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -79,7 +79,7 @@ const AdviceList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'agroAdvice' }))
+               dispatch(deleteData({ id: item.id, category: 'cultureEvents' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -138,4 +138,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default AdviceList
+export default ActivitesList

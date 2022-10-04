@@ -1,7 +1,7 @@
 import { REGEXP_EMAIL } from '../general'
 
 export const FORM_LEADERSHIP = {
-   style: '100px 100px 100px 1fr',
+   style: '100px 100px 100px 200px 1fr',
    styleBtn: '5 / 1 / 5 / 5',
    forms: [
       {
@@ -80,6 +80,15 @@ export const FORM_LEADERSHIP = {
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
+      },
+      {
+         label: 'Кызматкер жонундо маалымат',
+         styles: { gridArea: '5 / 1 / 5 / 5' },
+         requestName: 'text',
+         type: 'textarea',
+         // required: {
+         //    required: 'Поляны бош жонотууго болбойт',
+         // },
       },
    ],
 }

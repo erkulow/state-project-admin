@@ -73,6 +73,18 @@ export const API_ROUTES_SAVE = {
    cultureWorkers: {
       path: 'culture/save',
    },
+   cultureEvents: {
+      path: 'culture/cultureEvents/save',
+   },
+   museums: {
+      path: 'culture/museums/save',
+   },
+   cultureContests: {
+      path: 'culture/contests/save',
+   },
+   housesOfCultures: {
+      path: 'culture/housesOfCulture/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -149,6 +161,18 @@ export const API_ROUTES_EDIT = {
 
    cultureWorkers: {
       path: 'culture',
+   },
+   cultureEvents: {
+      path: 'culture/cultureEvents',
+   },
+   museums: {
+      path: 'culture/museums',
+   },
+   cultureContests: {
+      path: 'culture/contests',
+   },
+   housesOfCultures: {
+      path: 'culture/housesOfCulture',
    },
 }
 
@@ -227,6 +251,18 @@ export const API_ROUTES_DELETE = {
    cultureWorkers: {
       path: 'culture',
    },
+   cultureEvents: {
+      path: 'culture/cultureEvents',
+   },
+   museums: {
+      path: 'culture/museums',
+   },
+   cultureContests: {
+      path: 'culture/contests',
+   },
+   housesOfCultures: {
+      path: 'culture/housesOfCulture',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -304,6 +340,18 @@ export const API_ROUTES_UPLOAD = {
    cultureWorkers: {
       path: 'culture/upload-file',
    },
+   cultureEvents: {
+      path: 'culture/cultureEvents/upload-file',
+   },
+   museums: {
+      path: 'culture/museums/upload-file',
+   },
+   cultureContests: {
+      path: 'culture/contests/upload-file',
+   },
+   housesOfCultures: {
+      path: 'culture/housesOfCulture/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -380,5 +428,17 @@ export const API_ROUTES_GET = {
 
    cultureWorkers: {
       path: 'agriculture/acEvent/culturalFigures',
+   },
+   cultureEvents: {
+      path: 'agriculture/acEvent/cultureEvents',
+   },
+   museums: {
+      path: 'agriculture/acEvent/museums',
+   },
+   cultureContests: {
+      path: 'agriculture/acEvent/contests',
+   },
+   housesOfCultures: {
+      path: 'agriculture/acEvent/housesOfCultures',
    },
 }

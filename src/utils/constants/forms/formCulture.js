@@ -173,32 +173,8 @@ export const FORM_CULTURAL_COMPETITIONS = {
    ],
 }
 export const FORM_CULTURAL_ACTIVITIES = {
-   style: '100px 100px 1fr',
+   style: '200px 1fr',
    forms: [
-      {
-         label: 'Иш-чаранын аталышы',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'activitiName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 3 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Убактысы',
-         styles: { gridArea: '1 / 4 / 4 / 5' },
-         requestName: 'time',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
       {
          label: 'Иш-чара жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
@@ -210,7 +186,7 @@ export const FORM_CULTURAL_ACTIVITIES = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
