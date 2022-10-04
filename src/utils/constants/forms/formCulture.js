@@ -1,31 +1,6 @@
 export const FORM_CULTURE_HOUSES = {
-   style: '100px 100px 1fr',
+   style: '200px  1fr',
    forms: [
-      {
-         label: 'Маданият уйунун аталышы',
-         styles: { gridArea: '1 / 1 / 3 / 3' },
-         requestName: 'houseName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
       {
          label: 'Маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
@@ -37,7 +12,7 @@ export const FORM_CULTURE_HOUSES = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

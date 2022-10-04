@@ -29,9 +29,9 @@ const DetailAdvice = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2>Айыл чарба жонундо кенештер</H2>
+                  <H2>Маданият уйу жонундо маалымат</H2>
                   <Li>
-                     <b>Айыл чарба жонундо кенештер:</b> <span ref={refText} />
+                     <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>
