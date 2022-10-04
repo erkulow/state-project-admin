@@ -249,11 +249,6 @@ export const CATEGORYES = [
             title: 'Маданий иш-чаралар',
             path: culture.culturalActivities.path,
          },
-         {
-            id: uuid(),
-            title: 'Маданий сынактар',
-            path: culture.culturalCompetitions.path,
-         },
       ],
    },
    {

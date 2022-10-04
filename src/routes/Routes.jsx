@@ -85,9 +85,7 @@ const CulturalHouses = React.lazy(() =>
    import('../containers/culture/cultural-houses')
 )
 const Museums = React.lazy(() => import('../containers/culture/museums'))
-const CulturalCompetitions = React.lazy(() =>
-   import('../containers/culture/cultural-competitions')
-)
+
 const CulturalWorkers = React.lazy(() =>
    import('../containers/culture/cultural-workers')
 )
@@ -244,10 +242,7 @@ const AppRoutes = () => {
                   path={culture.culturalWorkers.path}
                   element={<CulturalWorkers />}
                />
-               <Route
-                  path={culture.culturalCompetitions.path}
-                  element={<CulturalCompetitions />}
-               />
+
                <Route
                   path={culture.culturalActivities.path}
                   element={<CulturalActivities />}
