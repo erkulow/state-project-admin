@@ -63,6 +63,12 @@ export const API_ROUTES_SAVE = {
    agroLaws: {
       path: 'agriculture/laws/save',
    },
+   agroActivites: {
+      path: 'agriculture/acEvent/save',
+   },
+   agroPasture: {
+      path: 'agriculture/pasture/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -129,6 +135,12 @@ export const API_ROUTES_EDIT = {
    },
    agroLaws: {
       path: 'agriculture/laws',
+   },
+   agroActivites: {
+      path: 'agriculture/acEvent',
+   },
+   agroPasture: {
+      path: 'agriculture/pasture',
    },
 }
 
@@ -197,6 +209,12 @@ export const API_ROUTES_DELETE = {
    agroLaws: {
       path: 'agriculture/laws',
    },
+   agroActivites: {
+      path: 'agriculture/acEvent',
+   },
+   agroPasture: {
+      path: 'agriculture/pasture',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -264,6 +282,12 @@ export const API_ROUTES_UPLOAD = {
    agroLaws: {
       path: 'agriculture/laws/upload-file',
    },
+   agroActivites: {
+      path: 'agriculture/acEvent/upload-file',
+   },
+   agroPasture: {
+      path: 'agriculture/pasture/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -330,5 +354,11 @@ export const API_ROUTES_GET = {
    },
    agroLaws: {
       path: 'agriculture/laws',
+   },
+   agroActivites: {
+      path: 'agriculture/acEvent',
+   },
+   agroPasture: {
+      path: 'agriculture/pasture',
    },
 }

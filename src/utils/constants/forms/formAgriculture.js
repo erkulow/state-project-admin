@@ -22,44 +22,19 @@ export const FORM_ANIMAL_USBUNDRY = {
    ],
 }
 export const FORM_PASTURE_COMMITTEE = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
-         label: 'Комитеттин аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'committeName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Комитет башчынын аты-жону',
-         styles: { gridArea: '1 / 2 / 3 / 3' },
+         styles: { gridArea: '1 / 1 / 3 / 5' },
          requestName: 'directorFullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Комитет жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -68,7 +43,7 @@ export const FORM_PASTURE_COMMITTEE = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -132,35 +107,19 @@ export const FORM_AGRO_ADVICES = {
    ],
 }
 export const FORM_AGRO_ACTIVITIES = {
-   style: '100px 100px 1fr',
+   style: '100px 200px 1fr',
    forms: [
       {
          label: 'Иш-чаранын аталышы',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'activitiName',
+         styles: { gridArea: '1 / 1 / 2 / 5' },
+         requestName: 'title',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 3 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Убактысы',
-         styles: { gridArea: '1 / 4 / 4 / 5' },
-         requestName: 'time',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Иш-чара жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         label: 'Иш-чара жөнүндө',
+         styles: { gridArea: '3 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -169,7 +128,7 @@ export const FORM_AGRO_ACTIVITIES = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 3 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

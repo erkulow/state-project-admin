@@ -29,12 +29,9 @@ const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2>Иш-чара жонундо маалымат</H2>
+                  <H2>Жайыт комитети жонундо маалымат</H2>
                   <Li>
-                     <b>Иш-чаранын аталышы:</b> {data.title}
-                  </Li>
-                  <Li>
-                     <b>Иш-чара жонундо маалымат:</b> <span ref={refText} />
+                     <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>

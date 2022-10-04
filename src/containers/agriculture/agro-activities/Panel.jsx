@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
-import EventsList from './EventsList'
+import ActivitesList from './ActivitesList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('educationEvents'))
+      dispatch(getData('agroActivites'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -22,7 +22,7 @@ const Panel = () => {
                <SectionTitle>Иш-чаралар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <EventsList key={item.id} item={item} />
+                     <ActivitesList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
                      Иш-чаралар боюнча маалымат табылган жок:(
