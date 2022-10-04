@@ -1,11 +1,18 @@
-/* eslint-disable jsx-a11y/alt-text */
-import styled from '@emotion/styled'
-import { Button } from '@mui/material'
 import React, { useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
-import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
+import {
+   ButtonDelete,
+   ButtonEdit,
+   H2,
+   Img,
+   Li,
+   List,
+   Wrapper,
+   WrapperButton,
+   WrapperImage,
+} from '../../styles'
 
 const DetailCircle = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
@@ -17,11 +24,10 @@ const DetailCircle = ({ data, setShowDeleteModal, editHandler }) => {
    return (
       <div>
          <Flex gap="30px" align="start">
-            <Flex direction="column" align="center" width="50%" gap="10px">
+            <WrapperImage>
                <Img src={data.fileInformation.photo} alt="Сурот" />
-               <TitlePosition size="20px">{data.courseName}</TitlePosition>
-            </Flex>
-            <Flex width="100%" justify="center" direction="column" gap="30px">
+            </WrapperImage>
+            <Wrapper>
                <List>
                   <H2>Ийрим жонундо маалымат</H2>
                   <Li>
@@ -37,7 +43,7 @@ const DetailCircle = ({ data, setShowDeleteModal, editHandler }) => {
                      <b>Ийрим жонундо маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
-               <Flex width="100%" justify="end" gap="20px">
+               <WrapperButton>
                   <ButtonEdit onClick={editHandler}>
                      <MdModeEditOutline /> Озгортуу
                   </ButtonEdit>
@@ -49,71 +55,11 @@ const DetailCircle = ({ data, setShowDeleteModal, editHandler }) => {
                   >
                      <AiFillDelete /> Очуруп салуу
                   </ButtonDelete>
-               </Flex>
-            </Flex>
+               </WrapperButton>
+            </Wrapper>
          </Flex>
       </div>
    )
 }
-const ButtonEdit = styled(Button)`
-   color: green;
-   display: flex;
-   align-items: center;
-   gap: 4px;
-
-   :hover {
-      background-color: #27c36a25;
-      border: none;
-   }
-`
-const ButtonDelete = styled(Button)`
-   color: tomato;
-   display: flex;
-   align-items: center;
-   gap: 4px;
-   :hover {
-      background-color: #ff634729;
-   }
-`
-const TitlePosition = styled(Title)`
-   width: 100%;
-   color: white;
-   padding: 1em;
-   -webkit-backdrop-filter: blur(5px);
-   backdrop-filter: blur(5px);
-   text-align: center;
-`
-const List = styled.ul`
-   list-style: none;
-   color: #89919e;
-`
-const Li = styled.li`
-   width: 100%;
-   padding: 1em;
-   margin-bottom: 10px;
-   border-radius: 5px;
-   b {
-      color: #94a0aa;
-   }
-   span {
-      ul {
-         margin-left: 25px;
-      }
-   }
-`
-const H2 = styled.h2`
-   text-align: center;
-   margin-bottom: 10px;
-   width: 100%;
-   padding: 1em;
-   margin-bottom: 10px;
-   border-radius: 5px;
-   color: #235694;
-`
-const Img = styled.img`
-   width: 100%;
-   border-radius: 5px;
-   height: 100%;
-`
 
 export default DetailCircle

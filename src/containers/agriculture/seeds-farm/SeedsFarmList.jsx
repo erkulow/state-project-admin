@@ -39,7 +39,7 @@ const EventsList = ({ item }) => {
          <Modal
             isVisible={showDetail}
             onClose={() => setShowDetail(false)}
-            width="1000px"
+            width="1200px"
          >
             <DetailSeedsFarm
                editHandler={editLeadershipHandler}

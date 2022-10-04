@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/alt-text */
 import styled from '@emotion/styled'
-import { Button } from '@mui/material'
 import React, { useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
-import Title from '../../../components/UI/typography/Title'
 import { Flex } from '../../../styles/style-for-positions/style'
+import { ButtonDelete, ButtonEdit, H2, Li } from '../../styles'
 
 const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
@@ -42,58 +40,12 @@ const DetailEvent = ({ data, setShowDeleteModal, editHandler }) => {
       </div>
    )
 }
-const ButtonEdit = styled(Button)`
-   color: green;
-   display: flex;
-   align-items: center;
-   gap: 4px;
 
-   :hover {
-      background-color: #27c36a25;
-      border: none;
-   }
-`
-const ButtonDelete = styled(Button)`
-   color: tomato;
-   display: flex;
-   align-items: center;
-   gap: 4px;
-   :hover {
-      background-color: #ff634729;
-   }
-`
 const List = styled.ul`
    list-style: none;
    color: #89919e;
    max-height: 500px;
    overflow-y: auto;
-`
-const Li = styled.li`
-   width: 100%;
-   padding: 1em;
-   margin-bottom: 10px;
-   border-radius: 5px;
-   b {
-      color: #94a0aa;
-   }
-   span {
-      ul {
-         margin-left: 25px;
-      }
-   }
-`
-const H2 = styled.h2`
-   text-align: center;
-   margin-bottom: 10px;
-   width: 100%;
-   padding: 1em;
-   margin-bottom: 10px;
-   border-radius: 5px;
-`
-const Img = styled.img`
-   width: 100%;
-   border-radius: 5px;
-   height: 100%;
 `
 
 export default DetailEvent

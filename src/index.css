@@ -18,3 +18,19 @@ code {
    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
 }
+::-webkit-scrollbar {
+   width: 24px; /* ширина для вертикального скролла */
+   height: 8px; /* высота для горизонтального скролла */
+   background-color: #143861;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar {
+   background-color: transparent;
+   width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 0.1rem;
+   background-color: gray;
+}
