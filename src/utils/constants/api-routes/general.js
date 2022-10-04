@@ -59,6 +59,12 @@ export const API_ROUTES_SAVE = {
    religiousAit: {
       path: 'din/ait/save',
    },
+   religiousRamadan: {
+      path: 'din/ramazan/save',
+   },
+   religiousMorality: {
+      path: 'din/ethics/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -121,6 +127,12 @@ export const API_ROUTES_EDIT = {
    },
    religiousAit: {
       path: 'din/ait',
+   },
+   religiousRamadan: {
+      path: 'din/ramazan',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
    },
 }
 
@@ -185,6 +197,12 @@ export const API_ROUTES_DELETE = {
    religiousAit: {
       path: 'din/ait',
    },
+   religiousRamadan: {
+      path: 'din/ramazan',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -248,6 +266,12 @@ export const API_ROUTES_UPLOAD = {
    religiousAit: {
       path: 'din/ait/upload-file',
    },
+   religiousRamadan: {
+      path: 'din/ramazan/upload-file',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -310,5 +334,11 @@ export const API_ROUTES_GET = {
    },
    religiousAit: {
       path: 'agriculture/acEvent/ait',
+   },
+   religiousRamadan: {
+      path: 'agriculture/acEvent/ramazan',
+   },
+   religiousMorality: {
+      path: 'agriculture/acEvent/ethics',
    },
 }

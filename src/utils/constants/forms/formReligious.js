@@ -213,16 +213,8 @@ export const FORM_RAMADAN = {
    style: 'repeat(2,1fr)',
    forms: [
       {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Рамазан жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '2 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -231,7 +223,7 @@ export const FORM_RAMADAN = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -275,16 +267,8 @@ export const FORM_MORALITY = {
    style: 'repeat(2,1fr)',
    forms: [
       {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Адеп-ахлак жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '2 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -293,7 +277,7 @@ export const FORM_MORALITY = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
