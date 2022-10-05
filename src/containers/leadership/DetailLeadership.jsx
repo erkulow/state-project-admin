@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
 import Title from '../../components/UI/typography/Title'
@@ -18,6 +18,11 @@ import {
 } from '../styles'
 
 const DetailLeadership = ({ data, setShowDeleteModal, editHandler }) => {
+   const refText = useRef()
+
+   useEffect(() => {
+      refText.current.innerHTML = data.text
+   }, [data])
    return (
       <div>
          <Flex gap="30px" align="start">
@@ -43,6 +48,9 @@ const DetailLeadership = ({ data, setShowDeleteModal, editHandler }) => {
                   </Li>
                   <Li>
                      <b>Электрондук почтасы:</b> {data.email}
+                  </Li>
+                  <Li>
+                     <b>Кызматкер жонундо маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>

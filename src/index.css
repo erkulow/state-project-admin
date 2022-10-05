@@ -6,7 +6,7 @@
    border: 0;
    box-sizing: border-box;
    font-family: 'Inter';
-   transition: all 0.3s ease;
+   transition: all 0.1s ease;
 }
 body {
    -webkit-font-smoothing: antialiased;
