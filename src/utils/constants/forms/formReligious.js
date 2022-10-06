@@ -1,9 +1,11 @@
+import { REGEXP_EMAIL } from '../general'
+
 export const FORM_MOSQUES = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 200px 1fr',
    forms: [
       {
          label: 'Мечиттин аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
+         styles: { gridArea: '1 / 1 / 3 / 3' },
          requestName: 'mosqueName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -11,24 +13,46 @@ export const FORM_MOSQUES = {
       },
       {
          label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 2 / 2 / 3' },
-         requestName: 'imamFullName',
+         styles: { gridArea: '1 / 3 / 2 / 4' },
+         requestName: 'imamName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Туулган куну',
+         styles: { gridArea: '1 / 4 / 4 / 5' },
+         requestName: 'birthDay',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
+         styles: { gridArea: '2 / 1 / 2 / 3' },
          requestName: 'address',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
+         label: 'Электрондук почтасы',
+         styles: { gridArea: '2 / 4 / 3 / 5' },
+         requestName: 'email',
+         type: 'email',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            pattern: {
+               value: REGEXP_EMAIL,
+               message: 'Электрондук почта форматында болуу керек',
+            },
+         },
+      },
+      {
          label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         styles: { gridArea: '2 / 3 / 3 / 4' },
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -36,8 +60,8 @@ export const FORM_MOSQUES = {
       },
       {
          label: 'Мечит жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         styles: { gridArea: '4 / 1 / 4 / 5' },
+         requestName: 'positions',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -55,27 +79,36 @@ export const FORM_MOSQUES = {
    ],
 }
 export const FORM_MADRASAS = {
-   style: 'repeat(2,1fr)',
+   style: '100px 100px 200px 1fr',
    forms: [
       {
          label: 'Медресенин аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'madrasaName',
+         styles: { gridArea: '1 / 1 / 3 / 3' },
+         requestName: 'schoolName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Имамдын аты-жону',
-         styles: { gridArea: '1 / 2 / 3 / 3' },
-         requestName: 'directorFullName',
+         label: 'Директордун аты-жону',
+         styles: { gridArea: '1 / 3 / 2 / 4' },
+         requestName: 'director',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Туулган куну',
+         styles: { gridArea: '1 / 4 / 3 / 5' },
+         requestName: 'directorBirthDay',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
+         styles: { gridArea: '2 / 1 / 2 / 3' },
          requestName: 'address',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
@@ -83,20 +116,24 @@ export const FORM_MADRASAS = {
       },
       {
          label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         styles: { gridArea: '2 / 3 / 3 / 4' },
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Медресе жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
-         type: 'textarea',
+         label: 'Электрондук почтасы',
+         styles: { gridArea: '2 / 4 / 3 / 5' },
+         requestName: 'email',
+         type: 'email',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            pattern: {
+               value: REGEXP_EMAIL,
+               message: 'Электрондук почта форматында болуу керек',
+            },
          },
       },
       {
@@ -111,44 +148,19 @@ export const FORM_MADRASAS = {
    ],
 }
 export const FORM_PILGRIMAGE = {
-   style: 'repeat(2,1fr)',
+   style: '70px 170px 150px 1fr',
    forms: [
       {
-         label: 'Ажы сапардын аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'pilgrimageName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 2 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
-         type: 'number',
+         label: 'Ажынын аты-жонү',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
+         requestName: 'fullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Ажылык жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -157,7 +169,7 @@ export const FORM_PILGRIMAGE = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -167,7 +179,7 @@ export const FORM_PILGRIMAGE = {
    ],
 }
 export const FORM_AIT = {
-   style: 'repeat(2,1fr)',
+   style: '70px 170px 150px 1fr',
    forms: [
       {
          label: 'Имамдын аты-жонү',
@@ -179,7 +191,7 @@ export const FORM_AIT = {
       },
       {
          label: 'Айт жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -188,7 +200,7 @@ export const FORM_AIT = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -201,16 +213,8 @@ export const FORM_RAMADAN = {
    style: 'repeat(2,1fr)',
    forms: [
       {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Рамазан жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '2 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -219,7 +223,7 @@ export const FORM_RAMADAN = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
@@ -263,16 +267,8 @@ export const FORM_MORALITY = {
    style: 'repeat(2,1fr)',
    forms: [
       {
-         label: 'Имамдын аты-жонү',
-         styles: { gridArea: '1 / 1 / 2 / 3' },
-         requestName: 'imamFullName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Адеп-ахлак жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '2 / 1 / 4 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -281,7 +277,7 @@ export const FORM_MORALITY = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 1 / 2 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {

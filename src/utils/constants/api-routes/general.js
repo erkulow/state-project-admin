@@ -85,6 +85,24 @@ export const API_ROUTES_SAVE = {
    housesOfCultures: {
       path: 'culture/housesOfCulture/save',
    },
+   religiousMosques: {
+      path: 'din/mosques/save',
+   },
+   religiousMadrasa: {
+      path: 'din/religionSchool/save',
+   },
+   religiousPilgrimage: {
+      path: 'din/hadj/save',
+   },
+   religiousAit: {
+      path: 'din/ait/save',
+   },
+   religiousRamadan: {
+      path: 'din/ramazan/save',
+   },
+   religiousMorality: {
+      path: 'din/ethics/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -173,6 +191,24 @@ export const API_ROUTES_EDIT = {
    },
    housesOfCultures: {
       path: 'culture/housesOfCulture',
+   },
+   religiousMosques: {
+      path: 'din/mosques',
+   },
+   religiousMadrasa: {
+      path: 'din/religionSchool',
+   },
+   religiousPilgrimage: {
+      path: 'din/hadj',
+   },
+   religiousAit: {
+      path: 'din/ait',
+   },
+   religiousRamadan: {
+      path: 'din/ramazan',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
    },
 }
 
@@ -263,6 +299,24 @@ export const API_ROUTES_DELETE = {
    housesOfCultures: {
       path: 'culture/housesOfCulture',
    },
+   religiousMosques: {
+      path: 'din/mosques',
+   },
+   religiousMadrasa: {
+      path: 'din/religionSchool',
+   },
+   religiousPilgrimage: {
+      path: 'din/hadj',
+   },
+   religiousAit: {
+      path: 'din/ait',
+   },
+   religiousRamadan: {
+      path: 'din/ramazan',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -352,6 +406,24 @@ export const API_ROUTES_UPLOAD = {
    housesOfCultures: {
       path: 'culture/housesOfCulture/upload-file',
    },
+   religiousMosques: {
+      path: 'din/mosques/upload-file',
+   },
+   religiousMadrasa: {
+      path: 'din/religionSchool/upload-file',
+   },
+   religiousPilgrimage: {
+      path: 'din/hadj/upload-file',
+   },
+   religiousAit: {
+      path: 'din/ait/upload-file',
+   },
+   religiousRamadan: {
+      path: 'din/ramazan/upload-file',
+   },
+   religiousMorality: {
+      path: 'din/ethics',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -440,5 +512,23 @@ export const API_ROUTES_GET = {
    },
    housesOfCultures: {
       path: 'agriculture/acEvent/housesOfCultures',
+   },
+   religiousMosques: {
+      path: 'agriculture/acEvent/mechitter',
+   },
+   religiousMadrasa: {
+      path: 'agriculture/acEvent/religionSchool',
+   },
+   religiousPilgrimage: {
+      path: 'agriculture/acEvent/hadj',
+   },
+   religiousAit: {
+      path: 'agriculture/acEvent/ait',
+   },
+   religiousRamadan: {
+      path: 'agriculture/acEvent/ramazan',
+   },
+   religiousMorality: {
+      path: 'agriculture/acEvent/ethics',
    },
 }
