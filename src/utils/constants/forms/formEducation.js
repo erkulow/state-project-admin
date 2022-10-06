@@ -324,7 +324,7 @@ export const FORM_OLYMPIADS = {
          requestName: 'galery',
          type: 'file',
          required: {
-            required: 'Поляны бош жонотууго болбойт',
+            required: false,
          },
       },
    ],

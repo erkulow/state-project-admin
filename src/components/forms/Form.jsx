@@ -90,10 +90,15 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                         files={selectedImages?.images}
                         isValid={errors[item.requestName] && !isValid}
                         {...register(item.requestName, {
-                           validate: () =>
-                              selectedImages.images.length > 0
-                                 ? true
-                                 : 'Суротсуз жонотуу мумкун эмес',
+                           validate: () => {
+                              if (item.required.required) {
+                                 if (selectedImages.images.length > 0) {
+                                    return true
+                                 }
+                                 return 'Суротсуз жонотуу мумкун эмес'
+                              }
+                              return true
+                           },
                         })}
                         type={item.type}
                      />

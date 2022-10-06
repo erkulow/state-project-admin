@@ -26,6 +26,7 @@ const Olympiads = () => {
          data,
          image,
          category: 'educationOlympiads',
+         notFile: true,
       })
    }
 
