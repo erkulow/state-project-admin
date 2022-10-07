@@ -110,6 +110,9 @@ export const API_ROUTES_SAVE = {
    religiousActivities: {
       path: 'din/dEvent/save',
    },
+   cleanliness: {
+      path: 'homePage/cleanliness/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -224,6 +227,9 @@ export const API_ROUTES_EDIT = {
    religiousActivities: {
       path: 'din/dEvent',
    },
+   cleanliness: {
+      path: 'homePage/cleanliness',
+   },
 }
 
 export const API_ROUTES_DELETE = {
@@ -336,6 +342,9 @@ export const API_ROUTES_DELETE = {
    },
    religiousActivities: {
       path: 'din/dEvent',
+   },
+   cleanliness: {
+      path: 'homePage/cleanliness',
    },
 }
 
@@ -450,6 +459,9 @@ export const API_ROUTES_UPLOAD = {
    religiousActivities: {
       path: 'din/dEvent/upload-file',
    },
+   cleanliness: {
+      path: 'homePage/cleanliness/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -563,5 +575,8 @@ export const API_ROUTES_GET = {
    },
    religiousActivities: {
       path: 'agriculture/acEvent/dEvent',
+   },
+   cleanliness: {
+      path: 'agriculture/acEvent/cleanliness',
    },
 }
