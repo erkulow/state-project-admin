@@ -113,6 +113,12 @@ export const API_ROUTES_SAVE = {
    cleanliness: {
       path: 'homePage/cleanliness/save',
    },
+   news: {
+      path: 'homePage/newsAnnouncement/save',
+   },
+   OKM: {
+      path: 'homePage/mChs/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -230,6 +236,12 @@ export const API_ROUTES_EDIT = {
    cleanliness: {
       path: 'homePage/cleanliness',
    },
+   news: {
+      path: 'homePage/newsAnnouncement',
+   },
+   OKM: {
+      path: 'homePage/mChs',
+   },
 }
 
 export const API_ROUTES_DELETE = {
@@ -345,6 +357,12 @@ export const API_ROUTES_DELETE = {
    },
    cleanliness: {
       path: 'homePage/cleanliness',
+   },
+   news: {
+      path: 'homePage/newsAnnouncement',
+   },
+   OKM: {
+      path: 'homePage/mChs',
    },
 }
 
@@ -462,6 +480,12 @@ export const API_ROUTES_UPLOAD = {
    cleanliness: {
       path: 'homePage/cleanliness/upload-file',
    },
+   news: {
+      path: 'homePage/newsAnnouncement/upload-file',
+   },
+   OKM: {
+      path: 'homePage/mChs/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -578,5 +602,11 @@ export const API_ROUTES_GET = {
    },
    cleanliness: {
       path: 'agriculture/acEvent/cleanliness',
+   },
+   news: {
+      path: 'agriculture/acEvent/newsAnnouncement',
+   },
+   OKM: {
+      path: 'agriculture/acEvent/mchs',
    },
 }

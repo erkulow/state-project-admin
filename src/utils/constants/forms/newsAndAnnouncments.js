@@ -1,25 +1,18 @@
 export const FORM_NEWS_AND_ANNOUNCMENT = {
-   style: '100px 100px 1fr',
+   style: '70px 180px  1fr',
    forms: [
       {
-         label: 'Жанылык/кулактандыруунун аталышы',
-         styles: { gridArea: '1 / 1 / 3 / 3' },
-         requestName: 'farmName',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
          label: 'Убактысы',
-         styles: { gridArea: '1 / 3 / 3 / 5' },
-         requestName: 'farmName',
+         styles: { gridArea: '1 / 1 / 3 / 5' },
+         requestName: 'dateOfNewAnnouncement',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
          label: 'Жанылык/куулакттандыруу жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
+         styles: { gridArea: '3 / 1 / 3 / 5' },
          requestName: 'text',
          type: 'textarea',
          required: {
@@ -28,7 +21,7 @@ export const FORM_NEWS_AND_ANNOUNCMENT = {
       },
       {
          label: 'Сурот кошуу',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '2 / 1 / 5 / 5' },
          requestName: 'galery',
          type: 'file',
          required: {
