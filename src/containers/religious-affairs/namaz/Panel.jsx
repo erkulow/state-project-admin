@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
-import MoralityLilst from './MoralityLilst'
+import RamadanList from './NamazList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('religiousMorality'))
+      dispatch(getData('religiousNamaz'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Адеп ахлак</SectionTitle>
+               <SectionTitle>Намаз</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <MoralityLilst key={item.id} item={item} />
+                     <RamadanList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Адеп ахлак боюнча маалымат табылган жок:(
+                     Намаз боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>

@@ -103,6 +103,9 @@ export const API_ROUTES_SAVE = {
    religiousMorality: {
       path: 'din/ethics/save',
    },
+   religiousNamaz: {
+      path: 'din/prayer/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -209,6 +212,9 @@ export const API_ROUTES_EDIT = {
    },
    religiousMorality: {
       path: 'din/ethics',
+   },
+   religiousNamaz: {
+      path: 'din/prayer',
    },
 }
 
@@ -317,6 +323,9 @@ export const API_ROUTES_DELETE = {
    religiousMorality: {
       path: 'din/ethics',
    },
+   religiousNamaz: {
+      path: 'din/prayer',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -424,6 +433,9 @@ export const API_ROUTES_UPLOAD = {
    religiousMorality: {
       path: 'din/ethics',
    },
+   religiousNamaz: {
+      path: 'din/prayer/upload-file',
+   },
 }
 
 export const API_ROUTES_GET = {
@@ -530,5 +542,8 @@ export const API_ROUTES_GET = {
    },
    religiousMorality: {
       path: 'agriculture/acEvent/ethics',
+   },
+   religiousNamaz: {
+      path: 'agriculture/acEvent/prayer',
    },
 }
