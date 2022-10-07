@@ -85,6 +85,7 @@ export const API_ROUTES_SAVE = {
    housesOfCultures: {
       path: 'culture/housesOfCulture/save',
    },
+
    religiousMosques: {
       path: 'din/mosques/save',
    },
@@ -105,6 +106,9 @@ export const API_ROUTES_SAVE = {
    },
    religiousNamaz: {
       path: 'din/prayer/save',
+   },
+   religiousActivities: {
+      path: 'din/dEvent/save',
    },
 }
 
@@ -195,6 +199,7 @@ export const API_ROUTES_EDIT = {
    housesOfCultures: {
       path: 'culture/housesOfCulture',
    },
+
    religiousMosques: {
       path: 'din/mosques',
    },
@@ -215,6 +220,9 @@ export const API_ROUTES_EDIT = {
    },
    religiousNamaz: {
       path: 'din/prayer',
+   },
+   religiousActivities: {
+      path: 'din/dEvent',
    },
 }
 
@@ -326,6 +334,9 @@ export const API_ROUTES_DELETE = {
    religiousNamaz: {
       path: 'din/prayer',
    },
+   religiousActivities: {
+      path: 'din/dEvent',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -431,10 +442,13 @@ export const API_ROUTES_UPLOAD = {
       path: 'din/ramazan/upload-file',
    },
    religiousMorality: {
-      path: 'din/ethics',
+      path: 'din/ethics/upload-file',
    },
    religiousNamaz: {
       path: 'din/prayer/upload-file',
+   },
+   religiousActivities: {
+      path: 'din/dEvent/upload-file',
    },
 }
 
@@ -525,6 +539,7 @@ export const API_ROUTES_GET = {
    housesOfCultures: {
       path: 'agriculture/acEvent/housesOfCultures',
    },
+
    religiousMosques: {
       path: 'agriculture/acEvent/mechitter',
    },
@@ -545,5 +560,8 @@ export const API_ROUTES_GET = {
    },
    religiousNamaz: {
       path: 'agriculture/acEvent/prayer',
+   },
+   religiousActivities: {
+      path: 'agriculture/acEvent/dEvent',
    },
 }

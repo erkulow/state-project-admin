@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
-import AitList from './AitList'
+import RamadanList from './ActivitiesList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('religiousAit'))
+      dispatch(getData('religiousActivities'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,13 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Айт</SectionTitle>
+               <SectionTitle>Диний иш-чаралар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <AitList key={item.id} item={item} />
+                     <RamadanList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Айт боюнча маалымат табылган жок:(
+                     Диний иш-чаралар боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>
