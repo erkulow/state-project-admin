@@ -1,22 +1,23 @@
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import Title from '../../../components/UI/typography/Title'
-import { Flex } from '../../../styles/style-for-positions/style'
-import ModalDelete from '../../../components/UI/modals/modalDelete'
-import { deleteData } from '../../../store/crud-slice'
-import Modal from '../../../components/UI/modals/modal-container/Modal'
-import { tabActions } from '../../../store/tab-slice'
-import { isEditHandler } from '../../../store/edit-slice'
-import DetailAit from './DetailAit'
+import Title from '../../components/UI/typography/Title'
+import { Flex } from '../../styles/style-for-positions/style'
+import ModalDelete from '../../components/UI/modals/modalDelete'
+import { deleteData } from '../../store/crud-slice'
+import Modal from '../../components/UI/modals/modal-container/Modal'
+import { tabActions } from '../../store/tab-slice'
+import { isEditHandler } from '../../store/edit-slice'
+import DetailNews from './DetailNews'
 
-const AitList = ({ item }) => {
+const NewsList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
+   const refText = useRef()
 
    const showDetailHandler = (e) => {
       e.stopPropagation()
@@ -29,6 +30,10 @@ const AitList = ({ item }) => {
       dispatch(isEditHandler({ isEdit: true, data: item }))
    }
 
+   useEffect(() => {
+      refText.current.innerHTML = item.dateOfNewAnnouncement
+   }, [item])
+
    return (
       <>
          <Modal
@@ -36,7 +41,7 @@ const AitList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailAit
+            <DetailNews
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}
@@ -48,14 +53,13 @@ const AitList = ({ item }) => {
                   <Image src={item?.fileInformation?.photo} />
                </Flex>
                <Flex
+                  style={{ overflow: 'hidden' }}
                   width="50%"
                   direction="column"
                   gap="10px"
                   align="flex-start"
                >
-                  <Title uppercase size="20px" color="#7d97b8">
-                     Айт
-                  </Title>
+                  <TitleAdvice ref={refText} size="10px" color="#7d97b8" />
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
@@ -75,7 +79,7 @@ const AitList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'religiousAit' }))
+               dispatch(deleteData({ id: item.id, category: 'news' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -83,6 +87,16 @@ const AitList = ({ item }) => {
       </>
    )
 }
+const TitleAdvice = styled(Title)`
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   ul,
+   ol {
+      margin-left: 25px;
+   }
+`
 const ButtonEdit = styled(Button)`
    color: green;
    display: flex;
@@ -124,4 +138,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default AitList
+export default NewsList

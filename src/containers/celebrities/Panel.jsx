@@ -2,16 +2,16 @@ import styled from '@emotion/styled'
 import { Alert } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { isEditHandler } from '../../../store/edit-slice'
-import { crudActions, getData } from '../../../store/crud-slice'
-import { Flex } from '../../../styles/style-for-positions/style'
-import AitList from './AitList'
+import { isEditHandler } from '../../store/edit-slice'
+import { crudActions, getData } from '../../store/crud-slice'
+import { Flex } from '../../styles/style-for-positions/style'
+import CleanlinesList from './NewsList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('religiousAit'))
+      dispatch(getData('news'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,13 +19,14 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Айт</SectionTitle>
+               <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <AitList key={item.id} item={item} />
+                     <CleanlinesList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Айт боюнча маалымат табылган жок:(
+                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
+                     жок:(
                   </Alert>
                )}
             </div>

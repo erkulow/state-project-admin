@@ -276,7 +276,7 @@ export const FORM_RELIGIOUS_ACTIVITIES = {
       {
          label: 'Диний иш-чаралар жөнүндө маалымат',
          styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
+         requestName: 'info',
          type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Button } from '@mui/material'
+import Title from '../../components/UI/typography/Title'
 import { Flex } from '../../styles/style-for-positions/style'
 
 export const WrapperImage = styled(Flex)`

@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
-import { Flex } from '../../../styles/style-for-positions/style'
+import { useEffect, useRef } from 'react'
+import { Flex } from '../../styles/style-for-positions/style'
 import {
    ButtonDelete,
    ButtonEdit,
@@ -13,9 +12,9 @@ import {
    Wrapper,
    WrapperButton,
    WrapperImage,
-} from '../../styles'
+} from '../styles'
 
-const DetailAit = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
@@ -29,9 +28,12 @@ const DetailAit = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2>Айт жонундо маалымат</H2>
+                  <H2> Жаңылыктар жана кулактандыруулар жонундо маалымат</H2>
                   <Li>
-                     <b> Толук маалымат:</b> <span ref={refText} />
+                     <b>Чыгарылган куну:</b> {data.dateOfNewAnnouncement}
+                  </Li>
+                  <Li>
+                     <b>Толук маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>
@@ -53,4 +55,4 @@ const DetailAit = ({ data, setShowDeleteModal, editHandler }) => {
    )
 }
 
-export default DetailAit
+export default DetailNews

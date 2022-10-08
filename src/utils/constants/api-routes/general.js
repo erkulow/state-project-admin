@@ -85,6 +85,7 @@ export const API_ROUTES_SAVE = {
    housesOfCultures: {
       path: 'culture/housesOfCulture/save',
    },
+
    religiousMosques: {
       path: 'din/mosques/save',
    },
@@ -102,6 +103,21 @@ export const API_ROUTES_SAVE = {
    },
    religiousMorality: {
       path: 'din/ethics/save',
+   },
+   religiousNamaz: {
+      path: 'din/prayer/save',
+   },
+   religiousActivities: {
+      path: 'din/dEvent/save',
+   },
+   cleanliness: {
+      path: 'homePage/cleanliness/save',
+   },
+   news: {
+      path: 'homePage/newsAnnouncement/save',
+   },
+   OKM: {
+      path: 'homePage/mChs/save',
    },
 }
 
@@ -192,6 +208,7 @@ export const API_ROUTES_EDIT = {
    housesOfCultures: {
       path: 'culture/housesOfCulture',
    },
+
    religiousMosques: {
       path: 'din/mosques',
    },
@@ -209,6 +226,21 @@ export const API_ROUTES_EDIT = {
    },
    religiousMorality: {
       path: 'din/ethics',
+   },
+   religiousNamaz: {
+      path: 'din/prayer',
+   },
+   religiousActivities: {
+      path: 'din/dEvent',
+   },
+   cleanliness: {
+      path: 'homePage/cleanliness',
+   },
+   news: {
+      path: 'homePage/newsAnnouncement',
+   },
+   OKM: {
+      path: 'homePage/mChs',
    },
 }
 
@@ -317,6 +349,21 @@ export const API_ROUTES_DELETE = {
    religiousMorality: {
       path: 'din/ethics',
    },
+   religiousNamaz: {
+      path: 'din/prayer',
+   },
+   religiousActivities: {
+      path: 'din/dEvent',
+   },
+   cleanliness: {
+      path: 'homePage/cleanliness',
+   },
+   news: {
+      path: 'homePage/newsAnnouncement',
+   },
+   OKM: {
+      path: 'homePage/mChs',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -422,7 +469,22 @@ export const API_ROUTES_UPLOAD = {
       path: 'din/ramazan/upload-file',
    },
    religiousMorality: {
-      path: 'din/ethics',
+      path: 'din/ethics/upload-file',
+   },
+   religiousNamaz: {
+      path: 'din/prayer/upload-file',
+   },
+   religiousActivities: {
+      path: 'din/dEvent/upload-file',
+   },
+   cleanliness: {
+      path: 'homePage/cleanliness/upload-file',
+   },
+   news: {
+      path: 'homePage/newsAnnouncement/upload-file',
+   },
+   OKM: {
+      path: 'homePage/mChs/upload-file',
    },
 }
 
@@ -513,6 +575,7 @@ export const API_ROUTES_GET = {
    housesOfCultures: {
       path: 'agriculture/acEvent/housesOfCultures',
    },
+
    religiousMosques: {
       path: 'agriculture/acEvent/mechitter',
    },
@@ -530,5 +593,20 @@ export const API_ROUTES_GET = {
    },
    religiousMorality: {
       path: 'agriculture/acEvent/ethics',
+   },
+   religiousNamaz: {
+      path: 'agriculture/acEvent/prayer',
+   },
+   religiousActivities: {
+      path: 'agriculture/acEvent/dEvent',
+   },
+   cleanliness: {
+      path: 'agriculture/acEvent/cleanliness',
+   },
+   news: {
+      path: 'agriculture/acEvent/newsAnnouncement',
+   },
+   OKM: {
+      path: 'agriculture/acEvent/mchs',
    },
 }

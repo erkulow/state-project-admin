@@ -11,7 +11,7 @@ const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('religiousPilgrimage'))
+      dispatch(getData('religiousMorality'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])

@@ -1,44 +1,42 @@
+import { REGEXP_EMAIL } from '../general'
+
 export const FORM_OKM = {
-   style: '100px 100px 1fr',
+   style: '100px 100px 200px 1fr',
    forms: [
       {
-         label: 'ӨКМ аты',
-         styles: { gridArea: '1 / 1 / 3 / 2' },
-         requestName: 'committeName',
+         label: 'ӨКМ кызматкеринин аты жону',
+         styles: { gridArea: '1 / 1 / 3 / 3' },
+         requestName: 'fullName',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'ӨКМ башчынын аты-жону',
-         styles: { gridArea: '1 / 2 / 3 / 3' },
-         requestName: 'directorFullName',
+         label: 'Туулган куну',
+         styles: { gridArea: '1 / 3 / 5 / 5' },
+         requestName: 'birthDay',
+         type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
       {
-         label: 'Дареги',
-         styles: { gridArea: '1 / 3 / 2 / 4' },
-         requestName: 'address',
+         label: 'Электрондук почтасы',
+         styles: { gridArea: '2 / 1 / 3 / 3' },
+         requestName: 'email',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+            pattern: {
+               value: REGEXP_EMAIL,
+               message: 'Электрондук почта форматында болуу керек',
+            },
          },
       },
       {
          label: 'Байланыш телефону',
-         styles: { gridArea: '1 / 4 / 3 / 5' },
-         requestName: 'phoneNumber',
+         styles: { gridArea: '2 / 3 / 5 / 5' },
+         requestName: 'phone',
          type: 'number',
-         required: {
-            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
-         },
-      },
-      {
-         label: 'ӨКМ жөнүндө маалымат',
-         styles: { gridArea: '2 / 1 / 5 / 5' },
-         requestName: 'text',
-         type: 'textarea',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },

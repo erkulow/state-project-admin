@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from '@emotion/styled'
-import { Alert, Button } from '@mui/material'
+import { Button } from '@mui/material'
 import React, { useRef, useEffect } from 'react'
 import { MdModeEditOutline } from 'react-icons/md'
 import { AiFillDelete } from 'react-icons/ai'
@@ -18,11 +18,11 @@ import {
    WrapperImage,
 } from '../../styles'
 
-const DetailMosques = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailNamaz = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data.positions
+      refText.current.innerHTML = data.text
    }, [data])
    return (
       <div>
@@ -32,30 +32,9 @@ const DetailMosques = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2>Мечит жонундо маалымат</H2>
+                  <H2>Намаз жонундо маалымат</H2>
                   <Li>
-                     <b>Мечиттин аталышы:</b> {data.mosqueName}
-                  </Li>
-                  <Li>
-                     <b>Имамдын аты:</b> {data.imamName}
-                  </Li>
-                  <Li>
-                     <b>Имамдын фамилиясы:</b> {data.imamLastName}
-                  </Li>
-                  <Li>
-                     <b>Туулган куну:</b> {data.birthDay}
-                  </Li>
-                  <Li>
-                     <b>Адрес:</b> {data.address}
-                  </Li>
-                  <Li>
-                     <b>Байланыш телефону:</b> {data.phone}
-                  </Li>
-                  <Li>
-                     <b>Электрондук почтасы:</b> {data.email}
-                  </Li>
-                  <Li>
-                     <b>Мечит жонундо маалымат:</b> <span ref={refText} />
+                     <b>Толук маалымат:</b> <span ref={refText} />
                   </Li>
                </List>
                <WrapperButton>
@@ -76,5 +55,15 @@ const DetailMosques = ({ data, setShowDeleteModal, editHandler }) => {
       </div>
    )
 }
+const TitlePosition = styled(Title)`
+   width: 100%;
+   color: #2c2e38;
+   padding: 1em;
+   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+   background-color: rgba(255, 255, 255, 0.4);
+   -webkit-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
+   text-align: center;
+`
 
-export default DetailMosques
+export default DetailNamaz
