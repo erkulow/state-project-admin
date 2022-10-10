@@ -132,7 +132,7 @@ export const FORM_OMS = {
       {
          label: ' ОМСтин аты',
          styles: { gridArea: '1 / 1 / 3 / 3' },
-         requestName: 'hospitalName',
+         requestName: 'title',
          required: {
             required: 'Поляны бош жонотууго болбойт',
          },
@@ -140,7 +140,7 @@ export const FORM_OMS = {
       {
          label: 'Байланыш телефону',
          styles: { gridArea: '1 / 5/ 5 / 3' },
-         requestName: 'phoneNumber',
+         requestName: 'phone',
          type: 'number',
          required: {
             required: 'Поляны бош жонотууго болбойт',
@@ -158,7 +158,7 @@ export const FORM_OMS = {
       {
          label: 'Add photo',
          styles: { gridArea: '2 / 1 / 3 / 5' },
-         requestName: 'text',
+         requestName: 'galery',
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
