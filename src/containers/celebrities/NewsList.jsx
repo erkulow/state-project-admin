@@ -11,7 +11,7 @@ import { deleteData } from '../../store/crud-slice'
 import Modal from '../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../store/tab-slice'
 import { isEditHandler } from '../../store/edit-slice'
-import DetailNews from './DetailNews'
+import DetailCelebrities from './DetailCelebrities'
 
 const NewsList = ({ item }) => {
    const dispatch = useDispatch()
@@ -41,7 +41,7 @@ const NewsList = ({ item }) => {
             onClose={() => setShowDetail(false)}
             width="1000px"
          >
-            <DetailNews
+            <DetailCelebrities
                editHandler={editLeadershipHandler}
                setShowDeleteModal={setShowDeleteModal}
                data={item}

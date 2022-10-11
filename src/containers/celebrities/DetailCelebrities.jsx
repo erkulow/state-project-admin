@@ -14,7 +14,7 @@ import {
    WrapperImage,
 } from '../styles'
 
-const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
+const DetailCelebrities = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
@@ -28,7 +28,7 @@ const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2> Жаңылыктар жана кулактандыруулар жонундо маалымат</H2>
+                  <H2>Атактуу жонундо</H2>
                   <Li>
                      <b>Чыгарылган куну:</b> {data.dateOfNewAnnouncement}
                   </Li>
@@ -55,4 +55,4 @@ const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
    )
 }
 
-export default DetailNews
+export default DetailCelebrities
