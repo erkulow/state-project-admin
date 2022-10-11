@@ -2,14 +2,23 @@ export const FORM_NEWS_AND_ANNOUNCMENT = {
    style: '70px 180px  1fr',
    forms: [
       {
+         label: 'Аталышы',
+         styles: { gridArea: '1 / 1 / 3 / 3' },
+         requestName: 'title',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
          label: 'Убактысы',
-         styles: { gridArea: '1 / 1 / 3 / 5' },
+         styles: { gridArea: '3 / 1 / 3 / 5' },
          requestName: 'dateOfNewAnnouncement',
          type: 'date',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
+
       {
          label: 'Жанылык/куулакттандыруу жөнүндө маалымат',
          styles: { gridArea: '3 / 1 / 3 / 5' },

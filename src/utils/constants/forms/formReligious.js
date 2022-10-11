@@ -20,7 +20,7 @@ export const FORM_MOSQUES = {
          },
       },
       {
-         label: 'Туулган куну',
+         label: 'Курулган куну',
          styles: { gridArea: '1 / 4 / 4 / 5' },
          requestName: 'birthDay',
          type: 'date',
@@ -98,7 +98,7 @@ export const FORM_MADRASAS = {
          },
       },
       {
-         label: 'Туулган куну',
+         label: 'Курулган куну',
          styles: { gridArea: '1 / 4 / 3 / 5' },
          requestName: 'directorBirthDay',
          type: 'date',
@@ -143,6 +143,15 @@ export const FORM_MADRASAS = {
          type: 'file',
          required: {
             required: 'Поляны бош жонотууго болбойт',
+         },
+      },
+      {
+         label: 'Медресе жөнүндө маалымат',
+         styles: { gridArea: '4 / 1 / 4 / 5' },
+         requestName: 'text',
+         type: 'textarea',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
       },
    ],
