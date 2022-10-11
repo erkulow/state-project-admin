@@ -11,7 +11,7 @@ export const FORM_NEWS_AND_ANNOUNCMENT = {
       },
       {
          label: 'Убактысы',
-         styles: { gridArea: '3 / 1 / 3 / 5' },
+         styles: { gridArea: '1 / 3 / 3 / 5' },
          requestName: 'dateOfNewAnnouncement',
          type: 'date',
          required: {
