@@ -1,28 +1,51 @@
 import styled from '@emotion/styled'
 import { Alert } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../store/edit-slice'
 import { crudActions, getData } from '../../store/crud-slice'
 import { Flex } from '../../styles/style-for-positions/style'
-import CleanlinesList from './NewsList'
+import NewsList from './NewsList'
+import { getNewsState, getNewsWorld } from '../../store/news-slice'
 
 const Panel = () => {
    const dispatch = useDispatch()
-   const { datas } = useSelector((state) => state.crud)
+   const { newsState, newsWorld } = useSelector((state) => state.news)
+   const [pagination, setPagination] = useState({ state: 1, world: 1 })
+
    useEffect(() => {
-      dispatch(getData('news'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
+
+   useEffect(() => {
+      dispatch(getNewsState(pagination.state))
+      dispatch(getNewsWorld(pagination.world))
+   }, [pagination])
+
    return (
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
-               {(!!datas.length &&
-                  datas.map((item) => (
-                     <CleanlinesList key={item.id} item={item} />
+               <SectionTitle>
+                  Жаңылыктар жана кулактандыруулар (Мамлекет ичиндеги){' '}
+               </SectionTitle>
+               {(!!newsState.length &&
+                  newsState.map((item) => (
+                     <NewsList key={item.id} item={item} />
+                  ))) || (
+                  <Alert severity="info">
+                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
+                     жок:(
+                  </Alert>
+               )}
+               <br />
+               <SectionTitle>
+                  Жаңылыктар жана кулактандыруулар (Дуйно жузу боюнча)
+               </SectionTitle>
+               {(!!newsWorld.length &&
+                  newsWorld.map((item) => (
+                     <NewsList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
                      Жаңылыктар жана кулактандыруулар боюнча кенештер табылган

@@ -15,11 +15,11 @@ const Input = forwardRef((props, ref) => {
          <InputStyledSelect ref={ref} {...props}>
             {props.options.map((option) => (
                <option
-                  value={option}
+                  value={option.path}
                   style={{ color: 'whitesmoke', background: '#0e1117' }}
                   key={option}
                >
-                  {option}
+                  {option.label}
                </option>
             ))}
          </InputStyledSelect>

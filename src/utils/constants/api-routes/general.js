@@ -603,8 +603,11 @@ export const API_ROUTES_GET = {
    cleanliness: {
       path: 'agriculture/acEvent/cleanliness',
    },
-   news: {
-      path: 'agriculture/acEvent/newsAnnouncement',
+   newsState: {
+      path: 'agriculture/acEvent/stateNewsAnnouncement',
+   },
+   newsWorld: {
+      path: 'agriculture/acEvent/newsOfTheWorldAnnouncement',
    },
    OKM: {
       path: 'agriculture/acEvent/mchs',

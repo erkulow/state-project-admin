@@ -173,7 +173,12 @@ export const FORM_KINGERGARTENS = {
          styles: { gridArea: '2 / 3 / 5 / 5' },
          requestName: 'language',
          type: 'select',
-         options: ['', 'Кыргыз тили', 'Орус тили', 'Англис тили'],
+         options: [
+            { path: '', label: '' },
+            { path: 'Кыргыз тили', label: 'Кыргыз тили' },
+            { path: 'Орус тили', label: 'Орус тили' },
+            { path: 'Англис тили', label: 'Англис тили' },
+         ],
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
          },
