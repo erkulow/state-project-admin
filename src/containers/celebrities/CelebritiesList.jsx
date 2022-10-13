@@ -13,7 +13,7 @@ import { tabActions } from '../../store/tab-slice'
 import { isEditHandler } from '../../store/edit-slice'
 import DetailCelebrities from './DetailCelebrities'
 
-const NewsList = ({ item }) => {
+const CelebritiesList = ({ item }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -31,7 +31,7 @@ const NewsList = ({ item }) => {
    }
 
    useEffect(() => {
-      refText.current.innerHTML = item.dateOfNewAnnouncement
+      refText.current.innerHTML = item.fullName
    }, [item])
 
    return (
@@ -79,7 +79,7 @@ const NewsList = ({ item }) => {
          <ModalDelete
             open={showDeleteModal}
             action={() =>
-               dispatch(deleteData({ id: item.id, category: 'news' }))
+               dispatch(deleteData({ id: item.id, category: 'celebrities' }))
             }
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
@@ -138,4 +138,4 @@ const Image = styled.img`
    border-radius: 4px;
 `
 
-export default NewsList
+export default CelebritiesList

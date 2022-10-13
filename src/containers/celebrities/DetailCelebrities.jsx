@@ -18,7 +18,7 @@ const DetailCelebrities = ({ data, setShowDeleteModal, editHandler }) => {
    const refText = useRef()
 
    useEffect(() => {
-      refText.current.innerHTML = data.text
+      refText.current.innerHTML = data.info
    }, [data])
    return (
       <div>
@@ -30,7 +30,10 @@ const DetailCelebrities = ({ data, setShowDeleteModal, editHandler }) => {
                <List>
                   <H2>Атактуу жонундо</H2>
                   <Li>
-                     <b>Чыгарылган куну:</b> {data.dateOfNewAnnouncement}
+                     <b>Аты жону:</b> {data.fullName}
+                  </Li>
+                  <Li>
+                     <b>Туулган куну:</b> {data.birthday}
                   </Li>
                   <Li>
                      <b>Толук маалымат:</b> <span ref={refText} />

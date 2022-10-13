@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../store/edit-slice'
 import { crudActions, getData } from '../../store/crud-slice'
 import { Flex } from '../../styles/style-for-positions/style'
-import CleanlinesList from './NewsList'
+import CelebritiesList from './CelebritiesList'
 
 const Panel = () => {
    const dispatch = useDispatch()
    const { datas } = useSelector((state) => state.crud)
    useEffect(() => {
-      dispatch(getData('news'))
+      dispatch(getData('сelebrities'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
       dispatch(crudActions.changeTextEditor(null))
    }, [])
@@ -19,14 +19,13 @@ const Panel = () => {
       <Container>
          <Flex width="100%" direction="column" gap="20px">
             <div>
-               <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
+               <SectionTitle>Атактуулар</SectionTitle>
                {(!!datas.length &&
                   datas.map((item) => (
-                     <CleanlinesList key={item.id} item={item} />
+                     <CelebritiesList key={item.id} item={item} />
                   ))) || (
                   <Alert severity="info">
-                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
-                     жок:(
+                     Атактуулар боюнча маалымат табылган жок:(
                   </Alert>
                )}
             </div>

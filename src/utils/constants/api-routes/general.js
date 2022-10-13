@@ -119,6 +119,9 @@ export const API_ROUTES_SAVE = {
    OKM: {
       path: 'homePage/mChs/save',
    },
+   celebrities: {
+      path: 'homePage/ataktuular/save',
+   },
 }
 
 export const API_ROUTES_EDIT = {
@@ -242,6 +245,9 @@ export const API_ROUTES_EDIT = {
    OKM: {
       path: 'homePage/mChs',
    },
+   celebrities: {
+      path: 'homePage/ataktuular',
+   },
 }
 
 export const API_ROUTES_DELETE = {
@@ -364,6 +370,9 @@ export const API_ROUTES_DELETE = {
    OKM: {
       path: 'homePage/mChs',
    },
+   celebrities: {
+      path: 'homePage/ataktuular',
+   },
 }
 
 export const API_ROUTES_UPLOAD = {
@@ -485,6 +494,9 @@ export const API_ROUTES_UPLOAD = {
    },
    OKM: {
       path: 'homePage/mChs/upload-file',
+   },
+   celebrities: {
+      path: 'homePage/ataktuular/upload-file',
    },
 }
 
@@ -611,5 +623,8 @@ export const API_ROUTES_GET = {
    },
    OKM: {
       path: 'agriculture/acEvent/mchs',
+   },
+   celebrities: {
+      path: 'agriculture/acEvent/ataktuular',
    },
 }
