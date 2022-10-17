@@ -12,7 +12,7 @@ export const FORM_MOSQUES = {
          },
       },
       {
-         label: 'Имамдын аты-жонү',
+         label: 'Имамдын аты',
          styles: { gridArea: '1 / 3 / 2 / 4' },
          requestName: 'imamName',
          required: {
@@ -20,8 +20,16 @@ export const FORM_MOSQUES = {
          },
       },
       {
-         label: 'Курулган куну',
+         label: 'Имамдын фамилиясы',
          styles: { gridArea: '1 / 4 / 4 / 5' },
+         requestName: 'imamLastName',
+         required: {
+            required: 'Жазуу талаасын бош жөнөтүүгө болбойт',
+         },
+      },
+      {
+         label: 'Курулган куну',
+         styles: { gridArea: '2 / 2 / 4 / 3' },
          requestName: 'birthDay',
          type: 'date',
          required: {
@@ -30,7 +38,7 @@ export const FORM_MOSQUES = {
       },
       {
          label: 'Дареги',
-         styles: { gridArea: '2 / 1 / 2 / 3' },
+         styles: { gridArea: '2 / 1 / 2 / 2' },
          requestName: 'address',
          required: {
             required: 'Жазуу талаасын бош жөнөтүүгө болбойт',

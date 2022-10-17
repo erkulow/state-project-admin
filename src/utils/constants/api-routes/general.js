@@ -625,6 +625,6 @@ export const API_ROUTES_GET = {
       path: 'agriculture/acEvent/mchs',
    },
    celebrities: {
-      path: 'agriculture/acEvent/ataktuular',
+      path: 'agriculture/acEvent/celebrities',
    },
 }
