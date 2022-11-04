@@ -17,10 +17,9 @@ const TemplateLeaderShipPages = () => {
       },
       {
          path: '/jetekchilik/aiyldyk-kenesh',
-         name: state.title,
+         name: state?.title,
       },
    ]
-   const isActiveFunction = (isAcive) => (isAcive ? 'active' : '')
    return (
       <Container>
          <Header>

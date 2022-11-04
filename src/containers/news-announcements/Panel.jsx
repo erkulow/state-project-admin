@@ -1,17 +1,42 @@
 import styled from '@emotion/styled'
 import { Alert } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { isEditHandler } from '../../store/edit-slice'
-import { crudActions, getData } from '../../store/crud-slice'
+import { crudActions } from '../../store/crud-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import NewsList from './NewsList'
-import { getNewsState, getNewsWorld } from '../../store/news-slice'
+import {
+   getCountOfNews,
+   getNewsState,
+   getNewsWorld,
+} from '../../store/news-slice'
+import Pagination from '../../components/UI/pagination/Pagination'
+import {
+   getDataFromSessionStorage,
+   saveToSessionStorage,
+} from '../../utils/helpers/general'
 
 const Panel = () => {
    const dispatch = useDispatch()
-   const { newsState, newsWorld } = useSelector((state) => state.news)
-   const [pagination, setPagination] = useState({ state: 1, world: 1 })
+   const { newsState, newsWorld, countOfState, countOfWorld } = useSelector(
+      (state) => state.news
+   )
+
+   const localData = useMemo(() => getDataFromSessionStorage('page')) || {}
+
+   const [pagination, setPagination] = useState({
+      state: localData.state || 1,
+      world: localData.world || 1,
+   })
+
+   const paginationWorldHandler = (event, value) => {
+      setPagination({ ...pagination, world: value })
+   }
+
+   const paginationStateHandler = (event, value) => {
+      setPagination({ ...pagination, state: value })
+   }
 
    useEffect(() => {
       dispatch(isEditHandler({ data: null, isEdit: false }))
@@ -19,8 +44,10 @@ const Panel = () => {
    }, [])
 
    useEffect(() => {
+      saveToSessionStorage('page', pagination)
       dispatch(getNewsState(pagination.state))
       dispatch(getNewsWorld(pagination.world))
+      dispatch(getCountOfNews())
    }, [pagination])
 
    return (
@@ -39,6 +66,15 @@ const Panel = () => {
                      жок:(
                   </Alert>
                )}
+               {countOfState > 1 && (
+                  <Flex width="100%" justify="center">
+                     <Pagination
+                        onChange={paginationStateHandler}
+                        count={countOfState}
+                        page={pagination.state}
+                     />
+                  </Flex>
+               )}
                <br />
                <SectionTitle>
                   Жаңылыктар жана кулактандыруулар (Дуйно жузу боюнча)
@@ -51,6 +87,15 @@ const Panel = () => {
                      Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
                      жок:(
                   </Alert>
+               )}
+               {countOfWorld > 1 && (
+                  <Flex width="100%" justify="start">
+                     <Pagination
+                        onChange={paginationWorldHandler}
+                        count={countOfWorld}
+                        page={pagination.world}
+                     />
+                  </Flex>
                )}
             </div>
          </Flex>
