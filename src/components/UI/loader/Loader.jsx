@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Centered from '../ui-for-positions/Centered'
+import { Centered } from '../../../styles/style-for-positions/style'
 
 const Loader = () => {
    return (
@@ -27,7 +27,7 @@ const LoaderStyled = styled.div`
       align-items: center;
       width: var(--clock-width);
       height: var(--clock-width);
-      border: 3px solid #dd8a08;
+      border: 3px solid #173b67;
       border-radius: 50%;
 
       &::before,
@@ -36,7 +36,7 @@ const LoaderStyled = styled.div`
          content: '';
          top: calc(var(--clock-radius) * 0.25);
          width: var(--clock-thickness);
-         background: #dd8a08;
+         background: #173b67;
          border-radius: 10px;
          transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
          animation: spin infinite linear;

@@ -30,6 +30,9 @@ const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
                <List>
                   <H2> Жаңылыктар жана кулактандыруулар жонундо маалымат</H2>
                   <Li>
+                     <b>Аталышы:</b> {data.title}
+                  </Li>
+                  <Li>
                      <b>Чыгарылган куну:</b> {data.dateOfNewAnnouncement}
                   </Li>
                   <Li>

@@ -143,3 +143,10 @@ export const putInDataForm = ({
       })
    }
 }
+
+export function checkOnlineState() {
+   if (navigator.onLine) {
+      return true
+   }
+   return false
+}

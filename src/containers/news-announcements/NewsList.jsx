@@ -7,13 +7,13 @@ import { useDispatch } from 'react-redux'
 import Title from '../../components/UI/typography/Title'
 import { Flex } from '../../styles/style-for-positions/style'
 import ModalDelete from '../../components/UI/modals/modalDelete'
-import { deleteData } from '../../store/crud-slice'
+import { deleteData } from '../../store/news-slice'
 import Modal from '../../components/UI/modals/modal-container/Modal'
 import { tabActions } from '../../store/tab-slice'
 import { isEditHandler } from '../../store/edit-slice'
 import DetailNews from './DetailNews'
 
-const NewsList = ({ item }) => {
+const NewsList = ({ item, category }) => {
    const dispatch = useDispatch()
    const [showDeleteModal, setShowDeleteModal] = useState(false)
    const [showDetail, setShowDetail] = useState(false)
@@ -29,10 +29,6 @@ const NewsList = ({ item }) => {
       dispatch(tabActions.tabChange(0))
       dispatch(isEditHandler({ isEdit: true, data: item }))
    }
-
-   useEffect(() => {
-      refText.current.innerHTML = item.dateOfNewAnnouncement
-   }, [item])
 
    return (
       <>
@@ -59,7 +55,10 @@ const NewsList = ({ item }) => {
                   gap="10px"
                   align="flex-start"
                >
-                  <TitleAdvice ref={refText} size="10px" color="#7d97b8" />
+                  <TitleNews color="lightgray">{item.title}</TitleNews>
+                  <TitleNews size="10px" color="#7d97b8">
+                     {item.dateOfNewAnnouncement}
+                  </TitleNews>
                </Flex>
                <Flex width="40%" justify="center" gap="20px">
                   <ButtonEdit onClick={editLeadershipHandler}>
@@ -78,16 +77,14 @@ const NewsList = ({ item }) => {
          </Section>
          <ModalDelete
             open={showDeleteModal}
-            action={() =>
-               dispatch(deleteData({ id: item.id, category: 'news' }))
-            }
+            action={() => dispatch(deleteData({ id: item.id, category }))}
             setShowModal={setShowDeleteModal}
             title="Сиз чындап эле очуруп салууну каалайсызбы?"
          />
       </>
    )
 }
-const TitleAdvice = styled(Title)`
+const TitleNews = styled(Title)`
    text-overflow: ellipsis;
    display: -webkit-box;
    -webkit-line-clamp: 3;

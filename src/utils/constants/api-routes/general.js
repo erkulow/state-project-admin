@@ -358,7 +358,10 @@ export const API_ROUTES_DELETE = {
    cleanliness: {
       path: 'homePage/cleanliness',
    },
-   news: {
+   newsWorld: {
+      path: 'homePage/newsAnnouncement',
+   },
+   newsState: {
       path: 'homePage/newsAnnouncement',
    },
    OKM: {

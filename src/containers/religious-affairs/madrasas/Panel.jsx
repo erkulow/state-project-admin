@@ -6,10 +6,11 @@ import { isEditHandler } from '../../../store/edit-slice'
 import { crudActions, getData } from '../../../store/crud-slice'
 import { Flex } from '../../../styles/style-for-positions/style'
 import MadrasaList from './MadrasaList'
+import Loader from '../../../components/UI/loader/Loader'
 
 const Panel = () => {
    const dispatch = useDispatch()
-   const { datas } = useSelector((state) => state.crud)
+   const { datas, isLoading } = useSelector((state) => state.crud)
    useEffect(() => {
       dispatch(getData('religiousMadrasa'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
@@ -17,19 +18,22 @@ const Panel = () => {
    }, [])
    return (
       <Container>
-         <Flex width="100%" direction="column" gap="20px">
-            <div>
-               <SectionTitle>Медреселер</SectionTitle>
-               {(!!datas.length &&
-                  datas.map((item) => (
-                     <MadrasaList key={item.id} item={item} />
-                  ))) || (
-                  <Alert severity="info">
-                     Медреселер боюнча маалымат табылган жок:(
-                  </Alert>
-               )}
-            </div>
-         </Flex>
+         {isLoading && <Loader />}
+         {!isLoading && (
+            <Flex width="100%" direction="column" gap="20px">
+               <div>
+                  <SectionTitle>Медреселер</SectionTitle>
+                  {(!!datas.length &&
+                     datas.map((item) => (
+                        <MadrasaList key={item.id} item={item} />
+                     ))) || (
+                     <Alert severity="info">
+                        Медреселер боюнча маалымат табылган жок:(
+                     </Alert>
+                  )}
+               </div>
+            </Flex>
+         )}
       </Container>
    )
 }
@@ -37,6 +41,7 @@ const Panel = () => {
 const Container = styled.div`
    width: 100%;
    margin: 0 auto;
+   min-height: 200px;
 `
 
 const SectionTitle = styled.h3`

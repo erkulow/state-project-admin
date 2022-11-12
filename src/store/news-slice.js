@@ -1,7 +1,15 @@
 /* eslint-disable default-param-last */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { baseFetch } from '../api/baseFetch'
-import { API_ROUTES_GET } from '../utils/constants/api-routes/general'
+import {
+   showErrorMessage,
+   showSuccessMessage,
+} from '../components/UI/notification/Notification'
+import {
+   API_ROUTES_DELETE,
+   API_ROUTES_GET,
+} from '../utils/constants/api-routes/general'
+import { checkOnlineState } from '../utils/helpers/general'
 
 export const getCountOfNews = createAsyncThunk(
    'getCountOfNews/news',
@@ -28,6 +36,18 @@ export const getNewsState = createAsyncThunk(
          })
          return { result }
       } catch (error) {
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -42,6 +62,51 @@ export const getNewsWorld = createAsyncThunk(
          })
          return { result }
       } catch (error) {
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
+         return rejectWithValue(error.message)
+      }
+   }
+)
+export const deleteData = createAsyncThunk(
+   'deleteData/news',
+   async ({ id, category }, { rejectWithValue, dispatch }) => {
+      try {
+         const result = await baseFetch({
+            path: `${API_ROUTES_DELETE[category].path}/${id}`,
+            method: 'DELETE',
+            isDelete: true,
+         })
+         if (result) {
+            showSuccessMessage({
+               title: 'Ура!',
+               message: 'Ийгиликтуу очурулду',
+            })
+         }
+         return { id, category }
+      } catch (error) {
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -95,6 +160,17 @@ const newsSlice = createSlice({
          state.newsWorld = result
       },
       [getNewsWorld.rejected]: (state) => {
+         state.isLoading = false
+      },
+      ///
+      [deleteData.pending]: (state) => {
+         state.isLoading = true
+      },
+      [deleteData.fulfilled]: (state, { payload: { id, category } }) => {
+         state.isLoading = false
+         state[category] = state[category].filter((el) => el.id !== id)
+      },
+      [deleteData.rejected]: (state) => {
          state.isLoading = false
       },
    },

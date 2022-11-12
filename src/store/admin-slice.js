@@ -5,13 +5,14 @@ import {
 } from '../components/UI/notification/Notification'
 import { baseFetch } from '../api/baseFetch'
 import { _KEY_AUTH } from '../utils/constants/general'
+import { checkOnlineState } from '../utils/helpers/general'
 
 export const loginAsAdmin = createAsyncThunk(
    'loginAsAdmin/admin',
    async ({ data, reset }, { rejectWithValue }) => {
       try {
          const result = await baseFetch({
-            path: 'auth/sign-in',
+            path: 'sign-in/auth',
             method: 'POST',
             body: data,
          })
@@ -22,10 +23,18 @@ export const loginAsAdmin = createAsyncThunk(
          reset()
          return result
       } catch (error) {
-         showErrorMessage({
-            title: 'Error!!!',
-            message: error.message,
-         })
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error)
       }
    }

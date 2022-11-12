@@ -8,6 +8,7 @@ import Circles from '../containers/education/circles'
 import Events from '../containers/education/events'
 import GRT from '../containers/education/GRT'
 import Olympiads from '../containers/education/olympiads'
+import NotConnect from '../containers/notConnect'
 import Layout from '../layout'
 import { ROUTES } from '../utils/constants/routes'
 import ProtectedRoute from './ProtectedRoute'
@@ -118,6 +119,7 @@ const AppRoutes = () => {
    } = ROUTES
    return (
       <Routes>
+         <Route path="/not_connect:(" element={<NotConnect />} />
          <Route
             path="/"
             element={<Navigate to={isAuthorized ? admin.path : login.path} />}

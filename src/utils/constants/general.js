@@ -1,8 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { ReactComponent as GroupsIcon } from '../../assets/icons/group.svg'
-import { ReactComponent as CoursesIcon } from '../../assets/icons/courses.svg'
-import { ReactComponent as TeachersIcon } from '../../assets/icons/teacher.svg'
-import { ReactComponent as StudentsIcon } from '../../assets/icons/students.svg'
 import { ReactComponent as TextIcon } from '../../assets/icons/simpleText.svg'
 import { ReactComponent as ItalicIcon } from '../../assets/icons/italic.svg'
 import { ReactComponent as UnderlineIcon } from '../../assets/icons/underline.svg'

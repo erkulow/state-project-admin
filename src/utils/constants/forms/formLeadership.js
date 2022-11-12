@@ -106,9 +106,9 @@ export const FORM_LEADERSHIP = {
          styles: { gridArea: '5 / 1 / 5 / 5' },
          requestName: 'text',
          type: 'textarea',
-         // required: {
-         //    required: 'Поляны бош жонотууго болбойт',
-         // },
+         required: {
+            required: 'Поляны бош жонотууго болбойт',
+         },
       },
    ],
 }

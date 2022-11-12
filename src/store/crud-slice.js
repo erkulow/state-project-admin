@@ -13,6 +13,7 @@ import {
    API_ROUTES_SAVE,
    API_ROUTES_UPLOAD,
 } from '../utils/constants/api-routes/general'
+import { checkOnlineState } from '../utils/helpers/general'
 
 export const saveDataToServer = createAsyncThunk(
    'saveDataToServer/crud',
@@ -53,10 +54,18 @@ export const saveDataToServer = createAsyncThunk(
 
          return result
       } catch (error) {
-         showErrorMessage({
-            title: ':(',
-            message: 'Бир жерден ката кетти:(',
-         })
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -96,6 +105,18 @@ export const editData = createAsyncThunk(
 
          return result
       } catch (error) {
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -121,10 +142,18 @@ export const uploadImage = createAsyncThunk(
          })
          return result
       } catch (error) {
-         showErrorMessage({
-            title: ':(',
-            message: 'Бир жерден ката кетти:(',
-         })
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Cурот жуктолбой калды, бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -139,7 +168,15 @@ export const getData = createAsyncThunk(
          })
          return { result, category }
       } catch (error) {
-         showErrorMessage({ title: 'Error', message: 'Что то пошло не так:(' })
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({ title: 'Error', message: error.messa })
+         }
          return rejectWithValue(error.message)
       }
    }
@@ -162,7 +199,18 @@ export const deleteData = createAsyncThunk(
          }
          return result
       } catch (error) {
-         showErrorMessage({ title: 'Ката', message: 'Что то пошло не так:(' })
+         if (!checkOnlineState()) {
+            showErrorMessage({
+               title: 'Error',
+               message: 'Интернет узгултукко учурады окшойт :(',
+            })
+            window.location.href = '/not_connect:('
+         } else {
+            showErrorMessage({
+               title: ':(',
+               message: 'Бир жерден ката кетти:(',
+            })
+         }
          return rejectWithValue(error.message)
       }
    }

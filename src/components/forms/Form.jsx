@@ -21,6 +21,7 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
    const {
       register,
       setValue,
+      control,
       reset,
       formState: { errors, isValid, isSubmitted },
       handleSubmit,
@@ -104,12 +105,13 @@ const Form = ({ dataForm, onGetData, isLoading, onGetSetValue, isEdit }) => {
                      />
                   )) || (
                      <Input
-                        change={(html) => setValue(item.requestName, html)}
+                        setValue={setValue}
                         disabled={isLoading}
                         options={item.options}
                         isValid={errors[item.requestName] && !isValid}
                         {...register(item.requestName, { ...item.required })}
                         type={item.type}
+                        control={control}
                      />
                   )}
                   <p style={{ color: 'tomato', fontSize: '12px' }}>

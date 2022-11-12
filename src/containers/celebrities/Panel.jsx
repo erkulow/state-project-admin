@@ -6,10 +6,11 @@ import { isEditHandler } from '../../store/edit-slice'
 import { crudActions, getData } from '../../store/crud-slice'
 import { Flex } from '../../styles/style-for-positions/style'
 import CleanlinesList from './NewsList'
+import Loader from '../../components/UI/loader/Loader'
 
 const Panel = () => {
    const dispatch = useDispatch()
-   const { datas } = useSelector((state) => state.crud)
+   const { datas, isLoading } = useSelector((state) => state.crud)
    useEffect(() => {
       dispatch(getData('news'))
       dispatch(isEditHandler({ data: null, isEdit: false }))
@@ -17,20 +18,23 @@ const Panel = () => {
    }, [])
    return (
       <Container>
-         <Flex width="100%" direction="column" gap="20px">
-            <div>
-               <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
-               {(!!datas.length &&
-                  datas.map((item) => (
-                     <CleanlinesList key={item.id} item={item} />
-                  ))) || (
-                  <Alert severity="info">
-                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
-                     жок:(
-                  </Alert>
-               )}
-            </div>
-         </Flex>
+         {isLoading && <Loader />}
+         {!isLoading && (
+            <Flex width="100%" direction="column" gap="20px">
+               <div>
+                  <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
+                  {(!!datas.length &&
+                     datas.map((item) => (
+                        <CleanlinesList key={item.id} item={item} />
+                     ))) || (
+                     <Alert severity="info">
+                        Жаңылыктар жана кулактандыруулар боюнча кенештер
+                        табылган жок:(
+                     </Alert>
+                  )}
+               </div>
+            </Flex>
+         )}
       </Container>
    )
 }
@@ -38,6 +42,7 @@ const Panel = () => {
 const Container = styled.div`
    width: 100%;
    margin: 0 auto;
+   min-height: 200px;
 `
 
 const SectionTitle = styled.h3`

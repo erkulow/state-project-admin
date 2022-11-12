@@ -16,12 +16,12 @@ import {
    getDataFromSessionStorage,
    saveToSessionStorage,
 } from '../../utils/helpers/general'
+import Loader from '../../components/UI/loader/Loader'
 
 const Panel = () => {
    const dispatch = useDispatch()
-   const { newsState, newsWorld, countOfState, countOfWorld } = useSelector(
-      (state) => state.news
-   )
+   const { newsState, newsWorld, countOfState, countOfWorld, isLoading } =
+      useSelector((state) => state.news)
 
    const localData = useMemo(() => getDataFromSessionStorage('page')) || {}
 
@@ -52,53 +52,64 @@ const Panel = () => {
 
    return (
       <Container>
-         <Flex width="100%" direction="column" gap="20px">
-            <div>
-               <SectionTitle>
-                  Жаңылыктар жана кулактандыруулар (Мамлекет ичиндеги){' '}
-               </SectionTitle>
-               {(!!newsState.length &&
-                  newsState.map((item) => (
-                     <NewsList key={item.id} item={item} />
-                  ))) || (
-                  <Alert severity="info">
-                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
-                     жок:(
-                  </Alert>
-               )}
-               {countOfState > 1 && (
-                  <Flex width="100%" justify="center">
-                     <Pagination
-                        onChange={paginationStateHandler}
-                        count={countOfState}
-                        page={pagination.state}
-                     />
-                  </Flex>
-               )}
-               <br />
-               <SectionTitle>
-                  Жаңылыктар жана кулактандыруулар (Дуйно жузу боюнча)
-               </SectionTitle>
-               {(!!newsWorld.length &&
-                  newsWorld.map((item) => (
-                     <NewsList key={item.id} item={item} />
-                  ))) || (
-                  <Alert severity="info">
-                     Жаңылыктар жана кулактандыруулар боюнча кенештер табылган
-                     жок:(
-                  </Alert>
-               )}
-               {countOfWorld > 1 && (
-                  <Flex width="100%" justify="start">
-                     <Pagination
-                        onChange={paginationWorldHandler}
-                        count={countOfWorld}
-                        page={pagination.world}
-                     />
-                  </Flex>
-               )}
-            </div>
-         </Flex>
+         {isLoading && <Loader />}
+         {!isLoading && (
+            <Flex width="100%" direction="column" gap="20px">
+               <div>
+                  <SectionTitle>
+                     Жаңылыктар жана кулактандыруулар (Мамлекет ичиндеги){' '}
+                  </SectionTitle>
+                  {(!!newsState.length &&
+                     newsState.map((item) => (
+                        <NewsList
+                           category="newsState"
+                           key={item.id}
+                           item={item}
+                        />
+                     ))) || (
+                     <Alert severity="info">
+                        Жаңылыктар жана кулактандыруулар боюнча маалымат
+                        табылган жок:(
+                     </Alert>
+                  )}
+                  {countOfState > 1 && (
+                     <Flex width="100%" justify="center">
+                        <Pagination
+                           onChange={paginationStateHandler}
+                           count={countOfState}
+                           page={pagination.state}
+                        />
+                     </Flex>
+                  )}
+                  <br />
+                  <SectionTitle>
+                     Жаңылыктар жана кулактандыруулар (Дуйно жузу боюнча)
+                  </SectionTitle>
+                  {(!!newsWorld.length &&
+                     newsWorld.map((item) => (
+                        <NewsList
+                           category="newsWorld"
+                           key={item.id}
+                           item={item}
+                        />
+                     ))) || (
+                     <Alert severity="info">
+                        Жаңылыктар жана кулактандыруулар боюнча маалымат
+                        табылган жок:(
+                     </Alert>
+                  )}
+                  {countOfWorld > 1 && (
+                     <Flex width="100%" justify="start">
+                        <Pagination
+                           onChange={paginationWorldHandler}
+                           count={countOfWorld}
+                           page={pagination.world}
+                        />
+                     </Flex>
+                  )}
+               </div>
+            </Flex>
+         )}
       </Container>
    )
 }
@@ -106,6 +117,7 @@ const Panel = () => {
 const Container = styled.div`
    width: 100%;
    margin: 0 auto;
+   min-height: 200px;
 `
 
 const SectionTitle = styled.h3`
