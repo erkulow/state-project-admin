@@ -6,7 +6,8 @@ import { ReactComponent as BoldIcon } from '../../assets/icons/bold.svg'
 import { ReactComponent as UlIcon } from '../../assets/icons/ulList.svg'
 import { ReactComponent as OlIcon } from '../../assets/icons/olList.svg'
 
-export const SERVER_BASE_URL = 'https://mady-app-kutu.herokuapp.com/api'
+export const SERVER_BASE_URL =
+   'http://mady-env.eba-pyfp7is9.us-east-1.elasticbeanstalk.com/api'
 
 export const _KEY_AUTH = 'STATE_PROJECT_'
 

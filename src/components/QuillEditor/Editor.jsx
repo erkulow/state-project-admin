@@ -75,6 +75,10 @@ const GlobalStyle = createGlobalStyle`
             color: white;
          }
 		}
+      .ql-editor{
+         min-height: 150px;
+      }
+
 	}
 `
 

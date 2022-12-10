@@ -32,7 +32,7 @@ export const loginAsAdmin = createAsyncThunk(
          } else {
             showErrorMessage({
                title: ':(',
-               message: 'Бир жерден ката кетти:(',
+               message: error.message,
             })
          }
          return rejectWithValue(error)
@@ -40,6 +40,7 @@ export const loginAsAdmin = createAsyncThunk(
    }
 )
 const localData = JSON.parse(sessionStorage.getItem(_KEY_AUTH)) || {}
+
 const initialState = {
    token: localData?.token || null,
    isAuthorized: localData?.isAuthorized || false,
