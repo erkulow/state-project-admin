@@ -28,7 +28,6 @@ const DetailNews = ({ data, setShowDeleteModal, editHandler }) => {
             </WrapperImage>
             <Wrapper>
                <List>
-                  <H2> Жаңылыктар жана кулактандыруулар жонундо маалымат</H2>
                   <Li>
                      <b>Аталышы:</b> {data.title}
                   </Li>

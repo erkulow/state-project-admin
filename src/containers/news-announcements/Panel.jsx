@@ -56,9 +56,7 @@ const Panel = () => {
          {!isLoading && (
             <Flex width="100%" direction="column" gap="20px">
                <div>
-                  <SectionTitle>
-                     Жаңылыктар жана кулактандыруулар (Мамлекет ичиндеги){' '}
-                  </SectionTitle>
+                  <SectionTitle>Мыйзамдар жана токтомдор</SectionTitle>
                   {(!!newsState.length &&
                      newsState.map((item) => (
                         <NewsList
@@ -68,8 +66,7 @@ const Panel = () => {
                         />
                      ))) || (
                      <Alert severity="info">
-                        Жаңылыктар жана кулактандыруулар боюнча маалымат
-                        табылган жок:(
+                        Мыйзамдар жана токтомдор боюнча маалымат табылган жок:(
                      </Alert>
                   )}
                   {countOfState > 1 && (
@@ -82,9 +79,7 @@ const Panel = () => {
                      </Flex>
                   )}
                   <br />
-                  <SectionTitle>
-                     Жаңылыктар жана кулактандыруулар (Дуйно жузу боюнча)
-                  </SectionTitle>
+                  <SectionTitle>Жаңылыктар жана кулактандыруулар</SectionTitle>
                   {(!!newsWorld.length &&
                      newsWorld.map((item) => (
                         <NewsList
